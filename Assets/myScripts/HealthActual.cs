@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 // Please fix any names and let me know the scripts I need to create or add to for this to work
@@ -12,69 +13,57 @@ public class HealthActual : MonoBehaviour
     public int currentHealth;
     public float blink;
     public float immuned;
-    public float Player;
-    //public Renderer modelRenderer1; Wait for the art?
-    //public Renderer modelRenderer2;
-    private float blinkTime = 0.1f;
-    private float immunedTime;
+    public SpriteRenderer modelRenderer1;
+    public float immunedTime;
 
-    public Transform respawnTarget;
     private bool respawning;
     private Vector3 respawnLocation;
 
+    public Image[] hearts;
     public bool isDead = false;
 
     
     void Start() 
     {
         currentHealth = maxHealth;
-
-        respawnLocation = respawnTarget.transform.position;
+        respawnLocation = transform.position;
+    }
+    
+    private void Update()
+    {
+        if (immunedTime > 0)
+        immunedTime -= Time.deltaTime;
     }
 
-    
-    void Update() 
+    IEnumerator BlinkWhileImmune()
     {
-        if (immundedTime > 0)
+        while (immunedTime > 0)
         {
-    
-
-            immundedTime -= Time.deltaTime;
-            blinkTime -= Time.deltaTime;
-
-            if (blinkTime <= 0)
-            {
-                modelRenderer1.enabled = !modelRenderer1.enabled;
-                modelRenderer2.enabled = !modelRenderer2.enabled;
-
-                blinkTime = blink;
-            }
-            if (immundedTime <= 0)
-            {
-                modelRenderer1.enabled = true;
-                modelRenderer2.enabled = true;   
-            }
+            modelRenderer1.enabled = !modelRenderer1.enabled;
+            yield return new WaitForSeconds(blink); // Wait for blink duration before toggling
         }
-    }    
+
+        // Make sure the player is visible when immunity ends
+        modelRenderer1.enabled = true;
+    }
+
 
     public void DamagePlayer(int Hurt, Vector3 direction)
     {
-        if (immundedTime <= 0)
+        if (immunedTime <= 0)
         {
             currentHealth -= Hurt;
 
             if (currentHealth <= 0)
             {
-                //Respawn(); Need a script for this?
+                Respawn();// Need a script for this?
             }
             else
             {
 
-                immundedTime = immuned;
+                immunedTime = immuned;
                 modelRenderer1.enabled = false;
-                modelRenderer2.enabled = false;
-
-                blinkTime = blink;
+                StartCoroutine(BlinkWhileImmune());
             }
         }
     }
@@ -88,16 +77,16 @@ public class HealthActual : MonoBehaviour
     {
         if (isDead == true)
         {
-            respawnTarget.gameObject.SetActive(false);
-            //FindObjectOfType<SoundEffects>().DeathSound(); Do they need new scripts, also are the namings correct?
+            //FindObjectOfType<SoundEffects>().DeathSound(); Do they need new scripts, also are the namings correct? in here its better to have a new scrips, yes the name is ok
             //FindObjectOfType<GameManager>().CameraAfterDeath();
         }
     }
 
-    public void Respawn()// New scripts?
+    public void Respawn()// New scripts? no need for new scripts for this one
     {
         isDead = true;
-        FindObjectOfType<GameManager>().EndGame();
+        transform.position = respawnLocation;
+        //FindObjectOfType<GameManager>().EndGame();
         Dead();
     }
 
@@ -113,10 +102,7 @@ public class HealthActual : MonoBehaviour
 
     public void SelectedContinue()
     {
-        isDead = false;
-        respawnTarget.transform.position = respawnLocation;
-        currentHealth = maxHealth;
- //     Alive();   ??
+        Respawn();
     }
 
 

@@ -12,14 +12,17 @@ public class HeartPickup : MonoBehaviour
         if(other.tag == "Player")
         {
             IInventory inventory = other.GetComponent<IInventory>();
-
             if(inventory != null)
             {
                 inventory.Heart = inventory.Heart + heartValue;
                 print("Player has " + inventory.Heart + " heart(s)");
                 Invoke("DeleteHeart",2);
-            
-                
+            }
+
+            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+            if (playerHealth != null)
+            {
+                playerHealth.Heal(heartValue);
             }
 
         }

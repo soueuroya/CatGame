@@ -20,8 +20,6 @@ public class coinpickup : MonoBehaviour
                 print("Player inventory has " + inventory.Coin + " coin(s)");
                 Invoke("DeleteCoin",2);
 
-            
-                
             }
 
         }

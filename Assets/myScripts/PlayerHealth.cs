@@ -10,6 +10,8 @@ public class PlayerHealth : MonoBehaviour
     public SpriteRenderer playerSr;
     public Movement playerMovement;
 
+    [SerializeField] private HealthActual healthActual;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -18,11 +20,26 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int amount)
     {
+        if (healthActual.immunedTime > 0) // prevent damage if blinking
+        {
+            return;
+        }
+
+        healthActual.DamagePlayer(amount, Vector3.zero);
         health -= amount;
         if(health <= 0)
         {
             playerSr.enabled = false;
             playerMovement.enabled = false;
+        }
+    }
+
+    public void Heal(int amount)
+    {
+        health += amount;
+        if (health > maxHealth)
+        {
+            health = maxHealth;
         }
     }
 
