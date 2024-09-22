@@ -19,11 +19,11 @@ public class HeartPickup : MonoBehaviour
                 Invoke("DeleteHeart",2);
             }
 
-            PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
-            if (playerHealth != null)
-            {
-                playerHealth.Heal(heartValue);
-            }
+            //PlayerHealth playerHealth = other.GetComponent<PlayerHealth>();
+            //if (playerHealth != null)
+            //{
+            //    playerHealth.Heal(heartValue);
+            //}
 
         }
     }

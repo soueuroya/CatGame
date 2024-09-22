@@ -14,6 +14,8 @@ public class PlayerHealth : MonoBehaviour
     private bool respawning;
     private Vector3 respawnLocation;
     public bool isDead = false;
+    public int currentHealth;
+    
 
     public Sprite emptyHeart;
     public Sprite fullHeart;
@@ -22,11 +24,14 @@ public class PlayerHealth : MonoBehaviour
     public SpriteRenderer playerSr;
     public Movement playerMovement;
 
+    
+
 
     // Start is called before the first frame update
     void Start()
     {
         health = maxHealth;
+        currentHealth = maxHealth;
         respawnLocation = transform.position;
     }
 
@@ -90,9 +95,9 @@ public class PlayerHealth : MonoBehaviour
     {
         if (immunedTime <= 0)
         {
-            health -= Hurt;
+            currentHealth -= Hurt;
 
-            if (health <= 0)
+            if (currentHealth <= 0)
             {
                 Respawn();// Need a script for this?
             }
