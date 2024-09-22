@@ -4529,8 +4529,6 @@ GameObject:
   - component: {fileID: 1940931620}
   - component: {fileID: 1940931623}
   - component: {fileID: 1940931624}
-  - component: {fileID: 1940931625}
-  - component: {fileID: 1940931626}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4721,50 +4719,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   maxHealth: 3
-  playerSr: {fileID: 1940931618}
-  playerMovement: {fileID: 1940931620}
-  healthActual: {fileID: 1940931626}
---- !u!114 &1940931625
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1940931617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9e28c39b22a54c94a91b7c600fdc4e4c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  health: 0
-  maxHealth: 3
+  blink: 0.1
+  immuned: 1
+  modelRenderer1: {fileID: 1940931618}
+  immunedTime: 0
+  isDead: 0
   emptyHeart: {fileID: 21300000, guid: e7503f0d2d68f4140b0e3611a82564a0, type: 3}
   fullHeart: {fileID: 21300000, guid: 296da8264acbd5b4490ec3e292b62130, type: 3}
   hearts:
   - {fileID: 403641256}
   - {fileID: 2012303670}
   - {fileID: 510188601}
-  playerHealth: {fileID: 1940931624}
---- !u!114 &1940931626
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1940931617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9abeea8b7205294e96f0c41a8b461a0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 3
-  currentHealth: 3
-  blink: 0.1
-  immuned: 1
-  modelRenderer1: {fileID: 1940931618}
-  immunedTime: 0
-  hearts: []
-  isDead: 0
+  playerSr: {fileID: 1940931618}
+  playerMovement: {fileID: 1940931620}
 --- !u!1 &1977830225
 GameObject:
   m_ObjectHideFlags: 0
