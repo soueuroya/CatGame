@@ -463,9 +463,9 @@ GameObject:
   - component: {fileID: 156842612}
   - component: {fileID: 156842611}
   - component: {fileID: 156842610}
-  - component: {fileID: 156842617}
   - component: {fileID: 156842616}
   - component: {fileID: 156842615}
+  - component: {fileID: 156842617}
   m_Layer: 0
   m_Name: heart
   m_TagString: Untagged
@@ -4723,7 +4723,8 @@ MonoBehaviour:
   immuned: 1
   modelRenderer1: {fileID: 1940931618}
   immunedTime: 0
-  isDead: 1
+  isDead: 0
+  currentHealth: 0
   emptyHeart: {fileID: 21300000, guid: e7503f0d2d68f4140b0e3611a82564a0, type: 3}
   fullHeart: {fileID: 21300000, guid: 296da8264acbd5b4490ec3e292b62130, type: 3}
   hearts:
