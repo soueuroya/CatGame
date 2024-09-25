@@ -21,12 +21,10 @@ public class PlayerHealth : MonoBehaviour
 
     public SpriteRenderer playerSr;
     public Movement playerMovement;
-    IInventory inventory;
 
     // Start is called before the first frame update
     void Start()
     {
-        inventory = GetComponent<IInventory>();
         currentHealth = maxHealth;
         respawnLocation = transform.position;
         UpdateHealthUI();
@@ -55,14 +53,11 @@ public class PlayerHealth : MonoBehaviour
             playerSr.enabled = false;
             StartCoroutine(BlinkWhileImmune());
         }
-
-        inventory.Heart--; // lose a heart on the inventory
         UpdateHealthUI();
     }
 
     public void Heal(int amount)
     {
-        inventory.Heart += amount;
         currentHealth += amount;
         if (currentHealth > maxHealth)
         {
@@ -113,7 +108,6 @@ public class PlayerHealth : MonoBehaviour
     {
         playerSr.enabled = true;
         playerMovement.enabled = true;
-        inventory.Heart = 3; // reset back to 3
         isDead = false;
         currentHealth = 3;
         UpdateHealthUI();

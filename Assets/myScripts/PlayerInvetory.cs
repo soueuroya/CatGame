@@ -8,10 +8,6 @@ public class PlayerInventory : MonoBehaviour, IInventory
 
   private int _Key = 0;
 
-  public int Heart { get => _Heart; set => _Heart = value; }
-
-  private int _Heart = 3;
-
   public int Coin { get => _Coin; set => _Coin = value; }
 
   private int _Coin = 0;
