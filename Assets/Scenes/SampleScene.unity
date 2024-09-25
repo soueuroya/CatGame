@@ -4846,7 +4846,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a418ea40705b3ef428331e39db375a11, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  health: 0
   maxHealth: 3
   blink: 0.1
   immuned: 1
@@ -5429,12 +5428,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 1940931617}
-  rbenemy: {fileID: 2065772561}
   speed: 15
-  WayPoints: {fileID: 190632409}
-  wayPoints:
-  - {fileID: 1008891175}
-  - {fileID: 189836231}
+  rbenemy: {fileID: 2065772561}
+  Maxright: 2
+  Maxleft: 5
+  minimumDistance: 4
 --- !u!50 &2065772561
 Rigidbody2D:
   serializedVersion: 4

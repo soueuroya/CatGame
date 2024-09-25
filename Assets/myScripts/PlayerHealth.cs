@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public int health;
     public int maxHealth = 3;
     public float blink;
     public float immuned;
@@ -23,14 +22,12 @@ public class PlayerHealth : MonoBehaviour
 
     public SpriteRenderer playerSr;
     public Movement playerMovement;
-
-    
-
+    IInventory inventory;
 
     // Start is called before the first frame update
     void Start()
     {
-        health = maxHealth;
+        inventory = GetComponent<IInventory>();
         currentHealth = maxHealth;
         respawnLocation = transform.position;
     }
@@ -42,33 +39,54 @@ public class PlayerHealth : MonoBehaviour
             return;
         }
 
-        DamagePlayer(amount, Vector3.zero);
-        health -= amount;
-        if(health <= 0)
+        // reduce health
+        currentHealth -= amount;
+        if(currentHealth <= 0)
         {
             playerSr.enabled = false;
             playerMovement.enabled = false;
+            Respawn();
         }
+        else
+        {
+            // trigger blinking only if not dead
+            immunedTime = immuned;
+            immuned = 1;
+            modelRenderer1.enabled = false;
+            StartCoroutine(BlinkWhileImmune());
+        }
+
+        inventory.Heart--; // lose a heart on the inventory
+        UpdateHealthUI();
     }
 
     public void Heal(int amount)
     {
-        health += amount;
-        if (health > maxHealth)
+        inventory.Heart += amount;
+        currentHealth += amount;
+        if (currentHealth > maxHealth)
         {
-            health = maxHealth;
+            currentHealth = maxHealth;
         }
+        UpdateHealthUI();
     }
 
     // Update is called once per frame
     void Update()
     {
         if (immunedTime > 0)
-        immunedTime -= Time.deltaTime;
+        {
+            immunedTime -= Time.deltaTime;
+        }
 
+        
+    }
+
+    void UpdateHealthUI()
+    {
         for (int i = 0; i < hearts.Length; i++)
         {
-            if(i < health)
+            if (i < currentHealth)
             {
                 hearts[i].sprite = fullHeart;
             }
@@ -91,47 +109,21 @@ public class PlayerHealth : MonoBehaviour
         modelRenderer1.enabled = true;
     }
 
-    void DamagePlayer(int Hurt, Vector3 direction)
-    {
-        if (immunedTime <= 0)
-        {
-            currentHealth -= Hurt;
-
-            if (currentHealth <= 0)
-            {
-                Respawn();// Need a script for this?
-            }
-            else
-            {
-
-                immunedTime = immuned;
-                immuned = 1;
-                modelRenderer1.enabled = false;
-                StartCoroutine(BlinkWhileImmune());
-            }
-        }
-    }
-
     public void Alive() 
     {
-
+        playerSr.enabled = true;
+        playerMovement.enabled = true;
+        modelRenderer1.enabled = true;
+        inventory.Heart = 3; // reset back to 3
     }
 
-    public void Dead()
-    {
-        if (isDead == true)
-        {
-            //FindObjectOfType<SoundEffects>().DeathSound(); Do they need new scripts, also are the namings correct? in here its better to have a new scrips, yes the name is ok
-            //FindObjectOfType<GameManager>().CameraAfterDeath();
-        }
-    }
 
     public void Respawn()// New scripts? no need for new scripts for this one
     {
         isDead = true;
         transform.position = respawnLocation;
-        //FindObjectOfType<GameManager>().EndGame();
-        Dead();
+
+        Invoke("Alive", 2); // reviving player after 2 seconds
     }
 
     public void CheckPoint(Vector3 newLocation)

@@ -9,38 +9,67 @@ public class EnemyFollow : MonoBehaviour
     public float speed;
     public Rigidbody2D rbenemy;
     
-    public int Maxright;
-    public int Maxleft;
+    public float Maxright;
+    public float Maxleft;
+    public float minimumDistance;
+    Vector2 initialPosition;
 
     private bool isFacingRight = true;
+
+    bool isChasing = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        initialPosition = transform.position;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(player.transform.position.x > transform.position.x)
+        if (isChasing) // if enemy is chasing
         {
-            rbenemy.velocity = Vector2.right * speed;
+            if (player.transform.position.x > transform.position.x)
+            {
+                rbenemy.velocity = Vector2.right * speed;
+            }
+            else
+            {
+                rbenemy.velocity = Vector2.right * -speed;
+            }
         }
-        else
+        else // if enemy is not chasing
         {
-            rbenemy.velocity = Vector2.right * -speed;
+            if (isFacingRight)
+            {
+                rbenemy.velocity = Vector2.right * speed;
+            }
+            else
+            {
+                rbenemy.velocity = Vector2.right * -speed;
+            }
+
+            if (transform.position.x > initialPosition.x + Maxright)
+            {
+                Flip();
+            }
+            else if (transform.position.x < initialPosition.x - Maxleft)
+            {
+                Flip();
+            }
+        }
+
+        if (Vector2.Distance(transform.position, player.transform.position) < minimumDistance) // if player gets too close
+        {
+            isChasing = true;
         }
     }
 
-        private void Flip()
+    private void Flip()
     {
-        if (isFacingRight && horizontal < 0f || !isFacingRight && horizontal > 0f)
-        {
-            isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
-        }
+        isFacingRight = !isFacingRight;
+        Vector3 localScale = transform.localScale;
+        localScale.x *= -1f;
+        transform.localScale = localScale;
     }
 }
