@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyDamage : MonoBehaviour
+public class EnemyAttack : MonoBehaviour
 {
     public PlayerHealth playerHealth;
     public int damage = 1;

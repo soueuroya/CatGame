@@ -8,7 +8,6 @@ public class PlayerHealth : MonoBehaviour
     public int maxHealth = 3;
     public float blink;
     public float immuned;
-    public SpriteRenderer modelRenderer1;
     public float immunedTime;
     private bool respawning;
     private Vector3 respawnLocation;
@@ -53,7 +52,7 @@ public class PlayerHealth : MonoBehaviour
             // trigger blinking only if not dead
             immunedTime = immuned;
             immuned = 1;
-            modelRenderer1.enabled = false;
+            playerSr.enabled = false;
             StartCoroutine(BlinkWhileImmune());
         }
 
@@ -102,19 +101,18 @@ public class PlayerHealth : MonoBehaviour
     {
         while (immunedTime > 0)
         {
-            modelRenderer1.enabled = !modelRenderer1.enabled;
+            playerSr.enabled = !playerSr.enabled;
             yield return new WaitForSeconds(blink); // Wait for blink duration before toggling
         }
 
         // Make sure the player is visible when immunity ends
-        modelRenderer1.enabled = true;
+        playerSr.enabled = true;
     }
 
     public void Alive() 
     {
         playerSr.enabled = true;
         playerMovement.enabled = true;
-        modelRenderer1.enabled = true;
         inventory.Heart = 3; // reset back to 3
         isDead = false;
         currentHealth = 3;
