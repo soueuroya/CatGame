@@ -30,6 +30,7 @@ public class PlayerHealth : MonoBehaviour
         inventory = GetComponent<IInventory>();
         currentHealth = maxHealth;
         respawnLocation = transform.position;
+        UpdateHealthUI();
     }
 
     public void TakeDamage(int amount)
@@ -115,10 +116,13 @@ public class PlayerHealth : MonoBehaviour
         playerMovement.enabled = true;
         modelRenderer1.enabled = true;
         inventory.Heart = 3; // reset back to 3
+        isDead = false;
+        currentHealth = 3;
+        UpdateHealthUI();
     }
 
 
-    public void Respawn()// New scripts? no need for new scripts for this one
+    public void Respawn()
     {
         isDead = true;
         transform.position = respawnLocation;
