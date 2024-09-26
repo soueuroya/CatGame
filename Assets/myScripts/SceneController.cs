@@ -21,14 +21,14 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    public void LoadScene(string sceneName)
-    {
-        SceneManager.LoadSceneAsync(sceneName);
-    }
-
     public void NextLevel()
     {
         StartCoroutine(LoadLevel());
+    }
+
+    public void LoadScene(string sceneName)
+    {
+        SceneManager.LoadSceneAsync(sceneName);
     }
 
     IEnumerator LoadLevel()
