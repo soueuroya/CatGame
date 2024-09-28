@@ -63,8 +63,10 @@ public class EnemyFollow : MonoBehaviour
         {
             isChasing = true;
         }
-        
-
+        else
+        {
+            isChasing = false;
+        }
     }
 
     private void Flip()
