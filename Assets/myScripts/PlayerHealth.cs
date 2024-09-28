@@ -14,11 +14,6 @@ public class PlayerHealth : MonoBehaviour
     public bool isDead = false;
     public int currentHealth;
     
-
-    public Sprite emptyHeart;
-    public Sprite fullHeart;
-    public Image[] hearts;
-
     public SpriteRenderer playerSr;
     public Movement playerMovement;
 
@@ -79,17 +74,7 @@ public class PlayerHealth : MonoBehaviour
 
     void UpdateHealthUI()
     {
-        for (int i = 0; i < hearts.Length; i++)
-        {
-            if (i < currentHealth)
-            {
-                hearts[i].sprite = fullHeart;
-            }
-            else
-            {
-                hearts[i].sprite = emptyHeart;
-            }
-        }
+        UIManager.Instance?.UpdateHearts(currentHealth);
     }
 
     IEnumerator BlinkWhileImmune()
