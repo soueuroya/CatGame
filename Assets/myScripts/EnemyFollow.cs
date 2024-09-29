@@ -1,11 +1,8 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
 {
-
-    public GameObject player;
     public float speed;
     public Rigidbody2D rbenemy;
     public int holdTime = 1;
@@ -30,7 +27,7 @@ public class EnemyFollow : MonoBehaviour
     {
         if (isChasing) // if enemy is chasing
         {
-            if (player.transform.position.x > transform.position.x)
+            if (Movement.Instance.transform.position.x > transform.position.x)
             {
                 rbenemy.velocity = Vector2.right * speed;
             }
@@ -62,11 +59,11 @@ public class EnemyFollow : MonoBehaviour
             }
         }
 
-        if (Vector2.Distance(transform.position, player.transform.position) < minimumDistance) // if player gets too close
+        if (Vector2.Distance(transform.position, Movement.Instance.transform.position) < minimumDistance && !Movement.Instance.IsHidding()) // if player gets too close
         {
             isChasing = true;
         }
-        else if (Vector2.Distance(transform.position, player.transform.position) > maximumDistance) // if player gets too far
+        else if (Vector2.Distance(transform.position, Movement.Instance.transform.position) > maximumDistance || Movement.Instance.IsHidding()) // if player gets too far
         {
             isChasing = false; //Is this the right way to make the enemy go back to its route?
         }

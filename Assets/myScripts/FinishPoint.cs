@@ -15,8 +15,8 @@ public class FinishPoint : MonoBehaviour
             {
                 SceneController.instance.NextLevel();
             }
+            SaveInventory(collision);
             UnlockNewLevel();
-            
         }
     }
 
@@ -28,5 +28,11 @@ public class FinishPoint : MonoBehaviour
             PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
             PlayerPrefs.Save();
         }
+    }
+
+    private void SaveInventory(Collider2D collision)
+    {
+        IInventory inventory = collision.GetComponent<IInventory>();
+        SaveManager.Instance?.SaveCoinForLevel(inventory.CurrentCoin, SceneManager.GetActiveScene().buildIndex);
     }
 }

@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class coinpickup : MonoBehaviour
@@ -8,20 +6,18 @@ public class coinpickup : MonoBehaviour
     
 
     private void OnTriggerEnter2D(Collider2D other)
-    {
-        
+    {   
         if(other.tag == "Player")
         {
             IInventory inventory = other.GetComponent<IInventory>();
 
             if(inventory != null)
             {
-                inventory.Coin = inventory.Coin + coinValue;
-                print("Player inventory has " + inventory.Coin + " coin(s)");
+                inventory.CurrentCoin = inventory.CurrentCoin + coinValue;
+                inventory.TotalCoin = inventory.TotalCoin + coinValue;
+                print("Player inventory has " + inventory.TotalCoin + " total coin(s) and " + inventory.CurrentCoin + " current coin(s)");
                 Invoke("DeleteCoin",2);
-
             }
-
         }
     }
     

@@ -1,6 +1,5 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInventory : MonoBehaviour, IInventory
 {
@@ -8,9 +7,18 @@ public class PlayerInventory : MonoBehaviour, IInventory
 
   private int _Key = 0;
 
-  public int Coin { get => _Coin; set => _Coin = value; }
+  public int CurrentCoin { get => _CurrentCoin; set => _CurrentCoin = value; }
 
-  private int _Coin = 0;
+  private int _CurrentCoin = 0;
+
+  public int TotalCoin { get => _TotalCoin; set => _TotalCoin = value; }
+
+  private int _TotalCoin = 0;
+
+    private void Start()
+    {
+        _TotalCoin = SaveManager.Instance.LoadCoinForLevel(SceneManager.GetActiveScene().buildIndex);
+    }
 }
 
 

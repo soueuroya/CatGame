@@ -6,17 +6,32 @@ public class Movement : MonoBehaviour
     public float speed;
     public float jumpingPower;
     private bool isFacingRight = true;
-    //private bool isCrouching = false;
-    private Vector2 originalScale;
+    private bool isHidding = false;
 
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private SpriteRenderer sr;
+    [SerializeField] private Collider2D collider;
+    private RigidbodyConstraints2D originalConstraints;
 
-    private void Start()
+    public static Movement Instance;
+    private void Awake()
     {
-        originalScale = transform.localScale;
+        if (Instance == null)
+        {
+            Instance = this;
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+
+        originalConstraints = rb.constraints;
+
+        collider = GetComponent<Collider2D>();
     }
+
 
     void Update()
     {
@@ -30,17 +45,15 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.LeftControl))
         {
             // is crouching
-            transform.localScale = Vector2.right * originalScale.x + Vector2.up * originalScale.y / 2; // making character smaller / can be swapped with play animation or something like that
+            transform.localScale = Vector2.right * transform.localScale.x + Vector2.up * 0.5f; // making character smaller / can be swapped with play animation or something like that
         }
         else
         {
             // not crouching
-            transform.localScale = originalScale; // reset characters size
+            transform.localScale = Vector2.right * transform.localScale.x + Vector2.up; // reset characters size
         }
 
-        Flip();
-        
-        
+        HandleFlipping();
     }
 
     private void FixedUpdate()
@@ -53,21 +66,43 @@ public class Movement : MonoBehaviour
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 
-    private void Flip()
+    private void HandleFlipping()
     {
         if (isFacingRight && horizontal < 0f)
         {
-            isFacingRight = !isFacingRight;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
+            isFacingRight = false;
+            transform.localScale = Vector2.up + Vector2.right * -1;
         }
         else if (!isFacingRight && horizontal > 0f)
         {
             isFacingRight = true;
-            Vector3 localScale = transform.localScale;
-            localScale.x *= -1f;
-            transform.localScale = localScale;
+            transform.localScale = Vector2.one;
         }
+    }
+
+    public void ToggleHidding(bool _isHidding)
+    {
+        isHidding = _isHidding;
+
+        if (_isHidding)
+        {
+            sr.enabled = false;
+            rb.velocity = Vector2.zero;
+            rb.constraints = RigidbodyConstraints2D.FreezeAll;
+            collider.enabled = false;
+            this.enabled = false;
+        }
+        else
+        {
+            this.enabled = true;
+            sr.enabled = true;
+            rb.constraints = originalConstraints;
+            collider.enabled = true;
+        }
+    }
+
+    public bool IsHidding()
+    {
+        return isHidding;
     }
 }

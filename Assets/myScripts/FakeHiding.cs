@@ -1,47 +1,45 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class FakeHiding : MonoBehaviour
 {
-    private Movement playerMovement;
     private PlayerHealth playerHealth;
     public int damage = 3;
     public int holdTime = 2;
+    bool playerIn;
 
-
-    
-    // Update is called once per frame
-    void Update()
+    private void Update()
     {
-        
-    }
-
-
-
-    void OnTriggerStay2D (Collider2D collision)
-    {
-        if(collision.gameObject.tag == "Player")
+        if (playerIn && playerHealth != null)
         {
-            if (Input.GetKey(KeyCode.W))
+            if (Input.GetKeyDown(KeyCode.W))
             {
-                playerMovement = collision.gameObject.GetComponent<Movement>();
-                playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
-                Sike();
+                Movement.Instance.ToggleHidding(true); // locks the player right away
+                Invoke("CauseDamage", holdTime);
+                // play the animation.duration
             }
         }
     }
 
-    private void Sike()
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        playerMovement.enabled = false;
-        StartCoroutine(HoldForDamage());
+        if (collision.gameObject.tag == "Player")
+        {
+            playerIn = true;
+            playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+        }
     }
 
-    IEnumerator HoldForDamage()
+    private void OnTriggerExit2D(Collider2D collision)
     {
-        yield return new WaitForSeconds(holdTime); 
+        if (collision.gameObject.tag == "Player")
+        {
+            playerIn = false;
+            playerHealth = null;
+        }
+    }
+
+    private void CauseDamage()
+    {
         playerHealth.TakeDamage(damage);
     }
-
 }

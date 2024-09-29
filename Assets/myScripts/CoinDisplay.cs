@@ -18,6 +18,6 @@ public class CoinDisplay : MonoBehaviour
     void Update()
     {
         IInventory inv = player.GetComponent<IInventory>();
-        coinText.text = "Coins: " + inv.Coin.ToString();
+        coinText.text = "Coins: " + inv.TotalCoin.ToString();
     }
 }

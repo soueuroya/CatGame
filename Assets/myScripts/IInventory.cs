@@ -5,5 +5,6 @@ using UnityEngine;
 public interface IInventory
 {
     int Key { get; set; }
-    int Coin { get; set; }
+    int CurrentCoin { get; set; }
+    int TotalCoin { get; set; }
 }

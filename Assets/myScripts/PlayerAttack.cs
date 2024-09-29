@@ -1,47 +1,51 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerAttack : MonoBehaviour
 {
-
-    private GameObject attackArea = default;
-    private bool attacking = false;
-    private float timeToAttack = 0.25f;
-    private float timer = 0f;
-
+    private GameObject attackArea;
+    private PlayerAnimationCallback pac;
+    private Animator anim;
+    private bool canAttack = true;
+    [SerializeField] private float attackCooldown;
 
     // Start is called before the first frame update
     void Start()
     {
-        attackArea = transform.GetChild(1).gameObject;
+        attackArea = GetComponentInChildren<AttackArea>(true).gameObject;
+        anim = GetComponentInChildren<Animator>();
+        pac = GetComponentInChildren<PlayerAnimationCallback>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Mouse0))
+        if(canAttack && !Movement.Instance.IsHidding() && Input.GetMouseButtonDown(0))
         {
-            Attack();
-        }
+            // play the animation
+            anim.SetTrigger("Attack");
 
-        if(attacking)
-        {
-            timer += Time.deltaTime;
+            canAttack = false;
 
-            if(timer >= timeToAttack)
-            {
-                timer = 0;
-                attacking = false;
-                attackArea.SetActive(attacking);
-            }
+            Invoke("AllowAttack", attackCooldown);
+
+            pac.SetAttackStartCallback(() => {
+                ToggleAttackCollision(true);
+            });
+
+            pac.SetAttackStopCallback(() => {
+                ToggleAttackCollision(false);
+            });
         }
     }
 
-    private void Attack()
+    private void AllowAttack()
     {
-        attacking = true;
-        attackArea.SetActive(attacking);
+        canAttack = true;
+    }
+
+    public void ToggleAttackCollision(bool activate)
+    {
+        attackArea.SetActive(activate);
     }
 
 }

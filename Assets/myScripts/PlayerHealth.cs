@@ -36,8 +36,8 @@ public class PlayerHealth : MonoBehaviour
         currentHealth -= amount;
         if(currentHealth <= 0)
         {
-            playerSr.enabled = false;
             playerMovement.enabled = false;
+            isDead = true;
             Respawn();
         }
         else
@@ -89,22 +89,28 @@ public class PlayerHealth : MonoBehaviour
         playerSr.enabled = true;
     }
 
-    public void Alive() 
+    public void UnlockMovement() 
     {
-        playerSr.enabled = true;
         playerMovement.enabled = true;
         isDead = false;
         currentHealth = 3;
         UpdateHealthUI();
     }
 
-
     public void Respawn()
     {
-        isDead = true;
         transform.position = respawnLocation;
 
-        Invoke("Alive", 2); // reviving player after 2 seconds
+        RespawnAnimation();
+        
+        Invoke("UnlockMovement", 2); // reviving player after 2 seconds
+    }
+
+    private void RespawnAnimation()
+    {
+        playerSr.enabled = true;
+        immunedTime = 0;
+        // play waking up animation
     }
 
     public void CheckPoint(Vector3 newLocation)
