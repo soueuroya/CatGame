@@ -8,10 +8,11 @@ public class EnemyFollow : MonoBehaviour
     public GameObject player;
     public float speed;
     public Rigidbody2D rbenemy;
-    
+    public int holdTime = 1;
     public float Maxright;
     public float Maxleft;
     public float minimumDistance;
+    public float maximumDistance;
     Vector2 initialPosition;
 
     private bool isFacingRight = true;
@@ -51,10 +52,12 @@ public class EnemyFollow : MonoBehaviour
 
             if (transform.position.x > initialPosition.x + Maxright)
             {
+                StartCoroutine(StayInPlace());
                 Flip();
             }
             else if (transform.position.x < initialPosition.x - Maxleft)
             {
+                StartCoroutine(StayInPlace());
                 Flip();
             }
         }
@@ -63,17 +66,23 @@ public class EnemyFollow : MonoBehaviour
         {
             isChasing = true;
         }
-        else
+        else if (Vector2.Distance(transform.position, player.transform.position) > maximumDistance) // if player gets too far
         {
-            isChasing = false;
+            isChasing = false; //Is this the right way to make the enemy go back to its route?
         }
-    }
 
+    }
+    
     private void Flip()
     {
         isFacingRight = !isFacingRight;
         Vector3 localScale = transform.localScale;
         localScale.x *= -1f;
         transform.localScale = localScale;
+    }
+
+    IEnumerator StayInPlace()
+    {
+        yield return new WaitForSeconds(holdTime); 
     }
 }

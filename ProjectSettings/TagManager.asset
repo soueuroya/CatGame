@@ -9,8 +9,9 @@ TagManager:
   - Enviroment
   - Background
   - Items
+  - Hide
+  - FakeHide
   - Vent
-  - VentE
   layers:
   - Default
   - TransparentFX

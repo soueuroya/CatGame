@@ -2,13 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyVent : MonoBehaviour
+public class FakeHiding : MonoBehaviour
 {
     public SpriteRenderer playerSr;
     public Movement playerMovement;
     public PlayerHealth playerHealth;
     public int damage = 3;
-    public int holdTime;
+    public int holdTime = 2;
 
 
     
@@ -20,7 +20,7 @@ public class EnemyVent : MonoBehaviour
 
     void OnTriggerStay2D (Collider2D collision)
     {
-        if(collision.gameObject.tag == "VentE")
+        if(collision.gameObject.tag == "FakeHide")
         {
             if (Input.GetKey(KeyCode.W))
             {
@@ -33,13 +33,13 @@ public class EnemyVent : MonoBehaviour
     {
         playerSr.enabled = false;
         playerMovement.enabled = false;
-    //    StartCoroutine(HoldForDamage());
-        playerHealth.TakeDamage(damage);
+        StartCoroutine(HoldForDamage());
     }
 
-    //IEnumerator HoldForDamage()
-    //{
-    //    yield return new WaitForSeconds(holdTime); 
-    //}
+    IEnumerator HoldForDamage()
+    {
+        yield return new WaitForSeconds(holdTime); 
+        playerHealth.TakeDamage(damage);
+    }
 
 }

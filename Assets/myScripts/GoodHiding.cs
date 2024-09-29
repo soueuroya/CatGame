@@ -2,15 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Venting : MonoBehaviour
+public class GoodHiding : MonoBehaviour
 {
     public SpriteRenderer playerSr;
     public Movement playerMovement;
 
-
     void OnTriggerStay2D (Collider2D collision)
     {
-        if(collision.gameObject.tag == "Vent")
+        if(collision.gameObject.tag == "Hide")
         {
             if (Input.GetKey(KeyCode.W))
             {

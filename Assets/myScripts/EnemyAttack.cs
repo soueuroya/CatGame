@@ -5,7 +5,11 @@ using UnityEngine;
 public class EnemyAttack : MonoBehaviour
 {
     public PlayerHealth playerHealth;
+    public GoodHiding goodHide;
+    public FakeHiding badHide;
     public int damage = 1;
+
+    
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +28,18 @@ public class EnemyAttack : MonoBehaviour
         if(collision.gameObject.tag == "Player")
         {
             playerHealth.TakeDamage(damage);
+        }
+    }
+
+    private void IfHiding()
+    {
+        if (goodHide.enabled == true)
+        {
+            damage = 0;
+        }
+        else if (badHide.enabled == true)
+        {
+            damage = 0;
         }
     }
 }

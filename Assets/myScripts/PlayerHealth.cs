@@ -117,9 +117,9 @@ public class PlayerHealth : MonoBehaviour
         respawnLocation = newSpawn;
     }
 
-    public void SelectedContinue()
-    {
-        Respawn();
-    }
+    //public void SelectedContinue() Not currently relevant
+    //{
+    //    Respawn();
+    //}
 
 }

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 332479233724349446}
   - component: {fileID: 3494606440091442147}
   - component: {fileID: 6598921155808326584}
+  - component: {fileID: 6896843045703764309}
   m_Layer: 0
   m_Name: NormalVent
   m_TagString: Vent
@@ -130,3 +131,17 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 6.4, y: 6.4}
   m_EdgeRadius: 0
+--- !u!114 &6896843045703764309
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5659193405883897484}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 005c8a499cffa3d429c5f7b97e80916a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSr: {fileID: 0}
+  playerMovement: {fileID: 0}
