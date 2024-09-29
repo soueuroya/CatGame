@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 2674776798916847937}
   - component: {fileID: 2927106326270832594}
   - component: {fileID: 3305495939709526224}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: -5487077368411116049, guid: 0000000000000000d000000000000000, type: 0}
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: 21300000, guid: 9ee16e71060316b42995698df18e30b8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -213,12 +213,6 @@ MonoBehaviour:
   immunedTime: 0
   isDead: 0
   currentHealth: 0
-  emptyHeart: {fileID: 21300000, guid: e7503f0d2d68f4140b0e3611a82564a0, type: 3}
-  fullHeart: {fileID: 21300000, guid: 296da8264acbd5b4490ec3e292b62130, type: 3}
-  hearts:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   playerSr: {fileID: 5552639753572551362}
   playerMovement: {fileID: 2834707635304083520}
 --- !u!114 &3305495939709526224
@@ -244,7 +238,7 @@ GameObject:
   - component: {fileID: 925899906327205099}
   - component: {fileID: 4344743672016903443}
   - component: {fileID: 7892545459140391184}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: AttackArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -336,7 +330,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1861284643907569679}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: GroundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}

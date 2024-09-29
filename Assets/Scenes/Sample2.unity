@@ -753,6 +753,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Finish Point
       objectReference: {fileID: 0}
+    - target: {fileID: 8704772510561722874, guid: 76e7885fabc9111499829222e45842f8, type: 3}
+      propertyPath: levelName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8704772510561722874, guid: 76e7885fabc9111499829222e45842f8, type: 3}
+      propertyPath: goNextLevel
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3295,10 +3303,10 @@ SceneRoots:
   m_Roots:
   - {fileID: 192965684}
   - {fileID: 575279137}
+  - {fileID: 364467781}
   - {fileID: 1487128069}
   - {fileID: 1418133765}
   - {fileID: 821213273}
   - {fileID: 859490859}
-  - {fileID: 364467781}
   - {fileID: 1111714730}
   - {fileID: 1790294026}

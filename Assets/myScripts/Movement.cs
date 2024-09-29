@@ -6,7 +6,7 @@ public class Movement : MonoBehaviour
     public float speed;
     public float jumpingPower;
     private bool isFacingRight = true;
-    private bool isCrouching = false;
+    //private bool isCrouching = false;
     private Vector2 originalScale;
 
     [SerializeField] private Rigidbody2D rb;
@@ -27,11 +27,6 @@ public class Movement : MonoBehaviour
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 
-        //if (Input.GetButtonUp("Jump") && rb.velocity.y > 0f)
-        //{
-        //    rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * 0.5f);
-        //}
-
         if (Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.LeftControl))
         {
             // is crouching
@@ -44,6 +39,8 @@ public class Movement : MonoBehaviour
         }
 
         Flip();
+        
+        
     }
 
     private void FixedUpdate()
