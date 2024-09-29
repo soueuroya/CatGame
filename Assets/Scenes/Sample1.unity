@@ -6813,6 +6813,10 @@ PrefabInstance:
       propertyPath: m_Camera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 2780558273015498394, guid: a7e5339b80746b742b06b63b874e2b27, type: 3}
+      propertyPath: m_fontColor32.rgba
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3834930866976567966, guid: a7e5339b80746b742b06b63b874e2b27, type: 3}
       propertyPath: m_LocalPosition.x
       value: 479.008
