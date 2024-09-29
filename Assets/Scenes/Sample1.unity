@@ -5405,28 +5405,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 167728f2b36251348b1773fc21a1bf9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &1940931631 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4182880204713912032, guid: 8d65435932ad98c448eeeeefa300225b, type: 3}
-  m_PrefabInstance: {fileID: 1234574040378144104}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1940931617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 005c8a499cffa3d429c5f7b97e80916a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &1940931632 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1561995301700423525, guid: 8d65435932ad98c448eeeeefa300225b, type: 3}
-  m_PrefabInstance: {fileID: 1234574040378144104}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1940931617}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3cc73222b3e81824daa88e111227aebe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!50 &1940931633 stripped
 Rigidbody2D:
   m_CorrespondingSourceObject: {fileID: 8352409561742130468, guid: 8d65435932ad98c448eeeeefa300225b, type: 3}
@@ -6894,11 +6872,11 @@ PrefabInstance:
     - target: {fileID: 1862316493568560767, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: badHide
       value: 
-      objectReference: {fileID: 1940931632}
+      objectReference: {fileID: 0}
     - target: {fileID: 1862316493568560767, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: goodHide
       value: 
-      objectReference: {fileID: 1940931631}
+      objectReference: {fileID: 0}
     - target: {fileID: 1862316493568560767, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: playerHealth
       value: 

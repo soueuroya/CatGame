@@ -13,25 +13,17 @@ public class GoodHiding : MonoBehaviour
         {
             if (Input.GetKey(KeyCode.W))
             {
-                Hiding();
+                playerMovement = collision.gameObject.GetComponent<Movement>();
+                playerMovement.enabled = false;
             }
         }
         else
         {
             if (Input.GetKey(KeyCode.S))
             {
-                NotHiding();
+                playerMovement = collision.gameObject.GetComponent<Movement>();
+                playerMovement.enabled = true;
             }
         }
-    }
-
-    private void Hiding()
-    {
-        playerMovement.enabled = false;
-    }
-
-    private void NotHiding()
-    {
-        playerMovement.enabled = true;
     }
 }

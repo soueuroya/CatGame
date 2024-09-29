@@ -26,7 +26,7 @@ public class FakeHiding : MonoBehaviour
             if (Input.GetKey(KeyCode.W))
             {
                 playerMovement = collision.gameObject.GetComponent<Movement>();
-                playerHealth = collision.gameObject.GetComponent<playerHealth>();
+                playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
                 Sike();
             }
         }
