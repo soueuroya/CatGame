@@ -50,12 +50,12 @@ public class EnemyFollow : MonoBehaviour
                 rbenemy.velocity = Vector2.right * -speed;
             }
 
-            if (transform.position.x > initialPosition.x + Maxright)
+            if (transform.position.x > initialPosition.x + Maxright && isFacingRight)
             {
                 StartCoroutine(StayInPlace());
                 Flip();
             }
-            else if (transform.position.x < initialPosition.x - Maxleft)
+            else if (transform.position.x < initialPosition.x - Maxleft && !isFacingRight)
             {
                 StartCoroutine(StayInPlace());
                 Flip();

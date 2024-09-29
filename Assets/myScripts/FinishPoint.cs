@@ -15,10 +15,6 @@ public class FinishPoint : MonoBehaviour
             {
                 SceneController.instance.NextLevel();
             }
-            else
-            {
-                SceneController.instance.LoadScene(levelName);
-            }
             UnlockNewLevel();
             
         }

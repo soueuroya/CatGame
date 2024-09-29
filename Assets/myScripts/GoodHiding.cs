@@ -4,12 +4,12 @@ using UnityEngine;
 
 public class GoodHiding : MonoBehaviour
 {
-    public SpriteRenderer playerSr;
-    public Movement playerMovement;
+
+    private Movement playerMovement;
 
     void OnTriggerStay2D (Collider2D collision)
     {
-        if(collision.gameObject.tag == "Hide")
+        if(collision.gameObject.tag == "Player")
         {
             if (Input.GetKey(KeyCode.W))
             {
@@ -27,15 +27,11 @@ public class GoodHiding : MonoBehaviour
 
     private void Hiding()
     {
-        playerSr.enabled = false;
         playerMovement.enabled = false;
     }
 
     private void NotHiding()
     {
-        playerSr.enabled = true;
         playerMovement.enabled = true;
     }
-
-
 }

@@ -26,11 +26,6 @@ public class SceneController : MonoBehaviour
         StartCoroutine(LoadLevel());
     }
 
-    public void LoadScene(string sceneName)
-    {
-        SceneManager.LoadSceneAsync(sceneName);
-    }
-
     IEnumerator LoadLevel()
     {
         transitionAnim.SetTrigger("End");

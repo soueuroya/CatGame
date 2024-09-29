@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class FakeHiding : MonoBehaviour
 {
-    public SpriteRenderer playerSr;
-    public Movement playerMovement;
-    public PlayerHealth playerHealth;
+    private Movement playerMovement;
+    private PlayerHealth playerHealth;
     public int damage = 3;
     public int holdTime = 2;
 
@@ -15,15 +14,19 @@ public class FakeHiding : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
+
+
 
     void OnTriggerStay2D (Collider2D collision)
     {
-        if(collision.gameObject.tag == "FakeHide")
+        if(collision.gameObject.tag == "Player")
         {
             if (Input.GetKey(KeyCode.W))
             {
+                playerMovement = collision.gameObject.GetComponent<Movement>();
+                playerHealth = collision.gameObject.GetComponent<playerHealth>();
                 Sike();
             }
         }
@@ -31,7 +34,6 @@ public class FakeHiding : MonoBehaviour
 
     private void Sike()
     {
-        playerSr.enabled = false;
         playerMovement.enabled = false;
         StartCoroutine(HoldForDamage());
     }
