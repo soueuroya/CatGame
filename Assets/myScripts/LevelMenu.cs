@@ -19,7 +19,7 @@ public class LevelMenu : MonoBehaviour
         }
         for (int i = 0; i < unlockedLevel; i++)
         {
-            buttons[i].interactable = true;
+            buttons[i].interactable = true; //Index error shows when clicking "Start Game" does not mess with playability
         }
     }
 

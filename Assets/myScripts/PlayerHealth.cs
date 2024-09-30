@@ -3,6 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+
+//Player does not take damage when entering an enemy hiding spot due to TakeDamage no longer having a damage indicator
+//UI no longer required on Player Health
+
 public class PlayerHealth : MonoBehaviour
 {
     public int maxHealth = 3;

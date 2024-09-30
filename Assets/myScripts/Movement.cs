@@ -12,7 +12,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private SpriteRenderer sr;
-    [SerializeField] private Collider2D collider;
+    [SerializeField] private Collider2D colliderpl;
     private RigidbodyConstraints2D originalConstraints;
 
     public static Movement Instance;
@@ -29,7 +29,7 @@ public class Movement : MonoBehaviour
 
         originalConstraints = rb.constraints;
 
-        collider = GetComponent<Collider2D>();
+        colliderpl = GetComponent<Collider2D>();
     }
 
 
@@ -89,7 +89,7 @@ public class Movement : MonoBehaviour
             sr.enabled = false;
             rb.velocity = Vector2.zero;
             rb.constraints = RigidbodyConstraints2D.FreezeAll;
-            collider.enabled = false;
+            colliderpl.enabled = false;
             this.enabled = false;
         }
         else
@@ -97,7 +97,7 @@ public class Movement : MonoBehaviour
             this.enabled = true;
             sr.enabled = true;
             rb.constraints = originalConstraints;
-            collider.enabled = true;
+            colliderpl.enabled = true;
         }
     }
 
