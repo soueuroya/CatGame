@@ -4,6 +4,7 @@ public class GoodHiding : MonoBehaviour
 {
     bool playerIn = false;
     public bool overrideIn = false;
+
     private void Update()
     {
         if (playerIn || overrideIn)

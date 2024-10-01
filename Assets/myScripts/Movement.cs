@@ -7,15 +7,14 @@ public class Movement : MonoBehaviour
     public float jumpingPower;
     private bool isFacingRight = true;
     private bool isHidding = false;
-
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Collider2D colliderpl;
     private RigidbodyConstraints2D originalConstraints;
-
     public static Movement Instance;
+
     private void Awake()
     {
         if (Instance == null)
@@ -31,7 +30,6 @@ public class Movement : MonoBehaviour
 
         colliderpl = GetComponent<Collider2D>();
     }
-
 
     void Update()
     {

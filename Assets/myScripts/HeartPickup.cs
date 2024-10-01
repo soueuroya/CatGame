@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HeartPickup : MonoBehaviour
@@ -17,6 +15,7 @@ public class HeartPickup : MonoBehaviour
             }
         }
     }
+
     private void DeleteHeart()
     {
         gameObject.SetActive(false);

@@ -11,9 +11,7 @@ public class EnemyFollow : MonoBehaviour
     public float minimumDistance;
     public float maximumDistance;
     Vector2 initialPosition;
-
     private bool isFacingRight = true;
-
     bool isChasing = false;
 
     // Start is called before the first frame update

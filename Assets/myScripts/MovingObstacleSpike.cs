@@ -1,23 +1,18 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MovingObstacleSpike : MonoBehaviour
 {
-   
    [Range(0,50)]
    public float speed;
    [Range(0,2)]
    public float waitDuration;
    Vector3 targetPos;
-
    public GameObject WaysSpikes;
    public Transform[] wayPoints;
    int pointIndex;
    int pointCount;
    int direction = 1;
-
-
    int speedMultiplier = 1;
 
    private void Awake()
@@ -47,7 +42,6 @@ public class MovingObstacleSpike : MonoBehaviour
         }
     
    }
-
    void NextPoint()
    {
         if (pointIndex == pointCount - 1) //Arrived last point
@@ -64,8 +58,6 @@ public class MovingObstacleSpike : MonoBehaviour
         targetPos = wayPoints[pointIndex].transform.position;
         StartCoroutine(WaitNextPoint());
    }
-
-
    IEnumerator WaitNextPoint()
    {
     speedMultiplier = 0;

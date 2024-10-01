@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class PlayerAttack : MonoBehaviour
 {
     private GameObject attackArea;
@@ -47,5 +46,4 @@ public class PlayerAttack : MonoBehaviour
     {
         attackArea.SetActive(activate);
     }
-
 }

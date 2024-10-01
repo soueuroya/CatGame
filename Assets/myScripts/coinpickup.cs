@@ -4,7 +4,6 @@ public class coinpickup : MonoBehaviour
 {
     public int coinValue = 1;
     
-
     private void OnTriggerEnter2D(Collider2D other)
     {   
         if(other.tag == "Player")
@@ -20,8 +19,6 @@ public class coinpickup : MonoBehaviour
             }
         }
     }
-    
-
     
     private void DeleteCoin()
     {

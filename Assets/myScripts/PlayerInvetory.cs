@@ -15,10 +15,10 @@ public class PlayerInventory : MonoBehaviour, IInventory
 
   private int _TotalCoin = 0;
 
-    private void Start()
-    {
-        _TotalCoin = SaveManager.Instance.LoadCoinForLevel(SceneManager.GetActiveScene().buildIndex);
-    }
+  private void Start()
+  {
+      _TotalCoin = SaveManager.Instance.LoadCoinForLevel(SceneManager.GetActiveScene().buildIndex);
+  }
 }
 
 

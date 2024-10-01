@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class AttackArea : MonoBehaviour
@@ -14,5 +12,4 @@ public class AttackArea : MonoBehaviour
             currentHealth.TakeDamage(damage);
         }
     }
-
 }

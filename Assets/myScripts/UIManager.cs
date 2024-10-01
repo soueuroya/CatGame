@@ -1,12 +1,10 @@
 using UnityEngine;
 using UnityEngine.UI;
-
 public class UIManager : MonoBehaviour
 {
     public Image[] hearts;
     public Sprite emptyHeart;
     public Sprite fullHeart;
-
     public static UIManager Instance;
     private void Awake()
     {

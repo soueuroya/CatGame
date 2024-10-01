@@ -1,11 +1,7 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
-
 
 //Player does not take damage when entering an enemy hiding spot due to TakeDamage no longer having a damage indicator
-//UI no longer required on Player Health
 
 public class PlayerHealth : MonoBehaviour
 {
@@ -17,7 +13,6 @@ public class PlayerHealth : MonoBehaviour
     private Vector3 respawnLocation;
     public bool isDead = false;
     public int currentHealth;
-    
     public SpriteRenderer playerSr;
     public Movement playerMovement;
 
@@ -54,7 +49,6 @@ public class PlayerHealth : MonoBehaviour
         }
         UpdateHealthUI();
     }
-
     public void Heal(int amount)
     {
         currentHealth += amount;
@@ -72,8 +66,6 @@ public class PlayerHealth : MonoBehaviour
         {
             immunedTime -= Time.deltaTime;
         }
-
-        
     }
 
     void UpdateHealthUI()
@@ -131,5 +123,4 @@ public class PlayerHealth : MonoBehaviour
     //{
     //    Respawn();
     //}
-
 }

@@ -1,24 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class MovingObstacleSaw : MonoBehaviour
-{
-
-   
+{   
    [Range(0,200)]
    public float speed;
-   
    Vector3 targetPos;
-
    public GameObject WaysSaws;
    public Transform[] wayPoints;
    int pointIndex;
    int pointCount;
    public float rotatespeed = 1;
    int direction = 1;
-
-   
 
    private void Awake()
    {
@@ -63,6 +55,5 @@ public class MovingObstacleSaw : MonoBehaviour
 
         pointIndex += direction;
         targetPos = wayPoints[pointIndex].transform.position;
-
    }
 }
