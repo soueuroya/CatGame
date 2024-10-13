@@ -3,10 +3,7 @@ using UnityEngine;
 public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance;
-    // level1 -  4 coins
-    // level2 -  2 coins
-    // level3 -  1 coin
-    // level4 -  3 coins
+
 
     private void Start()
     {
@@ -40,5 +37,10 @@ public class SaveManager : MonoBehaviour
         }
 
         return totalCoinsForLevel;
+    }
+
+    public void ResetData()
+    {
+        PlayerPrefs.DeleteAll();
     }
 }
