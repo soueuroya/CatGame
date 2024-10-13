@@ -34,12 +34,13 @@ public class FakeHiding : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             playerIn = false;
-            playerHealth = null;
         }
     }
 
     private void CauseDamage()
     {
+        playerIn = false;
+        Movement.Instance.ToggleHidding(false);
         playerHealth.TakeDamage(damage);
     }
 }
