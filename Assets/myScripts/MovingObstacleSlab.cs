@@ -3,9 +3,9 @@ using UnityEngine;
 
 public class MovingObstacleSlab : MonoBehaviour
 {
-   [Range(0,50)]
+   [Range(0,100)]
    public float speed;
-   [Range(0,2)]
+   [Range(0,20)]
    public float waitDuration;
    Vector3 targetPos;
    public GameObject WaysSmasher;
