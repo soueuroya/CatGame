@@ -6726,6 +6726,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Game Manager
       objectReference: {fileID: 0}
+    - target: {fileID: 9124845024603605106, guid: ef7dc9b78b721e941963dceea5210595, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -12718,7 +12722,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3902947098812847031, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4998055738058918836, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21367,7 +21371,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1869224722
 MonoBehaviour:
   m_ObjectHideFlags: 0
