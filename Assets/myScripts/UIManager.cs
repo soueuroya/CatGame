@@ -3,8 +3,8 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     public Image[] hearts;
-    public Sprite emptyHeart;
-    public Sprite fullHeart;
+    public Sprite emptysoul;
+    public Sprite fullsoul;
     public static UIManager Instance;
     private void Awake()
     {
@@ -24,11 +24,11 @@ public class UIManager : MonoBehaviour
         {
             if (i < health)
             {
-                hearts[i].sprite = fullHeart;
+                hearts[i].sprite = fullsoul;
             }
             else
             {
-                hearts[i].sprite = emptyHeart;
+                hearts[i].sprite = emptysoul;
             }
         }
     }
