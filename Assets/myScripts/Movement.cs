@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -14,6 +15,13 @@ public class Movement : MonoBehaviour
     [SerializeField] private Collider2D colliderpl;
     private RigidbodyConstraints2D originalConstraints;
     public static Movement Instance;
+
+    [SerializeField] private Animator animator;
+
+    private void Start()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     private void Awake()
     {
@@ -57,6 +65,7 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+        animator.SetFloat("xVelocity", Math.Abs(rb.velocity.x));
     }
 
     private bool IsGrounded()
