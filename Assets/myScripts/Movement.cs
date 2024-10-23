@@ -16,11 +16,11 @@ public class Movement : MonoBehaviour
     private RigidbodyConstraints2D originalConstraints;
     public static Movement Instance;
 
-    [SerializeField] private Animator animator;
+    //public Animator animator;
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        //animator = GetComponent<Animator>();
     }
 
     private void Awake()
@@ -65,7 +65,7 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-        animator.SetFloat("xVelocity", Math.Abs(rb.velocity.x));
+        //animator.SetFloat("xVelocity", Math.Abs(rb.velocity.x));
     }
 
     private bool IsGrounded()
