@@ -4,14 +4,14 @@ using UnityEngine.SceneManagement;
 
 public class SceneController : MonoBehaviour
 {
-    public static SceneController instance;
+    public static SceneController Instance;
     [SerializeField] Animator transitionAnim;
 
     private void Awake()
     {
-        if(instance == null)
+        if(Instance == null)
         {
-            instance = this;
+            Instance = this;
             DontDestroyOnLoad(gameObject);
         }
         else
@@ -20,18 +20,37 @@ public class SceneController : MonoBehaviour
         }
     }
 
-    public void NextLevel()
+    public void LoadLevel(int index)
     {
-        StartCoroutine(LoadLevel());
+        StartCoroutine(LoadSpecificLevel(index));
     }
 
-    IEnumerator LoadLevel()
+    IEnumerator LoadSpecificLevel(int index)
     {
         transitionAnim.SetTrigger("End");
         yield return new WaitForSeconds(1);
-        SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        while (!asyncLoad.isDone)
+        {
+            yield return null;  // Wait until the next frame to check again
+        }
         transitionAnim.SetTrigger("Start");
     }
 
+    public void NextLevel()
+    {
+        StartCoroutine(LoadNextLevel());
+    }
 
+    IEnumerator LoadNextLevel()
+    {
+        transitionAnim.SetTrigger("End");
+        yield return new WaitForSeconds(1);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        while (!asyncLoad.isDone)
+        {
+            yield return null;  // Wait until the next frame to check again
+        }
+        transitionAnim.SetTrigger("Start");
+    }
 }

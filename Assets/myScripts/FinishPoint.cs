@@ -4,6 +4,8 @@ using UnityEngine.SceneManagement;
 public class FinishPoint : MonoBehaviour
 {
 
+
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -15,18 +17,19 @@ public class FinishPoint : MonoBehaviour
 
     void UnlockNewLevel()
     {
+        int temp = PlayerPrefs.GetInt("ReachedIndex"); 
 
         if (SceneManager.GetActiveScene().buildIndex + 1 >= SceneManager.sceneCountInBuildSettings)
         {
             SaveManager.Instance.ResetData();
             SceneManager.LoadScene(0);
         }
-        else if (SceneManager.GetActiveScene().buildIndex>=PlayerPrefs.GetInt("ReachedIndex"))
+        else if (SceneManager.GetActiveScene().buildIndex<=PlayerPrefs.GetInt("ReachedIndex"))
         {
             PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
             PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
             PlayerPrefs.Save();
-            SceneController.instance.NextLevel();
+            SceneController.Instance.NextLevel();
 
         }
 
@@ -34,7 +37,7 @@ public class FinishPoint : MonoBehaviour
 
     private void SaveInventory(Collider2D collision)
     {
-        IInventory inventory = collision.GetComponent<IInventory>();
+        PlayerInventory inventory = collision.GetComponent<PlayerInventory>();
         SaveManager.Instance?.SaveCoinForLevel(inventory.CurrentCoin, SceneManager.GetActiveScene().buildIndex);
     }
 }

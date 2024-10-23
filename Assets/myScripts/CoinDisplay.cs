@@ -9,7 +9,7 @@ public class CoinDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        IInventory inv = player.GetComponent<IInventory>();
+        PlayerInventory inv = player.GetComponent<PlayerInventory>();
         coinText.text = "Coins: " + inv.TotalCoin.ToString();
     }
 }

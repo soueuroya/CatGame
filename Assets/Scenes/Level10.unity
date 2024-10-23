@@ -2907,6 +2907,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9140594060603551072, guid: 4c507d709bd7a8048b7286d4b7f15fee, type: 3}
+      propertyPath: damage
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 9144376622700419517, guid: 4c507d709bd7a8048b7286d4b7f15fee, type: 3}
       propertyPath: m_Name
       value: Smasher
@@ -3089,11 +3093,11 @@ PrefabInstance:
       objectReference: {fileID: 1355002170}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.961939
+      value: -19.956694
       objectReference: {fileID: 0}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3849937
+      value: -1.384992
       objectReference: {fileID: 0}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.z

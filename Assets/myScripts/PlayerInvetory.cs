@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class PlayerInventory : MonoBehaviour, IInventory
+public class PlayerInventory : MonoBehaviour
 {
   public int Key { get => _Key; set => _Key = value; }
 

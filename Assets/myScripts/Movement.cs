@@ -16,11 +16,12 @@ public class Movement : MonoBehaviour
     private RigidbodyConstraints2D originalConstraints;
     public static Movement Instance;
 
-    //public Animator animator;
+
+    public Animator animator;
 
     private void Start()
     {
-        //animator = GetComponent<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
     private void Awake()
@@ -65,7 +66,14 @@ public class Movement : MonoBehaviour
     private void FixedUpdate()
     {
         rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-        //animator.SetFloat("xVelocity", Math.Abs(rb.velocity.x));
+        if(rb.velocity.x !=0 && IsGrounded())
+        {
+            animator.SetFloat("xVelocity", 1);
+        }
+        else
+        {
+            animator.SetFloat("xVelocity", 0);
+        }
     }
 
     private bool IsGrounded()
@@ -112,4 +120,10 @@ public class Movement : MonoBehaviour
     {
         return isHidding;
     }
+
+    public void StopMovement()
+    {
+        rb.velocity = Vector2.zero;
+    }
+
 }

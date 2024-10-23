@@ -4,12 +4,12 @@ public class SaveManager : MonoBehaviour
 {
     public static SaveManager Instance;
 
-
     private void Start()
     {
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -33,7 +33,10 @@ public class SaveManager : MonoBehaviour
 
         for (int i = 1; i < level; i++)
         {
-            totalCoinsForLevel += PlayerPrefs.GetInt("level" + i + "coins");
+            if(PlayerPrefs.HasKey("level" + i + "coins"))
+            {
+                totalCoinsForLevel += PlayerPrefs.GetInt("level" + i + "coins");
+            }
         }
 
         return totalCoinsForLevel;

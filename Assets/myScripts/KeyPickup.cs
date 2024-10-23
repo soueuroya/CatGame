@@ -8,7 +8,7 @@ public class KeyPickup : MonoBehaviour
     {
         if(other.tag == "Player")
         {
-            IInventory inventory = other.GetComponent<IInventory>();
+            PlayerInventory inventory = other.GetComponent<PlayerInventory>();
 
             if(inventory != null)
             {

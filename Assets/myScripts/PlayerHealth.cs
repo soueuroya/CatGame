@@ -97,6 +97,8 @@ public class PlayerHealth : MonoBehaviour
     {
         transform.position = respawnLocation;
 
+        playerMovement.StopMovement();
+
         RespawnAnimation();
         
         Invoke("UnlockMovement", 2); // reviving player after 2 seconds

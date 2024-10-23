@@ -8,9 +8,9 @@ public class coinpickup : MonoBehaviour
     {   
         if(other.tag == "Player")
         {
-            IInventory inventory = other.GetComponent<IInventory>();
+            PlayerInventory inventory = other.GetComponent<PlayerInventory>();
 
-            if(inventory != null)
+            if (inventory != null)
             {
                 inventory.CurrentCoin = inventory.CurrentCoin + coinValue;
                 inventory.TotalCoin = inventory.TotalCoin + coinValue;

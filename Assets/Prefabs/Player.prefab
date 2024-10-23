@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4110762172397138985}
   - component: {fileID: 4314474090901158402}
   - component: {fileID: 2674536693704871511}
+  - component: {fileID: 6261416395561258892}
   m_Layer: 0
   m_Name: Cat 1
   m_TagString: Untagged
@@ -119,6 +120,14 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!81 &6261416395561258892
+AudioListener:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1645369074335816689}
+  m_Enabled: 1
 --- !u!1 &2623299304834235867
 GameObject:
   m_ObjectHideFlags: 0
@@ -185,8 +194,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.38228607, y: 0.16383743, z: 0}
-    m_Extent: {x: 2.9927444, y: 3.4514809, z: 0}
+    m_Center: {x: 105.83144, y: 136.84799, z: 0}
+    m_Extent: {x: 13.396355, y: 22.389069, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -197,22 +206,23 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 0
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -1.7014618, y: -3.012146, z: 0}
-  - {x: -0.55703735, y: -3.2876434, z: 0}
-  - {x: 0.81918335, y: -3.0473557, z: 0}
-  - {x: 1.9550934, y: -2.1080246, z: 0}
-  - {x: 2.5534058, y: -1.0242767, z: 0}
-  - {x: 2.6104584, y: 0.120147705, z: 0}
-  - {x: 2.5667725, y: 1.0813141, z: 0}
-  - {x: 2.1080322, y: 2.217247, z: 0}
-  - {x: 1.2645721, y: 2.9903183, z: 0}
-  - {x: 0.16383362, y: 3.6153183, z: 0}
-  - {x: -1.2997742, y: 3.4624023, z: 0}
-  - {x: -2.3264618, y: 2.6759949, z: 0}
-  - {x: -3.012146, y: 1.7888412, z: 0}
-  - {x: -3.3750305, y: 0.535202, z: 0}
-  - {x: -3.222107, y: -0.86286163, z: 0}
-  - {x: -2.6541443, y: -2.195404, z: 0}
+  - {x: 93.73742, y: 120.776375, z: 0}
+  - {x: 98.25043, y: 115.36282, z: 0}
+  - {x: 105.000626, y: 114.45892, z: 0}
+  - {x: 113.30825, y: 116.71868, z: 0}
+  - {x: 119.22729, y: 119.20452, z: 0}
+  - {x: 118.60432, y: 123.49795, z: 0}
+  - {x: 117.46207, y: 132.19806, z: 0}
+  - {x: 116.527214, y: 141.23709, z: 0}
+  - {x: 114.865685, y: 149.48524, z: 0}
+  - {x: 113.67809, y: 155.813, z: 0}
+  - {x: 111.77211, y: 159.23706, z: 0}
+  - {x: 105.41581, y: 157.73341, z: 0}
+  - {x: 101.26199, y: 154.23064, z: 0}
+  - {x: 97.93894, y: 149.0333, z: 0}
+  - {x: 94.82368, y: 142.81903, z: 0}
+  - {x: 93.05806, y: 135.13564, z: 0}
+  - {x: 92.43509, y: 127.339645, z: 0}
 --- !u!1 &4422371761941224696
 GameObject:
   m_ObjectHideFlags: 0
@@ -279,8 +289,8 @@ MonoBehaviour:
   m_ShadowVolumeIntensityEnabled: 0
   m_ShadowVolumeIntensity: 0.75
   m_LocalBounds:
-    m_Center: {x: -0.38228607, y: 0.16383743, z: 0}
-    m_Extent: {x: 2.9927444, y: 3.4514809, z: 0}
+    m_Center: {x: 37.995934, y: 128.7386, z: 0}
+    m_Extent: {x: 30.286667, y: 28.342297, z: 0}
   m_PointLightInnerAngle: 360
   m_PointLightOuterAngle: 360
   m_PointLightInnerRadius: 0
@@ -291,22 +301,21 @@ MonoBehaviour:
   m_ShapeLightFalloffSize: 0
   m_ShapeLightFalloffOffset: {x: 0, y: 0}
   m_ShapePath:
-  - {x: -1.7014618, y: -3.012146, z: 0}
-  - {x: -0.55703735, y: -3.2876434, z: 0}
-  - {x: 0.81918335, y: -3.0473557, z: 0}
-  - {x: 1.9550934, y: -2.1080246, z: 0}
-  - {x: 2.5534058, y: -1.0242767, z: 0}
-  - {x: 2.6104584, y: 0.120147705, z: 0}
-  - {x: 2.5667725, y: 1.0813141, z: 0}
-  - {x: 2.1080322, y: 2.217247, z: 0}
-  - {x: 1.2645721, y: 2.9903183, z: 0}
-  - {x: 0.16383362, y: 3.6153183, z: 0}
-  - {x: -1.2997742, y: 3.4624023, z: 0}
-  - {x: -2.3264618, y: 2.6759949, z: 0}
-  - {x: -3.012146, y: 1.7888412, z: 0}
-  - {x: -3.3750305, y: 0.535202, z: 0}
-  - {x: -3.222107, y: -0.86286163, z: 0}
-  - {x: -2.6541443, y: -2.195404, z: 0}
+  - {x: 7.709265, y: 126.55843, z: 0}
+  - {x: 9.752067, y: 119.54429, z: 0}
+  - {x: 15.486578, y: 110.93834, z: 0}
+  - {x: 25.175396, y: 103.62347, z: 0}
+  - {x: 37.039494, y: 100.39631, z: 0}
+  - {x: 47.915512, y: 101.04174, z: 0}
+  - {x: 57.60472, y: 103.19318, z: 0}
+  - {x: 64.13057, y: 107.467514, z: 0}
+  - {x: 68.28241, y: 114.811134, z: 0}
+  - {x: 67.49147, y: 123.41687, z: 0}
+  - {x: 61.36149, y: 132.45311, z: 0}
+  - {x: 53.45209, y: 142.3497, z: 0}
+  - {x: 44.553818, y: 150.95564, z: 0}
+  - {x: 35.458008, y: 155.90395, z: 0}
+  - {x: 25.60793, y: 157.08069, z: 0}
 --- !u!1 &4940155336674327046
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +433,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 150
-  jumpingPower: 150
+  jumpingPower: 275
   rb: {fileID: 8352409561742130468}
   groundCheck: {fileID: 1861284643907569679}
   groundLayer:
