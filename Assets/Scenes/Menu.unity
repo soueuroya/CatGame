@@ -4394,7 +4394,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a4f953a7065c86c41a128ed5c5acf903, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buttons: []
+  buttons:
+  - {fileID: 1260125935}
+  - {fileID: 1017531992}
+  - {fileID: 674824580}
+  - {fileID: 721609846}
+  - {fileID: 258359174}
+  - {fileID: 381678031}
+  - {fileID: 1422939065}
+  - {fileID: 1269519775}
+  - {fileID: 2117823866}
+  - {fileID: 307266408}
   levelButtons: {fileID: 614523348}
 --- !u!1 &2104483665
 GameObject:
