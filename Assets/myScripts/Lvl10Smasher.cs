@@ -17,7 +17,7 @@ public class Lvl10Smasher : MonoBehaviour
             if (playerHealth != null && Movement.Instance != null && !Movement.Instance.IsHidding())
             {
                 playerHealth.TakeDamage(damage);
-                Instance.Restart();
+                PauseMenu.Instance.Restart();
 }
         }
     }
