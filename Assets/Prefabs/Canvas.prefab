@@ -1342,3 +1342,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 8528414646341108157}
+  paused: 0

@@ -1323,6 +1323,7 @@ MonoBehaviour:
   clips:
   - {fileID: 8300000, guid: 01c8dcc953063b744ab38347902bac8d, type: 3}
   playedClips: 
+  fadeBetween: 0
 --- !u!82 &1014006430
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2543,11 +2544,11 @@ PrefabInstance:
       objectReference: {fileID: 477095786}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.625908
+      value: -20.017513
       objectReference: {fileID: 0}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3622838
+      value: -1.3627026
       objectReference: {fileID: 0}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.z
