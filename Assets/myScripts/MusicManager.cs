@@ -15,6 +15,7 @@ public class MusicManager : MonoBehaviour
 
     [SerializeField] List<AudioClip> clips;
     [SerializeField] List<int> playedClips = new List<int>();
+    [SerializeField] bool fadeBetween;
 
     // Addressable Songs in project
     //[SerializeField] SerializableDictionaryBase<Songs, string> songsPaths;
@@ -22,6 +23,7 @@ public class MusicManager : MonoBehaviour
     // Private properties
     float delayUntilNextSong = 0f; // Delay in-between songs
     float maxVolume = 1f; // Max volume
+    
 
     #region Initialization
     private void OnValidate()
@@ -47,6 +49,7 @@ public class MusicManager : MonoBehaviour
                 if (audioSource.clip != null)
                 {
                     Instance.audioSource.loop = audioSource.loop;
+                    Instance.fadeBetween = this.fadeBetween;
 
                     if (clips != null && clips.Count > 0)
                     {
@@ -189,12 +192,20 @@ public class MusicManager : MonoBehaviour
         {
             audioSource.clip = _nextClip; // update with new song
             audioSource.Play(); // start playing new song
-            AudioManager.Instance.SetVolume("musicFadeVolume", 1); // starts song at max volume
-            //FadeMusicTo(AnimationTimers.MUSIC_FADEIN, maxVolume); // fade IN new song // fades in song at the start
-            //if (!audioSource.loop)
-            //{
-                AddFadeToEndOfMusic(); // Add fade automatic OUT
-            //}
+
+            if (fadeBetween)
+            {
+                FadeMusicTo(AnimationTimers.MUSIC_FADEIN, maxVolume); // fade IN new song // fades in song at the start
+            }
+            else
+            {
+                AudioManager.Instance.SetVolume("musicFadeVolume", 1); // starts song at max volume
+            }
+
+            if (!audioSource.loop)
+            {
+              AddFadeToEndOfMusic(); // Add fade automatic OUT
+            }
         }
     }
 
