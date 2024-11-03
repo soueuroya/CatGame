@@ -957,6 +957,11 @@ Transform:
   - {fileID: 1602764784}
   m_Father: {fileID: 1542633904}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &307385201 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9144376622700419517, guid: 4c507d709bd7a8048b7286d4b7f15fee, type: 3}
+  m_PrefabInstance: {fileID: 1178441889}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &362075564
 GameObject:
   m_ObjectHideFlags: 0
@@ -2922,16 +2927,33 @@ PrefabInstance:
       propertyPath: m_Name
       value: Smasher
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9140594060603551072, guid: 4c507d709bd7a8048b7286d4b7f15fee, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 9144376622700419517, guid: 4c507d709bd7a8048b7286d4b7f15fee, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1178441891}
   m_SourcePrefab: {fileID: 100100000, guid: 4c507d709bd7a8048b7286d4b7f15fee, type: 3}
 --- !u!4 &1178441890 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8363355213053587722, guid: 4c507d709bd7a8048b7286d4b7f15fee, type: 3}
   m_PrefabInstance: {fileID: 1178441889}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1178441891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 307385201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ade1b45f5eca92c47a09c3fa98c2b4a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 3
 --- !u!1001 &1251415580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3100,11 +3122,11 @@ PrefabInstance:
       objectReference: {fileID: 1355002170}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.955996
+      value: -19.96137
       objectReference: {fileID: 0}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3849919
+      value: -1.3849934
       objectReference: {fileID: 0}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.z
