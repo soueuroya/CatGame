@@ -1649,10 +1649,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TransitionManager
       objectReference: {fileID: 0}
-    - target: {fileID: 7275875296283975244, guid: 11eab4076c8038d45ab7f5f02518eef9, type: 3}
-      propertyPath: m_RaycastTarget
-      value: 0
-      objectReference: {fileID: 0}
     - target: {fileID: 7292310542980284334, guid: 11eab4076c8038d45ab7f5f02518eef9, type: 3}
       propertyPath: m_Pivot.x
       value: 0
