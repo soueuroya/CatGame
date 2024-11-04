@@ -4,8 +4,6 @@ using UnityEngine.SceneManagement;
 public class FinishPoint : MonoBehaviour
 {
 
-
-
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
@@ -30,7 +28,6 @@ public class FinishPoint : MonoBehaviour
             PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
             PlayerPrefs.Save();
             SceneController.Instance.NextLevel();
-
         }
 
     }
