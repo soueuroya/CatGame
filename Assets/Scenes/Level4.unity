@@ -3161,11 +3161,11 @@ PrefabInstance:
       objectReference: {fileID: 381033685}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.01911
+      value: -20.013987
       objectReference: {fileID: 0}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3627014
+      value: -1.3627051
       objectReference: {fileID: 0}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4743,6 +4743,10 @@ PrefabInstance:
     - target: {fileID: 9144376622700419517, guid: 4c507d709bd7a8048b7286d4b7f15fee, type: 3}
       propertyPath: m_Name
       value: Smasher
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212132335969118731, guid: 4c507d709bd7a8048b7286d4b7f15fee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.025
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

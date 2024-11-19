@@ -2997,7 +2997,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 9140594060603551072, guid: 4c507d709bd7a8048b7286d4b7f15fee, type: 3}
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 6947984048782512685, guid: 4c507d709bd7a8048b7286d4b7f15fee, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents:
     - targetCorrespondingSourceObject: {fileID: 9144376622700419517, guid: 4c507d709bd7a8048b7286d4b7f15fee, type: 3}
@@ -3021,7 +3022,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ade1b45f5eca92c47a09c3fa98c2b4a5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damage: 3
 --- !u!1001 &1251415580
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3190,11 +3190,11 @@ PrefabInstance:
       objectReference: {fileID: 1355002170}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.96137
+      value: -19.956282
       objectReference: {fileID: 0}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3849934
+      value: -1.3849919
       objectReference: {fileID: 0}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.z

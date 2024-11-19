@@ -29,7 +29,7 @@ public class SceneController : MonoBehaviour
     {
         transitionAnim.SetTrigger("End");
         yield return new WaitForSeconds(1);
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + 1);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(SceneManager.GetActiveScene().buildIndex + index);
         while (!asyncLoad.isDone)
         {
             yield return null;  // Wait until the next frame to check again

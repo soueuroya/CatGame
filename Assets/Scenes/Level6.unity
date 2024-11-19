@@ -1496,10 +1496,6 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1015892260}
     - target: {fileID: 6663606907750639583, guid: 4c507d709bd7a8048b7286d4b7f15fee, type: 3}
-      propertyPath: wayPoints.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6663606907750639583, guid: 4c507d709bd7a8048b7286d4b7f15fee, type: 3}
       propertyPath: wayPoints.Array.data[0]
       value: 
       objectReference: {fileID: 312667201}
@@ -1507,18 +1503,6 @@ PrefabInstance:
       propertyPath: wayPoints.Array.data[1]
       value: 
       objectReference: {fileID: 1465447379}
-    - target: {fileID: 8363355213053587722, guid: 4c507d709bd7a8048b7286d4b7f15fee, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 41.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363355213053587722, guid: 4c507d709bd7a8048b7286d4b7f15fee, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 41.7
-      objectReference: {fileID: 0}
-    - target: {fileID: 8363355213053587722, guid: 4c507d709bd7a8048b7286d4b7f15fee, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 41.7
-      objectReference: {fileID: 0}
     - target: {fileID: 8363355213053587722, guid: 4c507d709bd7a8048b7286d4b7f15fee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 616.6207
@@ -1562,6 +1546,10 @@ PrefabInstance:
     - target: {fileID: 9144376622700419517, guid: 4c507d709bd7a8048b7286d4b7f15fee, type: 3}
       propertyPath: m_Name
       value: Smasher
+      objectReference: {fileID: 0}
+    - target: {fileID: 9212132335969118731, guid: 4c507d709bd7a8048b7286d4b7f15fee, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.023980081
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2868,11 +2856,11 @@ PrefabInstance:
       objectReference: {fileID: 2050221474}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -20.653236
+      value: -20.64873
       objectReference: {fileID: 0}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.7334794
+      value: -1.7334787
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
