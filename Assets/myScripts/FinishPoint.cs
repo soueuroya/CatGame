@@ -46,8 +46,4 @@ public class FinishPoint : MonoBehaviour
         PlayerInventory inventory = collision.GetComponent<PlayerInventory>();
         SaveManager.Instance?.SaveCoinForLevel(inventory.CurrentCoin, SceneManager.GetActiveScene().buildIndex);
     }
-    IEnumerator WaitForLoad()
-    {
-        yield return new WaitForSeconds(1);
-    }
 }
