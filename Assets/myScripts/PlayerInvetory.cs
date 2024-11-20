@@ -7,6 +7,10 @@ public class PlayerInventory : MonoBehaviour
 
   private int _Key = 0;
 
+  public int Grapple { get => _Grapple; set => _Grapple = value; }
+
+  private int _Grapple = 0;
+
   public int CurrentCoin { get => _CurrentCoin; set => _CurrentCoin = value; }
 
   private int _CurrentCoin = 0;
@@ -15,7 +19,10 @@ public class PlayerInventory : MonoBehaviour
 
   private int _TotalCoin = 0;
 
-  private void Start()
+
+
+
+    private void Start()
   {
       _TotalCoin = SaveManager.Instance.LoadCoinForLevel(SceneManager.GetActiveScene().buildIndex);
   }

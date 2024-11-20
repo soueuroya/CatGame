@@ -20,11 +20,13 @@ public class FinishPoint : MonoBehaviour
         }
         //Was trying to get the E key and player colliding to allow them to go to the next level
         //However it is requiring multiple presses sometimes. Without the GetKeyUp it send the player multiple levels forward since its a constant update.
+        //It also can send them multiple levels forward if they spam the key.
     }
     void UnlockNewLevel()
     {
         int temp = PlayerPrefs.GetInt("ReachedIndex");
         int temp2 = PlayerPrefs.GetInt("UnlockedLevel");
+        //Both variables always report 0, maybe that was an underlying problem and what I "fixed" is more of a bandaid on a stab wound.
 
         if (SceneManager.GetActiveScene().buildIndex + 1 >= SceneManager.sceneCountInBuildSettings)
         {
