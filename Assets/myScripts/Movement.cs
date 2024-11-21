@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -15,6 +14,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private Collider2D colliderpl;
     private RigidbodyConstraints2D originalConstraints;
     public static Movement Instance;
+
 
 
     public Animator animator;
@@ -38,6 +38,7 @@ public class Movement : MonoBehaviour
         originalConstraints = rb.constraints;
 
         colliderpl = GetComponent<Collider2D>();
+
     }
 
     void Update()
