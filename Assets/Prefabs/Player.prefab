@@ -467,8 +467,6 @@ GameObject:
   - component: {fileID: 2674776798916847937}
   - component: {fileID: 2927106326270832594}
   - component: {fileID: 3305495939709526224}
-  - component: {fileID: 5722078198942530790}
-  - component: {fileID: 9128524107653876350}
   m_Layer: 8
   m_Name: Player
   m_TagString: Player
@@ -626,43 +624,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   attackCooldown: 1
---- !u!232 &5722078198942530790
-DistanceJoint2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4940155336674327046}
-  m_Enabled: 1
-  serializedVersion: 4
-  m_EnableCollision: 1
-  m_ConnectedRigidBody: {fileID: 0}
-  m_BreakForce: Infinity
-  m_BreakTorque: Infinity
-  m_BreakAction: 3
-  m_AutoConfigureConnectedAnchor: 0
-  m_Anchor: {x: 0, y: 0}
-  m_ConnectedAnchor: {x: 0, y: 0}
-  m_AutoConfigureDistance: 0
-  m_Distance: 385.7026
-  m_MaxDistanceOnly: 0
---- !u!114 &9128524107653876350
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4940155336674327046}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f5983a69fdbfb544db95735f1f4d7100, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  grappleLength: 2
-  grappleLayer:
-    serializedVersion: 2
-    m_Bits: 512
-  rope: {fileID: 7343983028369128323}
 --- !u!1 &6032900900204635908
 GameObject:
   m_ObjectHideFlags: 0
