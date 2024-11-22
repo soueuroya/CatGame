@@ -9,13 +9,13 @@ public class FinishPoint : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E)) 
         {
-            print("Key Down");
+            //print("Key Down");
             SaveInventory(collision);
             UnlockNewLevel();
         }
         else if (Input.GetKeyUp(KeyCode.E))
         {
-            print("Key Up");
+            //print("Key Up");
             return;
         }
         //Was trying to get the E key and player colliding to allow them to go to the next level
@@ -24,9 +24,6 @@ public class FinishPoint : MonoBehaviour
     }
     void UnlockNewLevel()
     {
-        int temp = PlayerPrefs.GetInt("ReachedIndex");
-        int temp2 = PlayerPrefs.GetInt("UnlockedLevel");
-        //Both variables always report 0, maybe that was an underlying problem and what I "fixed" is more of a bandaid on a stab wound.
 
         if (SceneManager.GetActiveScene().buildIndex + 1 >= SceneManager.sceneCountInBuildSettings)
         {
@@ -36,7 +33,15 @@ public class FinishPoint : MonoBehaviour
         else if (SceneManager.GetActiveScene().buildIndex <= PlayerPrefs.GetInt("ReachedIndex") + 1)
         {
             PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
-            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel", 1) + 1);
+            PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel") + 1);
+
+
+            //Testing, can be removed.
+            int reach = PlayerPrefs.GetInt("ReachedIndex");
+            print("ReachedIndex: " + reach);
+            int unlock = PlayerPrefs.GetInt("UnlockedLevel");
+            print("UnlockedLevel: " + unlock);
+
             PlayerPrefs.Save();
             SceneController.Instance.NextLevel();
         }
