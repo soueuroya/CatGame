@@ -80,6 +80,7 @@ public class Movement : MonoBehaviour
     private bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
+        //add hazardLayer to allow jumping on spikes
     }
 
     private void HandleFlipping()

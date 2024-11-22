@@ -21,6 +21,14 @@ public class GrapplingHook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        PlayerInventory inventory = GetComponent<PlayerInventory>();
+
+
+
+        if (true)
+        {
+            
+        }
 
         if (Input.GetMouseButtonDown(1))
         {

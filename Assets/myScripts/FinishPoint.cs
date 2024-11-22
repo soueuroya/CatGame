@@ -9,17 +9,18 @@ public class FinishPoint : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E)) 
         {
-            //print("Key Down");
+            print("Key Down");
             SaveInventory(collision);
             UnlockNewLevel();
+
         }
         else if (Input.GetKeyUp(KeyCode.E))
         {
-            //print("Key Up");
+            print("Key Up");
             return;
         }
         //Was trying to get the E key and player colliding to allow them to go to the next level
-        //However it is requiring multiple presses sometimes. Without the GetKeyUp it send the player multiple levels forward since its a constant update.
+        //However it is requiring multiple presses sometimes. Without the GetKeyUp or with just GetKey it sends the player multiple levels forward since its a constant update.
         //It also can send them multiple levels forward if they spam the key.
     }
     void UnlockNewLevel()
