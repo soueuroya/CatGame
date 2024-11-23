@@ -12,6 +12,7 @@ TagManager:
   - Hide
   - FakeHide
   - Vent
+  - Grapple
   layers:
   - Default
   - TransparentFX
@@ -23,7 +24,7 @@ TagManager:
   - Hazard
   - Player
   - grapple
-  - 
+  - Interactable
   - 
   - 
   - 

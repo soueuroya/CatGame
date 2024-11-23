@@ -53,15 +53,7 @@ public class Movement : MonoBehaviour
         else if (Input.GetButtonDown("Jump") && isGrappling)
         {
             Ungrappled();
-
-            //if (isFacingRight)
-            //{
-            //    rb.velocity = new Vector2(jumpingPower, 0);
-            //}
-            //else
-            //{
-            //    rb.velocity = new Vector2(jumpingPower, 0);
-            //}
+            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
         }
 
         if (Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.LeftControl))

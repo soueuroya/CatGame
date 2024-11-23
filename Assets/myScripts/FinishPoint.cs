@@ -4,25 +4,42 @@ using UnityEngine.SceneManagement;
 
 public class FinishPoint : MonoBehaviour
 {
+    bool isColliding = false;
+    bool isActive = true;
+    PlayerInventory inventory;
 
-    private void OnTriggerStay2D(Collider2D collision)
+    private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E)) 
+        if (Input.GetKeyDown(KeyCode.E) && isActive && isColliding)
         {
             print("Key Down");
-            SaveInventory(collision);
+            SaveInventory();
             UnlockNewLevel();
-
+            isActive = false;
         }
         else if (Input.GetKeyUp(KeyCode.E))
         {
             print("Key Up");
             return;
         }
-        //Was trying to get the E key and player colliding to allow them to go to the next level
-        //However it is requiring multiple presses sometimes. Without the GetKeyUp or with just GetKey it sends the player multiple levels forward since its a constant update.
-        //It also can send them multiple levels forward if they spam the key.
     }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            isColliding = true;
+            inventory = collision.GetComponent<PlayerInventory>();
+        }
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Player"))
+        {
+            isColliding = false;
+        }
+    }
+
     void UnlockNewLevel()
     {
 
@@ -36,22 +53,14 @@ public class FinishPoint : MonoBehaviour
             PlayerPrefs.SetInt("ReachedIndex", SceneManager.GetActiveScene().buildIndex + 1);
             PlayerPrefs.SetInt("UnlockedLevel", PlayerPrefs.GetInt("UnlockedLevel") + 1);
 
-
-            //Testing, can be removed.
-            int reach = PlayerPrefs.GetInt("ReachedIndex");
-            print("ReachedIndex: " + reach);
-            int unlock = PlayerPrefs.GetInt("UnlockedLevel");
-            print("UnlockedLevel: " + unlock);
-
             PlayerPrefs.Save();
             SceneController.Instance.NextLevel();
         }
 
     }
 
-    private void SaveInventory(Collider2D collision)
+    private void SaveInventory()
     {
-        PlayerInventory inventory = collision.GetComponent<PlayerInventory>();
         SaveManager.Instance?.SaveCoinForLevel(inventory.CurrentCoin, SceneManager.GetActiveScene().buildIndex);
     }
 }

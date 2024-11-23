@@ -28,7 +28,7 @@ public class GrappleHook : MonoBehaviour
             Hook.transform.position = Vector2.MoveTowards(Hook.transform.position, transform.position, speed * Time.deltaTime);
 
             // Stop pulling when the player reaches the hook
-            if (Vector2.Distance(Hook.transform.position, transform.position) < 0.1f)
+            if (Vector2.Distance(Hook.transform.position, transform.position) < 50.0f)
             {
                 //Hook.transform.position = transform.position;
                 this.enabled = false;
@@ -38,20 +38,15 @@ public class GrappleHook : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Enviroment"))
+        if (collision.gameObject.CompareTag("Grapple"))
         {
             isHooked = true;
             hookedObject = collision.transform;
             Hook.Grappled();
         }
+        else
+        {
+            Hook.StopGrapple();
+        }
     }
-
-    //private void OnTriggerEnter2D(Collider2D other)
-    //{
-    //    if (other.CompareTag("Enviroment"))
-    //    {
-    //        isHooked = true;
-    //        hookedObject = other.transform;
-    //    }
-    //}
 }

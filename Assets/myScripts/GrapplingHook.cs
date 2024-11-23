@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class GrapplingHook : MonoBehaviour
 {
+    PlayerInventory inventory;
+
     [SerializeField] private GameObject grappleHookPrefab;
     [SerializeField] private GameObject grappleRopePrefab;
-    [SerializeField] private Transform playerTransform;
 
     private GameObject currentGrappleHook;
     private GameObject currentGrappleRope;
@@ -14,19 +15,22 @@ public class GrapplingHook : MonoBehaviour
 
     void Start()
     {
-
+        inventory = GetComponent<PlayerInventory>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && !isTryingToGrapple && !isGrappling)
+        if (inventory.Grapple > 0)
         {
-            ShootGrapple();
-        }
-        else if (Input.GetMouseButtonDown(1) && isTryingToGrapple)
-        {
-            StopGrapple();
+            if (Input.GetMouseButtonDown(1) && !isTryingToGrapple && !isGrappling)
+            {
+                ShootGrapple();
+            }
+            else if (Input.GetMouseButtonDown(1) && isTryingToGrapple)
+            {
+                StopGrapple();
+            }
         }
     }
 

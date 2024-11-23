@@ -6,10 +6,20 @@ public class LevelMenu : MonoBehaviour
     public Button[] buttons;
     public GameObject levelButtons;
 
-    private void Awake()
+    private void OnEnable()
     {
         ButtonsToArray();
-        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 1);
+        int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 0);
+        if (unlockedLevel < 0)
+        {
+            unlockedLevel = 0;
+        }
+
+        if (unlockedLevel >= buttons.Length)
+        {
+            unlockedLevel = buttons.Length -1;
+        }
+
         for (int i = 0; i < buttons.Length; i++)
         {
             buttons[i].interactable = false;
