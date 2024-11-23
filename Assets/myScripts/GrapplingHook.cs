@@ -2,65 +2,85 @@ using UnityEngine;
 
 public class GrapplingHook : MonoBehaviour
 {
+    [SerializeField] private GameObject grappleHookPrefab;
+    [SerializeField] private GameObject grappleRopePrefab;
+    [SerializeField] private Transform playerTransform;
 
-    [SerializeField] private float grappleLength;
-    [SerializeField] private LayerMask grappleLayer;
-    [SerializeField] private LineRenderer rope;
+    private GameObject currentGrappleHook;
+    private GameObject currentGrappleRope;
 
-    private Vector3 grapplePoint;
-    private DistanceJoint2D joint;
+    private bool isGrappling = false;
 
-    // Start is called before the first frame update
     void Start()
     {
-        joint = gameObject.GetComponent<DistanceJoint2D>();
-        joint.enabled = false;
-        rope.enabled = false;
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        PlayerInventory inventory = GetComponent<PlayerInventory>();
-
-
-
-        if (true)
+        if (Input.GetMouseButtonDown(1) && !isGrappling)
         {
-            
+            ShootGrapple();
+        }
+    }
+
+    private void ShootGrapple()
+    {
+        if (currentGrappleHook != null)
+        {
+            Destroy(currentGrappleHook.gameObject);
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (currentGrappleRope != null)
         {
-            RaycastHit2D hit = Physics2D.Raycast(
-            origin: Camera.main.ScreenToWorldPoint(Input.mousePosition),
-            direction: Vector2.zero,
-            distance: Mathf.Infinity,
-            layerMask: grappleLayer
-            );
-
-            if (hit.collider != null)
-            {
-                grapplePoint = hit.point;
-                grapplePoint.z = 0;
-                joint.connectedAnchor = grapplePoint;
-                joint.enabled = true;
-                joint.distance = grappleLength;
-                rope.SetPosition(0, grapplePoint);
-                rope.SetPosition(1, transform.position);
-                rope.enabled = true;
-            }
+            Destroy(currentGrappleRope.gameObject);
         }
 
-        if (Input.GetMouseButtonUp(1))
+
+        float angle = GetAngleBetweenPlayerAndCursor(transform.position);
+
+        // Instantiate Grapple Hook
+        currentGrappleHook = Instantiate(grappleHookPrefab, transform.position, Quaternion.Euler(0, 0, angle));
+
+        GrappleHook hookScript = currentGrappleHook.GetComponent<GrappleHook>();
+        hookScript.Initialize(this);
+
+        // Instantiate Grapple Rope
+        currentGrappleRope = Instantiate(grappleRopePrefab, transform.position, Quaternion.identity);
+
+        GrappleRope ropeScript = currentGrappleRope.GetComponent<GrappleRope>();
+        ropeScript.Initialize(transform, currentGrappleHook.transform);
+    }
+
+    private float GetAngleBetweenPlayerAndCursor(Vector2 playerPosition)
+    {
+        Vector2 mouseWorldPosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Vector2 direction = mouseWorldPosition - playerPosition;
+        float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
+        return angle;
+    }
+
+    public void Grappled()
+    {
+        isGrappling = true;
+        GetComponent<Rigidbody2D>().simulated = false;
+        GetComponent<Movement>().Grappled();
+    }
+
+    public void Ungrappled()
+    {
+        isGrappling = false;
+        GetComponent<Rigidbody2D>().simulated = true;
+
+        if (currentGrappleHook != null)
         {
-            joint.enabled = false;
-            rope.enabled = false;
+            Destroy(currentGrappleHook.gameObject);
         }
 
-        if (rope.enabled == true)
+        if (currentGrappleRope != null)
         {
-            rope.SetPosition(1, transform.position);
+            Destroy(currentGrappleRope.gameObject);
         }
     }
 }

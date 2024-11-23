@@ -7,6 +7,7 @@ public class Movement : MonoBehaviour
     public float jumpingPower;
     private bool isFacingRight = true;
     private bool isHidding = false;
+    private bool isGrappling = false;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -48,6 +49,19 @@ public class Movement : MonoBehaviour
         if (Input.GetButtonDown("Jump") && IsGrounded())
         {
             rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+        }
+        else if (Input.GetButtonDown("Jump") && isGrappling)
+        {
+            Ungrappled();
+
+            //if (isFacingRight)
+            //{
+            //    rb.velocity = new Vector2(jumpingPower, 0);
+            //}
+            //else
+            //{
+            //    rb.velocity = new Vector2(jumpingPower, 0);
+            //}
         }
 
         if (Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.LeftControl))
@@ -128,4 +142,14 @@ public class Movement : MonoBehaviour
         rb.velocity = Vector2.zero;
     }
 
+    public void Grappled()
+    {
+        isGrappling = true;
+    }
+
+    public void Ungrappled()
+    {
+        isGrappling = false;
+        GetComponent<GrapplingHook>().Ungrappled();
+    }
 }
