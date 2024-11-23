@@ -98,3 +98,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ropeRenderer: {fileID: 8267598983248811901}
+  maxDistance: 300

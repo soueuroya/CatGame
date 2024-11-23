@@ -3,6 +3,7 @@ using UnityEngine;
 public class GrappleRope : MonoBehaviour
 {
     [SerializeField] private SpriteRenderer ropeRenderer;
+    [SerializeField] private float maxDistance;
 
     private Transform playerTransform;
     private Transform hookTransform;
@@ -31,5 +32,10 @@ public class GrappleRope : MonoBehaviour
 
         // Update the tiling of the sprite
         ropeRenderer.size = new Vector2(distance/4, 1);
+
+        if (distance > maxDistance)
+        {
+            playerTransform.GetComponent<GrapplingHook>().StopGrapple();
+        }
     }
 }

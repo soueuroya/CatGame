@@ -10,6 +10,7 @@ public class GrapplingHook : MonoBehaviour
     private GameObject currentGrappleRope;
 
     private bool isGrappling = false;
+    private bool isTryingToGrapple = false;
 
     void Start()
     {
@@ -19,9 +20,30 @@ public class GrapplingHook : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(1) && !isGrappling)
+        if (Input.GetMouseButtonDown(1) && !isTryingToGrapple && !isGrappling)
         {
             ShootGrapple();
+        }
+        else if (Input.GetMouseButtonDown(1) && isTryingToGrapple)
+        {
+            StopGrapple();
+        }
+    }
+
+    public void StopGrapple()
+    {
+        isGrappling = false;
+        isTryingToGrapple = false;
+        GetComponent<Rigidbody2D>().simulated = true;
+
+        if (currentGrappleHook != null)
+        {
+            Destroy(currentGrappleHook.gameObject);
+        }
+
+        if (currentGrappleRope != null)
+        {
+            Destroy(currentGrappleRope.gameObject);
         }
     }
 
@@ -61,15 +83,22 @@ public class GrapplingHook : MonoBehaviour
         return angle;
     }
 
+    public void TryingToGrapple()
+    {
+        isTryingToGrapple = true;
+    }
+
     public void Grappled()
     {
         isGrappling = true;
+        isTryingToGrapple = false;
         GetComponent<Rigidbody2D>().simulated = false;
         GetComponent<Movement>().Grappled();
     }
 
     public void Ungrappled()
     {
+        isTryingToGrapple = false;
         isGrappling = false;
         GetComponent<Rigidbody2D>().simulated = true;
 

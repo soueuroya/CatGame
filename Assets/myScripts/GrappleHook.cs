@@ -12,6 +12,7 @@ public class GrappleHook : MonoBehaviour
     public void Initialize(GrapplingHook _hook)
     {
         Hook = _hook;
+        Hook.TryingToGrapple();
     }
 
     void Update()
