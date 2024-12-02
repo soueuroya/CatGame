@@ -6636,7 +6636,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8021a3bfb7cb1d7489bd030710c83d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeProperty: 0
+  volumeProperty: 2
   slider: {fileID: 1446805922}
   label: {fileID: 1321291474}
 --- !u!114 &1446805922
@@ -8358,7 +8358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8021a3bfb7cb1d7489bd030710c83d1f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  volumeProperty: 0
+  volumeProperty: 1
   slider: {fileID: 1973650112}
   label: {fileID: 784069046}
 --- !u!114 &1973650112
