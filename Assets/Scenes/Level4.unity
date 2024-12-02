@@ -4484,6 +4484,10 @@ PrefabInstance:
       propertyPath: m_Offset.y
       value: 9.020662
       objectReference: {fileID: 0}
+    - target: {fileID: 1816148506823989113, guid: 9c276d8f394b8ab41a94d2e52c256df0, type: 3}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3830725531535169807, guid: 9c276d8f394b8ab41a94d2e52c256df0, type: 3}
       propertyPath: m_Name
       value: Shadow area
