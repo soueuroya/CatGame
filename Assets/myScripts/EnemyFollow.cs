@@ -11,7 +11,7 @@ public class EnemyFollow : MonoBehaviour
     public float minimumDistance;
     public float maximumDistance;
     Vector2 initialPosition;
-    private bool isFacingRight = false;
+    public bool isFacingRight = false;
     bool isChasing = false;
 
     // Start is called before the first frame update
@@ -21,6 +21,7 @@ public class EnemyFollow : MonoBehaviour
     private float attackRate = 1.0f;
     private bool canAttack = false;
     private bool canMove = false;
+    private bool isFlipping = false;
 
     void Start()
     {
@@ -84,15 +85,21 @@ public class EnemyFollow : MonoBehaviour
                 rbenemy.velocity = Vector2.zero;
             }
 
-            if (transform.position.x > initialPosition.x + Maxright && isFacingRight)
+            if (transform.position.x > initialPosition.x + Maxright && isFacingRight && !isFlipping)
             {
-                StartCoroutine(StayInPlace());
-                Flip();
+                Invoke("Flip", holdTime);
+                rbenemy.velocity = Vector2.zero;
+                animator.SetBool("Moving", false);
+                isFlipping = true;
+                canMove = false;
             }
-            else if (transform.position.x < initialPosition.x - Maxleft && !isFacingRight)
+            else if (transform.position.x < initialPosition.x - Maxleft && !isFacingRight && !isFlipping)
             {
-                StartCoroutine(StayInPlace());
-                Flip();
+                Invoke("Flip", holdTime);
+                rbenemy.velocity = Vector2.zero;
+                animator.SetBool("Moving", false);
+                isFlipping = true;
+                canMove = false;
             }
         }
 
@@ -145,10 +152,8 @@ public class EnemyFollow : MonoBehaviour
         Vector3 localScale = transform.localScale;
         localScale.x *= -1f;
         transform.localScale = localScale;
-    }
-
-    IEnumerator StayInPlace()
-    {
-        yield return new WaitForSeconds(holdTime); 
+        animator.SetBool("Moving", true);
+        canMove = true;
+        isFlipping = false;
     }
 }
