@@ -11,13 +11,21 @@ public class EnemyFollow : MonoBehaviour
     public float minimumDistance;
     public float maximumDistance;
     Vector2 initialPosition;
-    private bool isFacingRight = true;
+    private bool isFacingRight = false;
     bool isChasing = false;
 
     // Start is called before the first frame update
+
+    private EnemyAttack enemyAttack;
+    public Animator animator;
+    private float attackRate = 1.0f;
+    private bool canAttack = false;
+    private bool canMove = false;
+
     void Start()
     {
         initialPosition = transform.position;
+        animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -25,24 +33,55 @@ public class EnemyFollow : MonoBehaviour
     {
         if (isChasing) // if enemy is chasing
         {
-            if (Movement.Instance.transform.position.x > transform.position.x)
+            animator.SetBool("Chasing", true);
+            if (canAttack)
             {
-                rbenemy.velocity = Vector2.right * speed;
+                canAttack = false;
+                Invoke("Attack", attackRate);
+            }
+
+            if (canMove)
+            {
+
+                if (Movement.Instance.transform.position.x > transform.position.x)
+                {
+                    rbenemy.velocity = Vector2.right * speed;
+                }
+                else
+                {
+                    rbenemy.velocity = Vector2.right * -speed;
+                }
             }
             else
             {
-                rbenemy.velocity = Vector2.right * -speed;
+                rbenemy.velocity = Vector2.zero;
             }
         }
         else // if enemy is not chasing
         {
-            if (isFacingRight)
+            animator.SetBool("Chasing", false);
+
+            if (!canAttack)
             {
-                rbenemy.velocity = Vector2.right * speed;
+                canAttack=true;
+                CancelInvoke("Attack");
+            }
+
+            if (canMove)
+            {
+
+                if (isFacingRight)
+                {
+                    rbenemy.velocity = Vector2.right * speed;
+                }
+                else
+                {
+                    rbenemy.velocity = Vector2.right * -speed;
+                }
             }
             else
             {
-                rbenemy.velocity = Vector2.right * -speed;
+                rbenemy.velocity = Vector2.zero;
             }
 
             if (transform.position.x > initialPosition.x + Maxright && isFacingRight)
@@ -59,7 +98,18 @@ public class EnemyFollow : MonoBehaviour
 
         if (Vector2.Distance(transform.position, Movement.Instance.transform.position) < minimumDistance && !Movement.Instance.IsHidding()) // if player gets too close
         {
-            isChasing = true;
+            if ((isFacingRight && Movement.Instance.transform.position.x > transform.position.x) || (!isFacingRight && Movement.Instance.transform.position.x < transform.position.x))
+            {
+                isChasing = true;
+            }
+            else if (!isChasing)
+            {
+                isChasing = false;
+            }
+            else
+            {
+                Flip();
+            }
         }
         else if (Vector2.Distance(transform.position, Movement.Instance.transform.position) > maximumDistance || Movement.Instance.IsHidding()) // if player gets too far
         {
@@ -67,7 +117,28 @@ public class EnemyFollow : MonoBehaviour
         }
 
     }
+
+    public void StartWalk()
+    {
+        canMove = true;
+    }
+
+    public void StopWalk()
+    {
+        canMove = false;
+    }
     
+    private void Attack()
+    {
+        animator.SetTrigger("Attack");
+        Invoke("AllowAttack", 1);
+    }
+
+    private void AllowAttack()
+    {
+        canAttack = true;
+    }
+
     private void Flip()
     {
         isFacingRight = !isFacingRight;
