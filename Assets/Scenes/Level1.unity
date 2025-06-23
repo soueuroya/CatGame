@@ -2265,6 +2265,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9008360785777917010, guid: 11eab4076c8038d45ab7f5f02518eef9, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 98.13672
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
