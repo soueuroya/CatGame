@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -8,7 +9,7 @@ public class MultipleEndings : MonoBehaviour
     bool isColliding = false;
     bool isActive = true;
     PlayerInventory inventory;
-    bool goldEnding = false;
+    int endState = -1;
 
     private void Update()
     {
@@ -45,12 +46,44 @@ public class MultipleEndings : MonoBehaviour
 
     private void CheckInventory()
     {
-
+        if (inventory != null)
+        {
+            if (inventory.CurrentCoin >= 17)
+            {
+                endState = 0;
+                SaveManager.Instance?.SaveGoodEnding();
+            }
+            else if (inventory.CurrentCoin >= 8)
+            {
+                endState = 1;
+            }
+            else
+            {
+                endState = 2;
+            }
+        }
     } 
 
     private void EndingScene()
     {
+        switch (endState)
+        {
+            case 0:
+                SceneManager.LoadScene("CardboardEnding");
+                break;
 
+            case 1:
+                SceneManager.LoadScene("SilverEnding");
+                break;
+
+            case 2:
+                SceneManager.LoadScene("GoldEnding");
+                break;
+
+            default:
+                SceneManager.LoadScene("CardboardEnding");
+                break;
+        }
     }
 
 

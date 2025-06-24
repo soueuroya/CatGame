@@ -33,7 +33,7 @@ public class SaveManager : MonoBehaviour
 
         for (int i = 1; i < level; i++)
         {
-            if(PlayerPrefs.HasKey("level" + i + "coins"))
+            if (PlayerPrefs.HasKey("level" + i + "coins"))
             {
                 totalCoinsForLevel += PlayerPrefs.GetInt("level" + i + "coins");
             }
@@ -45,5 +45,10 @@ public class SaveManager : MonoBehaviour
     public void ResetData()
     {
         PlayerPrefs.DeleteAll();
+    }
+
+    public void SaveGoodEnding()
+    {
+        PlayerPrefs.SetInt("GoodEnding", 1);
     }
 }

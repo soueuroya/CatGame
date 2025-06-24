@@ -38,4 +38,13 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level10.unity
     guid: b80f6985891dd264884e966e982c7f1e
+  - enabled: 1
+    path: Assets/Scenes/CardboardEnding.unity
+    guid: 1dad135d3bdbfa249a1cb879ad68b023
+  - enabled: 1
+    path: Assets/Scenes/SilverEnding.unity
+    guid: 9611a2369b158f84aaae0cc4ee5053c4
+  - enabled: 1
+    path: Assets/Scenes/GoldEnding.unity
+    guid: 2beb695fc5b12db41b7942c52ac2c6d2
   m_configObjects: {}
