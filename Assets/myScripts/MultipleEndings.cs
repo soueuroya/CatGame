@@ -48,7 +48,7 @@ public class MultipleEndings : MonoBehaviour
     {
         if (inventory != null)
         {
-            if (inventory.CurrentCoin >= 17)
+            if (inventory.CurrentCoin >= 23)
             {
                 endState = 0;
                 SaveManager.Instance?.SaveGoodEnding();
