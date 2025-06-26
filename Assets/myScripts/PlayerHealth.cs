@@ -1,4 +1,5 @@
 using System.Collections;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 //Player does not take damage when entering an enemy hiding spot due to TakeDamage no longer having a damage indicator
@@ -16,9 +17,20 @@ public class PlayerHealth : MonoBehaviour
     public SpriteRenderer playerSr;
     public Movement playerMovement;
 
+    public static PlayerHealth Instance;
+
     // Start is called before the first frame update
     void Start()
     {
+        if (Instance == null)
+        {
+            Instance = this;
+            //DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
         currentHealth = maxHealth;
         respawnLocation = transform.position;
         UpdateHealthUI();
@@ -33,13 +45,15 @@ public class PlayerHealth : MonoBehaviour
 
         // reduce health
         currentHealth -= amount;
-        if(currentHealth <= 0)
+        if(currentHealth <= 0 && !isDead)
         {
-            playerMovement.enabled = false;
+            //playerMovement.enabled = false;
             isDead = true;
+            MultipleDeaths.Instance.RandomNumber();
+            playerSr.enabled = false;
             Respawn();
         }
-        else
+        else if (!isDead)
         {
             // trigger blinking only if not dead
             immunedTime = immuned;
@@ -95,13 +109,14 @@ public class PlayerHealth : MonoBehaviour
 
     public void Respawn()
     {
-        transform.position = respawnLocation;
+        //transform.position = respawnLocation;
 
         playerMovement.StopMovement();
 
-        RespawnAnimation();
+        //RespawnAnimation();
         
-        Invoke("UnlockMovement", 2); // reviving player after 2 seconds
+        //Invoke("UnlockMovement", 2); // reviving player after 2 seconds
+
     }
 
     private void RespawnAnimation()

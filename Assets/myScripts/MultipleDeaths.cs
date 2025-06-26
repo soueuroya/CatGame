@@ -1,31 +1,33 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class MultipleDeaths : MonoBehaviour
 {
-    public PlayerHealth currentHealth;
 
     public Image imageDisplay;
     public Sprite[] sprites;
-    int health;
 
+    public GameObject gameObject;
+
+    public static MultipleDeaths Instance;
+
+    // Start is called before the first frame update
     void Start()
     {
-        currentHealth = currentHealth.GetComponent<PlayerHealth>();
-    }
-
-    public void DeathScreen()
-    {
-        //PlayerHealth.currentHealth;
-        //if (currentHealth <= 0)
+        if (Instance == null)
         {
-            RandomNumber();
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
         }
     }
 
     public void RandomNumber()
     {
+        gameObject.SetActive(true);
         int randomNumber = Random.Range(1, 5);
         Debug.Log("Random number between 1 and 5: " + randomNumber);
         imageDisplay.sprite = sprites[randomNumber];
