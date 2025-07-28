@@ -5578,8 +5578,8 @@ MonoBehaviour:
   holdTime: 1
   Maxright: 80
   Maxleft: 80
-  minimumDistance: 50
-  maximumDistance: 90
+  minimumDistance: 100
+  maximumDistance: 200
   isFacingRight: 0
   animator: {fileID: 1953667037}
 --- !u!61 &939598782

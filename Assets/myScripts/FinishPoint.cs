@@ -12,14 +12,12 @@ public class FinishPoint : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && isActive && isColliding)
         {
-            print("Key Down");
             SaveInventory();
             UnlockNewLevel();
             isActive = false;
         }
         else if (Input.GetKeyUp(KeyCode.E))
         {
-            print("Key Up");
             return;
         }
     }
