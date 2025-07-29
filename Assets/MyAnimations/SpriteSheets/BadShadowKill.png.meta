@@ -1,0 +1,1346 @@
+fileFormatVersion: 2
+guid: e6372a42db61a1e45be4d9a4c0eed2fa
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: BadShadowKill_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 4277
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 54049e9d6da1de94daf75c6473e458dc
+      internalID: 1422109241
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_1
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 4277
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 34f0a361997c22d47bd25b377daff500
+      internalID: 1270401994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_2
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 4277
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22f990645c7a2c347b640500f61759f6
+      internalID: 1510314523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_3
+      rect:
+        serializedVersion: 2
+        x: 2406
+        y: 4277
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5b9f8236f125f4d4e9ebb2da647e4841
+      internalID: -732282130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_4
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 4277
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4526295995451d47a44734eb183cef8
+      internalID: -422066384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_5
+      rect:
+        serializedVersion: 2
+        x: 4010
+        y: 4277
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: afa0dca9e22974047b720482d25431fc
+      internalID: -1178384078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_6
+      rect:
+        serializedVersion: 2
+        x: 4812
+        y: 4277
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c4481976b0ded134aa1d937cda4c9c23
+      internalID: 145276896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3666
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 104f4e9605fceb745aefa5df98bc0974
+      internalID: 1741927141
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_8
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 3666
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c081fa025a9cb494497d63c9607fea25
+      internalID: -2036921669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_9
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 3666
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3bec8cf601721494ca977676a3c3e281
+      internalID: -566698191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_10
+      rect:
+        serializedVersion: 2
+        x: 2406
+        y: 3666
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17dba780316785e43b72bf88ddb7f93d
+      internalID: 2017189628
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_11
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 3666
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ff4f2284527a79346bf51c98c953b1ba
+      internalID: 1421476948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_12
+      rect:
+        serializedVersion: 2
+        x: 4010
+        y: 3666
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4dd815aa731d16a499634518f3c72e07
+      internalID: 1893839561
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_13
+      rect:
+        serializedVersion: 2
+        x: 4812
+        y: 3666
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9865c61ef23ff324ebb2d20be1fcc4b0
+      internalID: -1753033694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3055
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d97aec6db9c7874c85c98730ea866c5
+      internalID: 582335457
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_15
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 3055
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b550aad6c9757dd4596f66372fbbefa2
+      internalID: -1405879816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_16
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 3055
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ab1d86a2bc885f645a1bb1ccd26f551b
+      internalID: 934297453
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_17
+      rect:
+        serializedVersion: 2
+        x: 2406
+        y: 3055
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddab802a4dc30e24ca6670b1b24ccd44
+      internalID: -1454560566
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_18
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 3055
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 16e9bfba69da9a24b9b096a97a1f4969
+      internalID: -1297317133
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_19
+      rect:
+        serializedVersion: 2
+        x: 4010
+        y: 3055
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12eee194bb42b1a49a07dd4384f13fd1
+      internalID: -149717757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_20
+      rect:
+        serializedVersion: 2
+        x: 4812
+        y: 3055
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e568cadb262bfd446b3fe6739819ffcd
+      internalID: -1642736653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2444
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b0ce7e078b9e4a842870c16bf9e2f312
+      internalID: 269539242
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_22
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 2444
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 260b48ae3961c9e4587fc5932a39cd70
+      internalID: 278525874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_23
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 2444
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2e236d793ebeb274abd3f072f5857fcf
+      internalID: 1348335660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_24
+      rect:
+        serializedVersion: 2
+        x: 2406
+        y: 2444
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6a91124119fa194aa0446dbc7439382
+      internalID: 1609030816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_25
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 2444
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5181ab1b111c2ea458fb24a7fa5f358a
+      internalID: -448536978
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_26
+      rect:
+        serializedVersion: 2
+        x: 4010
+        y: 2444
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb26962be197dcb40b84f20167082781
+      internalID: -653506114
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_27
+      rect:
+        serializedVersion: 2
+        x: 4812
+        y: 2444
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a21f3751397f8bc42a566375683d3551
+      internalID: 457801813
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1833
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ac2bf3e0dbca444cb334b794b0f7f18
+      internalID: 2125307693
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_29
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 1833
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b145e9caa151fd4f94cb9793fcb0136
+      internalID: 937147069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_30
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 1833
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13bbd66be52057245a756ab742bbc879
+      internalID: -196749858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_31
+      rect:
+        serializedVersion: 2
+        x: 2406
+        y: 1833
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b79f399bb18b6d4468014255d64793c9
+      internalID: -2040587577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_32
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 1833
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dea18d66357999d47abe9f4bdae51af6
+      internalID: -844601060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_33
+      rect:
+        serializedVersion: 2
+        x: 4010
+        y: 1833
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d2a064e8c7df6b241aa9699a0b3b3d09
+      internalID: -468133024
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_34
+      rect:
+        serializedVersion: 2
+        x: 4812
+        y: 1833
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a505ad2f2c118e49a475c6888a667b1
+      internalID: 1585690006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1222
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ed9de9d8e6b0ce4689f7ff407d3979b
+      internalID: 750156771
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_36
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 1222
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de07dd93bdbe5ba4a8991cfc02f3331c
+      internalID: -63236864
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_37
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 1222
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 45837e1a62756a8458d7ec7523e212df
+      internalID: 1828910017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_38
+      rect:
+        serializedVersion: 2
+        x: 2406
+        y: 1222
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a34c3d3e3e9487e4a830b2f4c48eff9e
+      internalID: 1912430119
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_39
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 1222
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f98ba6b058d7d344ca75a8fb4011cf65
+      internalID: 400145166
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_40
+      rect:
+        serializedVersion: 2
+        x: 4010
+        y: 1222
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6eff4f86deefb7a47941613944de0307
+      internalID: 1397790964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_41
+      rect:
+        serializedVersion: 2
+        x: 4812
+        y: 1222
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65c8b910e470230428185e9fa8bf7cdc
+      internalID: 1828626848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 611
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4b1471c5228b7243812b1f96b2e4fc1
+      internalID: 254159333
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_43
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 611
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3255487fa3efc24baba9d1769a0e4ac
+      internalID: -1170638640
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_44
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 611
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7566ce004d1501a40abb7e95727d0781
+      internalID: 193090896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_45
+      rect:
+        serializedVersion: 2
+        x: 2406
+        y: 611
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 781a62ff5aadda9468000ec6f5d1064b
+      internalID: -1613279041
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_46
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 611
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7d7ee3c96c6f5874ab3d63dae1939643
+      internalID: -685499191
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_47
+      rect:
+        serializedVersion: 2
+        x: 4010
+        y: 611
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3a10e562f24aa449ad55bdae02ef8e2
+      internalID: 977769600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_48
+      rect:
+        serializedVersion: 2
+        x: 4812
+        y: 611
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e3086b271824a784098a5dfeec892f2d
+      internalID: 1145286945
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_49
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 359b269a3188f1b419da6b31858e6585
+      internalID: -1124287527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_50
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 0
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5c07fba45af1ffe40955782c68b29489
+      internalID: -523093262
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_51
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 0
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53df8a5456641de4f8705d0f8b751805
+      internalID: 786071927
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_52
+      rect:
+        serializedVersion: 2
+        x: 2406
+        y: 0
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebe0ec997e1295649aa226afc92cc249
+      internalID: 1640301704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_53
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 0
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 168d0407ca40ff742b07f8dbb0005345
+      internalID: 1355596920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_54
+      rect:
+        serializedVersion: 2
+        x: 4010
+        y: 0
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c148264556eb66d40b277e39f5608ee0
+      internalID: 88200542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BadShadowKill_55
+      rect:
+        serializedVersion: 2
+        x: 4812
+        y: 0
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cef63a539e6ba934ab4c705b217e7c68
+      internalID: 256926653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      BadShadowKill_0: 1422109241
+      BadShadowKill_1: 1270401994
+      BadShadowKill_10: 2017189628
+      BadShadowKill_11: 1421476948
+      BadShadowKill_12: 1893839561
+      BadShadowKill_13: -1753033694
+      BadShadowKill_14: 582335457
+      BadShadowKill_15: -1405879816
+      BadShadowKill_16: 934297453
+      BadShadowKill_17: -1454560566
+      BadShadowKill_18: -1297317133
+      BadShadowKill_19: -149717757
+      BadShadowKill_2: 1510314523
+      BadShadowKill_20: -1642736653
+      BadShadowKill_21: 269539242
+      BadShadowKill_22: 278525874
+      BadShadowKill_23: 1348335660
+      BadShadowKill_24: 1609030816
+      BadShadowKill_25: -448536978
+      BadShadowKill_26: -653506114
+      BadShadowKill_27: 457801813
+      BadShadowKill_28: 2125307693
+      BadShadowKill_29: 937147069
+      BadShadowKill_3: -732282130
+      BadShadowKill_30: -196749858
+      BadShadowKill_31: -2040587577
+      BadShadowKill_32: -844601060
+      BadShadowKill_33: -468133024
+      BadShadowKill_34: 1585690006
+      BadShadowKill_35: 750156771
+      BadShadowKill_36: -63236864
+      BadShadowKill_37: 1828910017
+      BadShadowKill_38: 1912430119
+      BadShadowKill_39: 400145166
+      BadShadowKill_4: -422066384
+      BadShadowKill_40: 1397790964
+      BadShadowKill_41: 1828626848
+      BadShadowKill_42: 254159333
+      BadShadowKill_43: -1170638640
+      BadShadowKill_44: 193090896
+      BadShadowKill_45: -1613279041
+      BadShadowKill_46: -685499191
+      BadShadowKill_47: 977769600
+      BadShadowKill_48: 1145286945
+      BadShadowKill_49: -1124287527
+      BadShadowKill_5: -1178384078
+      BadShadowKill_50: -523093262
+      BadShadowKill_51: 786071927
+      BadShadowKill_52: 1640301704
+      BadShadowKill_53: 1355596920
+      BadShadowKill_54: 88200542
+      BadShadowKill_55: 256926653
+      BadShadowKill_6: 145276896
+      BadShadowKill_7: 1741927141
+      BadShadowKill_8: -2036921669
+      BadShadowKill_9: -566698191
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

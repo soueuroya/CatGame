@@ -1,0 +1,1192 @@
+fileFormatVersion: 2
+guid: 358907cd3a6872e479b0828b8cbce1a6
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: badshadowblinking_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3666
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 339d87cd495e6e245ad089b36cb5d414
+      internalID: -1228336804
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_1
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 3666
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 000cd3ae7562e5f4785c789efbb0bd89
+      internalID: 361721795
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_2
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 3666
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c175166c1ae0b21478614a7efc7c0163
+      internalID: 1069807193
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_3
+      rect:
+        serializedVersion: 2
+        x: 2406
+        y: 3666
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2dae5cac4d077147922ae1e81fb1d1e
+      internalID: 2065950617
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_4
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 3666
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 384e172ac687b2341b225485ce4014a2
+      internalID: 887191050
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_5
+      rect:
+        serializedVersion: 2
+        x: 4010
+        y: 3666
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f2b7bce078915f6458c9fe534ddb5444
+      internalID: -889764855
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_6
+      rect:
+        serializedVersion: 2
+        x: 4812
+        y: 3666
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: efd7cc7a0e1552a468f95e655cfa897f
+      internalID: 1055246061
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 3055
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8f9cbc4e5f3674b48b8f245a305ecee4
+      internalID: 641163390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_8
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 3055
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f7a6c9e8d675c3c48b6faf12eceb8ede
+      internalID: 2133894248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_9
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 3055
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d36bf5a270a69134b95e9592f816a008
+      internalID: -1620905738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_10
+      rect:
+        serializedVersion: 2
+        x: 2406
+        y: 3055
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24ec5f207a0879a41836d44117581977
+      internalID: -871908215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_11
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 3055
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2dcf73bbc2895ec4f8f210ebea2888f6
+      internalID: -1315384989
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_12
+      rect:
+        serializedVersion: 2
+        x: 4010
+        y: 3055
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae84c3ab83328c4438912ee85bf3b83d
+      internalID: 326697320
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_13
+      rect:
+        serializedVersion: 2
+        x: 4812
+        y: 3055
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a849896c5085f84a921334bab323390
+      internalID: 1768886209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 2444
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdaf786b141050b47be8302112c2342c
+      internalID: 1555371160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_15
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 2444
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6fa883ae9dc29ab4ba97e669b6a615d9
+      internalID: 1720079995
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_16
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 2444
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c5492d954d3f35b42957c791ac20616f
+      internalID: 713589448
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_17
+      rect:
+        serializedVersion: 2
+        x: 2406
+        y: 2444
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f38ddcdc6c3be9f45b7dd5606811afa4
+      internalID: -2031976846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_18
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 2444
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ab9547b605f1e248b53593bbb6e17b0
+      internalID: -1668529264
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_19
+      rect:
+        serializedVersion: 2
+        x: 4010
+        y: 2444
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f6a7996d25858e94f9a3dbea88a3dc07
+      internalID: 1098853554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_20
+      rect:
+        serializedVersion: 2
+        x: 4812
+        y: 2444
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9d1317303f32738498bd77494018cb24
+      internalID: -1958911345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_21
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1833
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1ae94f920b6831b42953accd7308de54
+      internalID: 1455471064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_22
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 1833
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6d37dae17bed7bf4b80a414786723f43
+      internalID: -2002018130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_23
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 1833
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebd2e94d43316ef48ac12a3b1ded78cc
+      internalID: -1339824117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_24
+      rect:
+        serializedVersion: 2
+        x: 2406
+        y: 1833
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 85ae428583c17e248ad7ba0bef4cfe1f
+      internalID: 1435440950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_25
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 1833
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a07ecae2732d604db56616067660db1
+      internalID: -1962685209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_26
+      rect:
+        serializedVersion: 2
+        x: 4010
+        y: 1833
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82fde8aaafaaa9046b0bb1ee5950cd38
+      internalID: 1929810265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_27
+      rect:
+        serializedVersion: 2
+        x: 4812
+        y: 1833
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1cb31536dd9b75f4b803d1af01b16cac
+      internalID: 489855631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_28
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1222
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 13b4576db350dd3499f83b2c28cfa255
+      internalID: 1955914665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_29
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 1222
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 51787e06b72fc3544ae903707369d566
+      internalID: -913592391
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_30
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 1222
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f4a51d8ad0b1af04990ec2205998fd79
+      internalID: 309609462
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_31
+      rect:
+        serializedVersion: 2
+        x: 2406
+        y: 1222
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db811c7846239324d861583a33e76a1c
+      internalID: -1606372745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_32
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 1222
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa1368461824eff45bcb0d332fa090bb
+      internalID: -1716452367
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_33
+      rect:
+        serializedVersion: 2
+        x: 4010
+        y: 1222
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c0f5c3bbf439144f9d3d3ea248c1148
+      internalID: -1464204844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_34
+      rect:
+        serializedVersion: 2
+        x: 4812
+        y: 1222
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8076be0fb278f474a9d017f10bd36fdf
+      internalID: 1344495209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_35
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 611
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 57197aea3ea14e44698e158e59004a95
+      internalID: 38551641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_36
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 611
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d42fc2632cc9f174f8333d8697285de7
+      internalID: -563890343
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_37
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 611
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 48da343c2cf496d45b2c15e50983bf3e
+      internalID: -253669665
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_38
+      rect:
+        serializedVersion: 2
+        x: 2406
+        y: 611
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0be90975b1237674983ccac8e8f27a06
+      internalID: -1045847008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_39
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 611
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd532e6d1e3a93540ab47fc059e18692
+      internalID: 880535405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_40
+      rect:
+        serializedVersion: 2
+        x: 4010
+        y: 611
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 223d62530cddfcd4cae0fa444487ce45
+      internalID: 804232770
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_41
+      rect:
+        serializedVersion: 2
+        x: 4812
+        y: 611
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6a86e50324bd2d449b71de2609724d24
+      internalID: 1271960785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_42
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d036d141e41eb144cb4b2a6a66ec1be7
+      internalID: 1096639933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_43
+      rect:
+        serializedVersion: 2
+        x: 802
+        y: 0
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a646eee86dc635549b68cf670124ec30
+      internalID: -964006295
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_44
+      rect:
+        serializedVersion: 2
+        x: 1604
+        y: 0
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b38674f9db7cc854aa4a6dbc4632a45d
+      internalID: -499227948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_45
+      rect:
+        serializedVersion: 2
+        x: 2406
+        y: 0
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2638e23c695ceda47b8ed532ff615074
+      internalID: -1543150032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_46
+      rect:
+        serializedVersion: 2
+        x: 3208
+        y: 0
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7829dbdc21f96674da69f1048281a73a
+      internalID: -151078256
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_47
+      rect:
+        serializedVersion: 2
+        x: 4010
+        y: 0
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7a696fd7c7a00dd4284490f9526c9f3f
+      internalID: -57582176
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: badshadowblinking_48
+      rect:
+        serializedVersion: 2
+        x: 4812
+        y: 0
+        width: 802
+        height: 611
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91812bc1c210a334abb386e2261e5329
+      internalID: 1947086017
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      badshadowblinking_0: -1228336804
+      badshadowblinking_1: 361721795
+      badshadowblinking_10: -871908215
+      badshadowblinking_11: -1315384989
+      badshadowblinking_12: 326697320
+      badshadowblinking_13: 1768886209
+      badshadowblinking_14: 1555371160
+      badshadowblinking_15: 1720079995
+      badshadowblinking_16: 713589448
+      badshadowblinking_17: -2031976846
+      badshadowblinking_18: -1668529264
+      badshadowblinking_19: 1098853554
+      badshadowblinking_2: 1069807193
+      badshadowblinking_20: -1958911345
+      badshadowblinking_21: 1455471064
+      badshadowblinking_22: -2002018130
+      badshadowblinking_23: -1339824117
+      badshadowblinking_24: 1435440950
+      badshadowblinking_25: -1962685209
+      badshadowblinking_26: 1929810265
+      badshadowblinking_27: 489855631
+      badshadowblinking_28: 1955914665
+      badshadowblinking_29: -913592391
+      badshadowblinking_3: 2065950617
+      badshadowblinking_30: 309609462
+      badshadowblinking_31: -1606372745
+      badshadowblinking_32: -1716452367
+      badshadowblinking_33: -1464204844
+      badshadowblinking_34: 1344495209
+      badshadowblinking_35: 38551641
+      badshadowblinking_36: -563890343
+      badshadowblinking_37: -253669665
+      badshadowblinking_38: -1045847008
+      badshadowblinking_39: 880535405
+      badshadowblinking_4: 887191050
+      badshadowblinking_40: 804232770
+      badshadowblinking_41: 1271960785
+      badshadowblinking_42: 1096639933
+      badshadowblinking_43: -964006295
+      badshadowblinking_44: -499227948
+      badshadowblinking_45: -1543150032
+      badshadowblinking_46: -151078256
+      badshadowblinking_47: -57582176
+      badshadowblinking_48: 1947086017
+      badshadowblinking_5: -889764855
+      badshadowblinking_6: 1055246061
+      badshadowblinking_7: 641163390
+      badshadowblinking_8: 2133894248
+      badshadowblinking_9: -1620905738
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
