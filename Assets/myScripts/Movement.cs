@@ -8,6 +8,9 @@ public class Movement : MonoBehaviour
     private bool isFacingRight = true;
     private bool isHidding = false;
     private bool isGrappling = false;
+    private bool isAiming = false;
+    private bool isAttacking = false;
+    private bool isJumping = false;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
@@ -15,8 +18,6 @@ public class Movement : MonoBehaviour
     [SerializeField] private Collider2D colliderpl;
     private RigidbodyConstraints2D originalConstraints;
     public static Movement Instance;
-
-
 
     public Animator animator;
 
@@ -44,46 +45,51 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        horizontal = Input.GetAxisRaw("Horizontal");
+        if (!isAttacking)
+        {
+            horizontal = Input.GetAxisRaw("Horizontal");
+            if (Input.GetButtonDown("Jump") && (IsGrounded() || isGrappling))
+            {
+                isJumping = true;
+                if (isGrappling) { Ungrappled(); }
+                animator.SetTrigger("Jump");
+                rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            }
 
-        if (Input.GetButtonDown("Jump") && IsGrounded())
-        {
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
-        }
-        else if (Input.GetButtonDown("Jump") && isGrappling)
-        {
-            Ungrappled();
-            rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+            if (Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.LeftControl))
+            {
+                // is crouching
+                transform.localScale = Vector2.right * transform.localScale.x + Vector2.up * 0.5f; // making character smaller / can be swapped with play animation or something like that
+            }
+            else
+            {
+                // not crouching
+                transform.localScale = Vector2.right * transform.localScale.x + Vector2.up; // reset characters size
+            }
+
+            HandleFlipping();
+            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
         }
 
-        if (Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.LeftControl))
-        {
-            // is crouching
-            transform.localScale = Vector2.right * transform.localScale.x + Vector2.up * 0.5f; // making character smaller / can be swapped with play animation or something like that
-        }
-        else
-        {
-            // not crouching
-            transform.localScale = Vector2.right * transform.localScale.x + Vector2.up; // reset characters size
-        }
+        animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
+        animator.SetFloat("yVelocity", rb.velocity.y);
+        animator.SetBool("Grounded", IsGrounded());
+        animator.SetBool("Jumping", isJumping);
+        animator.SetBool("Aiming", isAiming);
+        animator.SetBool("Grappling", isGrappling);
 
-        HandleFlipping();
+        if (IsGrounded())
+        {
+            isJumping = false;
+        }
     }
 
     private void FixedUpdate()
     {
-        rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
-        if(rb.velocity.x !=0 && IsGrounded())
-        {
-            animator.SetFloat("xVelocity", 1);
-        }
-        else
-        {
-            animator.SetFloat("xVelocity", 0);
-        }
+        
     }
 
-    private bool IsGrounded()
+    public bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
         //add hazardLayer to allow jumping on spikes
@@ -129,6 +135,12 @@ public class Movement : MonoBehaviour
         return isHidding;
     }
 
+    public void SetIsAttacking(bool isAttacking)
+    {
+        rb.velocity = Vector2.zero;
+        this.isAttacking = isAttacking;
+    }
+
     public void StopMovement()
     {
         rb.velocity = Vector2.zero;
@@ -143,5 +155,15 @@ public class Movement : MonoBehaviour
     {
         isGrappling = false;
         GetComponent<GrapplingHook>().Ungrappled();
+    }
+
+    public void SetIsAiming(bool isAiming)
+    {
+        this.isAiming = isAiming;
+    }
+
+    public void SetIsGrappling(bool isGrappling)
+    {
+        this.isGrappling = isGrappling;
     }
 }

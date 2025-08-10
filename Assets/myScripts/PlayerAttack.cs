@@ -18,12 +18,14 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(canAttack && !Movement.Instance.IsHidding() && Input.GetMouseButtonDown(0))
+        if(canAttack && !Movement.Instance.IsHidding() && Input.GetMouseButtonDown(0) && Movement.Instance.IsGrounded())
         {
             // play the animation
             anim.SetTrigger("Attack");
+            anim.SetBool("Attacking", true);
 
             canAttack = false;
+            Movement.Instance.SetIsAttacking(true);
 
             Invoke("AllowAttack", attackCooldown);
 
@@ -33,6 +35,8 @@ public class PlayerAttack : MonoBehaviour
 
             pac.SetAttackStopCallback(() => {
                 ToggleAttackCollision(false);
+                anim.SetBool("Attacking", false);
+                Movement.Instance.SetIsAttacking(false);
             });
         }
     }

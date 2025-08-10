@@ -39,6 +39,8 @@ public class GrapplingHook : MonoBehaviour
         isGrappling = false;
         isTryingToGrapple = false;
         GetComponent<Rigidbody2D>().simulated = true;
+        GetComponent<Movement>().SetIsAiming(false);
+        GetComponent<Movement>().SetIsGrappling(false);
 
         if (currentGrappleHook != null)
         {
@@ -77,6 +79,8 @@ public class GrapplingHook : MonoBehaviour
 
         GrappleRope ropeScript = currentGrappleRope.GetComponent<GrappleRope>();
         ropeScript.Initialize(transform, currentGrappleHook.transform);
+
+        GetComponent<Movement>().SetIsAiming(true);
     }
 
     private float GetAngleBetweenPlayerAndCursor(Vector2 playerPosition)
@@ -98,6 +102,8 @@ public class GrapplingHook : MonoBehaviour
         isTryingToGrapple = false;
         GetComponent<Rigidbody2D>().simulated = false;
         GetComponent<Movement>().Grappled();
+        GetComponent<Movement>().SetIsAiming(false);
+        GetComponent<Movement>().SetIsGrappling(true);
     }
 
     public void Ungrappled()
@@ -105,6 +111,8 @@ public class GrapplingHook : MonoBehaviour
         isTryingToGrapple = false;
         isGrappling = false;
         GetComponent<Rigidbody2D>().simulated = true;
+        GetComponent<Movement>().SetIsAiming(false);
+        GetComponent<Movement>().SetIsGrappling(false);
 
         if (currentGrappleHook != null)
         {
