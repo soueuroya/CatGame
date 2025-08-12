@@ -49,9 +49,7 @@ public class PlayerHealth : MonoBehaviour
         {
             //playerMovement.enabled = false;
             isDead = true;
-            MultipleDeaths.Instance.RandomNumber();
-            playerSr.enabled = false;
-            Respawn();
+            Die();
         }
         else if (!isDead)
         {
@@ -99,31 +97,9 @@ public class PlayerHealth : MonoBehaviour
         playerSr.enabled = true;
     }
 
-    public void UnlockMovement() 
+    public void Die()
     {
-        playerMovement.enabled = true;
-        isDead = false;
-        currentHealth = 3;
-        UpdateHealthUI();
-    }
-
-    public void Respawn()
-    {
-        //transform.position = respawnLocation;
-
-        playerMovement.StopMovement();
-
-        //RespawnAnimation();
-        
-        //Invoke("UnlockMovement", 2); // reviving player after 2 seconds
-
-    }
-
-    private void RespawnAnimation()
-    {
-        playerSr.enabled = true;
-        immunedTime = 0;
-        // play waking up animation
+        playerMovement.SetIsDead(true);
     }
 
     public void CheckPoint(Vector3 newLocation)

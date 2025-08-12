@@ -3,10 +3,9 @@ using UnityEngine;
 
 public class PlayerAnimationCallback : MonoBehaviour
 {
-    private Action onPlayerDeath;
+    private Action onPlayerFinishDeath;
     private Action onPlayerStartAttack;
     private Action onPlayerStopAttack;
-    private Action onPlayerRespawn;
 
     public void SetAttackStartCallback(Action callback)
     {
@@ -18,6 +17,11 @@ public class PlayerAnimationCallback : MonoBehaviour
         onPlayerStopAttack = callback;
     }
 
+    public void SetDeathFinishCallback(Action callback)
+    {
+        onPlayerFinishDeath = callback;
+    }
+
     public void PlayerAttackingStart()
     {
         onPlayerStartAttack?.Invoke();
@@ -26,6 +30,11 @@ public class PlayerAnimationCallback : MonoBehaviour
     public void PlayerAttackingFinish()
     {
         onPlayerStopAttack?.Invoke();
+    }
+
+    public void PlayerDeathFinish()
+    {
+        onPlayerFinishDeath?.Invoke();
     }
 
 }

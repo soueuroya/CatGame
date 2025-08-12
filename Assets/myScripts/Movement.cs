@@ -11,15 +11,17 @@ public class Movement : MonoBehaviour
     private bool isAiming = false;
     private bool isAttacking = false;
     private bool isJumping = false;
+    private bool isDead = false;
+    private PlayerAnimationCallback pac;
+    private RigidbodyConstraints2D originalConstraints;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Collider2D colliderpl;
-    private RigidbodyConstraints2D originalConstraints;
-    public static Movement Instance;
-
     public Animator animator;
+
+    public static Movement Instance;
 
     private void Start()
     {
@@ -38,14 +40,13 @@ public class Movement : MonoBehaviour
         }
 
         originalConstraints = rb.constraints;
-
+        pac = GetComponentInChildren<PlayerAnimationCallback>();
         colliderpl = GetComponent<Collider2D>();
-
     }
 
     void Update()
     {
-        if (!isAttacking)
+        if (!isAttacking && !isDead)
         {
             horizontal = Input.GetAxisRaw("Horizontal");
             if (Input.GetButtonDown("Jump") && (IsGrounded() || isGrappling))
@@ -77,6 +78,7 @@ public class Movement : MonoBehaviour
         animator.SetBool("Jumping", isJumping);
         animator.SetBool("Aiming", isAiming);
         animator.SetBool("Grappling", isGrappling);
+        animator.SetBool("Dead", isDead);
 
         if (IsGrounded())
         {
@@ -144,6 +146,7 @@ public class Movement : MonoBehaviour
     public void StopMovement()
     {
         rb.velocity = Vector2.zero;
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
     public void Grappled()
@@ -165,5 +168,15 @@ public class Movement : MonoBehaviour
     public void SetIsGrappling(bool isGrappling)
     {
         this.isGrappling = isGrappling;
+    }
+
+    public void SetIsDead(bool _isDead)
+    {
+        isDead = _isDead;
+        if (isDead)
+        {
+            animator.SetTrigger("Die");
+            StopMovement();
+        }
     }
 }

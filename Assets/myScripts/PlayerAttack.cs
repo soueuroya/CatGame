@@ -13,6 +13,20 @@ public class PlayerAttack : MonoBehaviour
         attackArea = GetComponentInChildren<AttackArea>(true).gameObject;
         anim = GetComponentInChildren<Animator>();
         pac = GetComponentInChildren<PlayerAnimationCallback>();
+
+        pac.SetDeathFinishCallback(() => {
+            MultipleDeaths.Instance.RandomNumber();
+        });
+
+        pac.SetAttackStartCallback(() => {
+            ToggleAttackCollision(true);
+        });
+
+        pac.SetAttackStopCallback(() => {
+            ToggleAttackCollision(false);
+            anim.SetBool("Attacking", false);
+            Movement.Instance.SetIsAttacking(false);
+        });
     }
 
     // Update is called once per frame
@@ -29,15 +43,6 @@ public class PlayerAttack : MonoBehaviour
 
             Invoke("AllowAttack", attackCooldown);
 
-            pac.SetAttackStartCallback(() => {
-                ToggleAttackCollision(true);
-            });
-
-            pac.SetAttackStopCallback(() => {
-                ToggleAttackCollision(false);
-                anim.SetBool("Attacking", false);
-                Movement.Instance.SetIsAttacking(false);
-            });
         }
     }
 
