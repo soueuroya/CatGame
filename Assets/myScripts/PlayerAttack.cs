@@ -32,7 +32,7 @@ public class PlayerAttack : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(canAttack && !Movement.Instance.IsHidding() && Input.GetMouseButtonDown(0) && Movement.Instance.IsGrounded())
+        if(canAttack && !Movement.Instance.IsHidding() && Input.GetMouseButtonDown(0) && Movement.Instance.IsGrounded() && !Movement.Instance.IsDead())
         {
             // play the animation
             anim.SetTrigger("Attack");

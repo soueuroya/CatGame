@@ -97,6 +97,11 @@ public class Movement : MonoBehaviour
         //add hazardLayer to allow jumping on spikes
     }
 
+    public bool IsDead()
+    {
+        return isDead;
+    }
+
     private void HandleFlipping()
     {
         if (isFacingRight && horizontal < 0f)

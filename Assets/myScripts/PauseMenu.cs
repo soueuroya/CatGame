@@ -21,27 +21,38 @@ public class PauseMenu : MonoBehaviour
 
     public void Pause()
     {
-        pauseMenu.SetActive(true);
-        paused = true;
-        //Time.timeScale = 0;
+        if (Movement.Instance.IsDead()) { return; }
+
+        if (paused)
+        {
+            pauseMenu.SetActive(false);
+            paused = false;
+            Time.timeScale = 1;
+        }
+        else
+        {
+            pauseMenu.SetActive(true);
+            paused = true;
+            Time.timeScale = 0;
+        }
     }
 
     public void Home()
     {
         SceneManager.LoadScene("Menu");
-        //Time.timeScale = 1;
+        Time.timeScale = 1;
     }
 
     public void Resume()
     {
         pauseMenu.SetActive(false);
         paused = false;
-        //Time.timeScale = 1;
+        Time.timeScale = 1;
     }
 
     public void Restart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
-        //Time.timeScale = 1;
+        Time.timeScale = 1;
     }
 }
