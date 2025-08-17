@@ -31,7 +31,7 @@ public class GrappleRope : MonoBehaviour
         //transform.localScale = new Vector3(distance, 1, 1);
 
         // Update the tiling of the sprite
-        ropeRenderer.size = new Vector2(distance/4, 1);
+        ropeRenderer.size = new Vector2(distance/13, 0.14f);
 
         if (distance > maxDistance)
         {

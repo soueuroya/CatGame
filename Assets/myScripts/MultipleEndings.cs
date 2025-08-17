@@ -68,7 +68,7 @@ public class MultipleEndings : MonoBehaviour
     {
         switch (endState)
         {
-            case 0:
+            case 2:
                 SceneManager.LoadScene("CardboardEnding");
                 break;
 
@@ -76,7 +76,7 @@ public class MultipleEndings : MonoBehaviour
                 SceneManager.LoadScene("SilverEnding");
                 break;
 
-            case 2:
+            case 0:
                 SceneManager.LoadScene("GoldEnding");
                 break;
 
