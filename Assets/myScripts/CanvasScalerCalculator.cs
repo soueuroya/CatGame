@@ -26,11 +26,11 @@ public class CanvasScalerCalculator : MonoBehaviour
         if (Camera.main != null && canvasScaler != null)
             if (Camera.main.aspect >= averageRatio)
             {
-                canvasScaler.matchWidthOrHeight = 1;
+                canvasScaler.matchWidthOrHeight = 0;
             }
             else
             {
-                canvasScaler.matchWidthOrHeight = 0;
+                canvasScaler.matchWidthOrHeight = 1;
             }
     }
 
@@ -40,7 +40,7 @@ public class CanvasScalerCalculator : MonoBehaviour
         CalculateScreenScale();
 
         // This runs every x seconds
-        //InvokeRepeating("CalculateScreenScale", 0, 5);
+        InvokeRepeating("CalculateScreenScale", 0, 1);
     }
 
     private void OnDisable()

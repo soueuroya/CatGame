@@ -8,7 +8,7 @@ public class LevelMenu : MonoBehaviour
 
     private void OnEnable()
     {
-        ButtonsToArray();
+        //ButtonsToArray();
         int unlockedLevel = PlayerPrefs.GetInt("UnlockedLevel", 0);
         if (unlockedLevel < 0)
         {
