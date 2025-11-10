@@ -145,9 +145,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 3
-  holdTime: 3
-  animator: {fileID: 0}
+  animator: {fileID: 6157988873883335639}
   IsShadow: 0
+  idleRate: 10
 --- !u!95 &6157988873883335639
 Animator:
   serializedVersion: 5

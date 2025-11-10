@@ -4,30 +4,37 @@ public class FakeHiding : MonoBehaviour
 {
     private PlayerHealth playerHealth;
     public int damage = 3;
-    public float holdTime = 0.5f;
+    private float holdTimeBox = 1.5f;
+    private float holdTimeShadow = 3.5f;
     bool playerIn;
     public Animator animator;
     public bool IsShadow;
+    public float idleRate = 10f;
+
 
     private void Start()
     {
-        animator = GetComponent<Animator>();
+        if (IsShadow)
+        {
+            InvokeRepeating("Idle", 1, idleRate);
+        }
+        
     }
 
     private void Update()
     {
         if (playerIn && playerHealth != null)
         {
-            if (Input.GetKeyDown(KeyCode.W) && IsShadow)
+            if (Input.GetKeyDown(KeyCode.S) && IsShadow)
             {
                 Movement.Instance.ToggleHidding(true); // locks the player right away
-                Invoke("CauseDeath", holdTime);
+                Invoke("CauseDeath", holdTimeShadow);
                 animator.SetTrigger("IntoDeathShadow");
             }
-            if (Input.GetKeyDown(KeyCode.W) && !IsShadow)
+            if (Input.GetKeyDown(KeyCode.S) && !IsShadow)
             {
                 Movement.Instance.ToggleHidding(true); // locks the player right away
-                Invoke("CauseDeath", holdTime);
+                Invoke("CauseDeath", holdTimeBox);
                 animator.SetTrigger("IntoDeathBox");
             }
         }
@@ -53,7 +60,14 @@ public class FakeHiding : MonoBehaviour
     private void CauseDeath()
     {
         playerIn = false;
-        Movement.Instance.ToggleHidding(false);
+        //Movement.Instance.ToggleHidding(false);
         playerHealth.InstantDie();
     }
+
+
+    private void Idle()
+    {
+        animator.SetTrigger("IsIdle");
+    }
+
 }
