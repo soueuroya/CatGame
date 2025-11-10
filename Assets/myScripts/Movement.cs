@@ -175,6 +175,16 @@ public class Movement : MonoBehaviour
         this.isGrappling = isGrappling;
     }
 
+    public void SetInstantDead(bool _isDead)
+    {
+        isDead = _isDead;
+        if (isDead)
+        {
+            StopMovement();
+            MultipleDeaths.Instance.RandomNumber();
+        }
+    }
+
     public void SetIsDead(bool _isDead)
     {
         isDead = _isDead;
