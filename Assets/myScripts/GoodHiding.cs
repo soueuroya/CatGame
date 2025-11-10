@@ -36,13 +36,13 @@ public class GoodHiding : MonoBehaviour
             {
                 Movement.Instance.ToggleHidding(true);
                 overrideIn = true;
-                animator.SetTrigger("HideInShadow");
+                animator.SetTrigger("Hide");
             }
             else if (Input.GetKeyDown(KeyCode.W) && overrideIn && !IsBox) //UnHiding
             {
                 overrideIn = false;
-                animator.SetTrigger("ExitHideInShadow");
-                Invoke("ExitHideInShadow", 0.5f);
+                animator.SetTrigger("UnHide");
+                Invoke("UnHide", 0.5f);
 
             }
         }

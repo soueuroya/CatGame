@@ -9,7 +9,7 @@ public class FakeHiding : MonoBehaviour
     bool playerIn;
     public Animator animator;
     public bool IsShadow;
-    public float idleRate = 10f;
+    public float idleRate = 35f;
 
 
     private void Start()
