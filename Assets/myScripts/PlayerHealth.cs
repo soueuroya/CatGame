@@ -97,6 +97,11 @@ public class PlayerHealth : MonoBehaviour
         playerSr.enabled = true;
     }
 
+    public void InstantDie()
+    {
+        playerMovement.SetInstantDead(true);
+    }
+
     public void Die()
     {
         playerMovement.SetIsDead(true);

@@ -146,6 +146,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   overrideIn: 0
   animator: {fileID: 0}
+  IsBox: 1
 --- !u!95 &2443158955436487536
 Animator:
   serializedVersion: 5

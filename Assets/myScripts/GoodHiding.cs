@@ -7,6 +7,7 @@ public class GoodHiding : MonoBehaviour
     bool playerIn = false;
     public bool overrideIn = false;
     public Animator animator;
+    public bool IsBox;
 
     private void Start()
     {
@@ -17,17 +18,31 @@ public class GoodHiding : MonoBehaviour
     {
         if (playerIn || overrideIn)
         {
-            if (Input.GetKeyDown(KeyCode.S) && !overrideIn) //IsHiding
+            if (Input.GetKeyDown(KeyCode.S) && !overrideIn && IsBox) //IsHiding
             {
                 Movement.Instance.ToggleHidding(true);
                 overrideIn = true;
                 animator.SetTrigger("Hide");
             }
-            else if (Input.GetKeyDown(KeyCode.W) && overrideIn) //UnHiding
+            else if (Input.GetKeyDown(KeyCode.W) && overrideIn && IsBox) //UnHiding
             {
                 overrideIn = false;
                 animator.SetTrigger("UnHide");
                 Invoke("UnHide", 0.5f);
+
+            }
+
+            if (Input.GetKeyDown(KeyCode.S) && !overrideIn && !IsBox) //IsHiding
+            {
+                Movement.Instance.ToggleHidding(true);
+                overrideIn = true;
+                animator.SetTrigger("HideInShadow");
+            }
+            else if (Input.GetKeyDown(KeyCode.W) && overrideIn && !IsBox) //UnHiding
+            {
+                overrideIn = false;
+                animator.SetTrigger("ExitHideInShadow");
+                Invoke("ExitHideInShadow", 0.5f);
 
             }
         }

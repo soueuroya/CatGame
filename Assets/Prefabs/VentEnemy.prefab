@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4328382549127050293}
   - component: {fileID: 1388939002313437042}
   - component: {fileID: 3609784582791394128}
+  - component: {fileID: 6157988873883335639}
   m_Layer: 0
   m_Name: VentEnemy
   m_TagString: Vent
@@ -143,8 +144,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3cc73222b3e81824daa88e111227aebe, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerSr: {fileID: 0}
-  playerMovement: {fileID: 0}
-  playerHealth: {fileID: 0}
   damage: 3
   holdTime: 3
+  animator: {fileID: 0}
+  IsShadow: 0
+--- !u!95 &6157988873883335639
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6571141375097282053}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 0a8cb9db4162b7945be9300c75c884d8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
