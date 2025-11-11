@@ -23,21 +23,33 @@ public class FakeHiding : MonoBehaviour
 
     private void Update()
     {
-        if (playerIn && playerHealth != null)
+        if ((playerIn && playerHealth != null) && Movement.Instance.CanHide())
         {
             if (Input.GetKeyDown(KeyCode.S) && IsShadow)
             {
-                Movement.Instance.ToggleHidding(true); // locks the player right away
+                Movement.Instance.ToggleHiding(true); // locks the player right away
+                Movement.Instance.AnimateShadow();
                 Invoke("CauseDeath", holdTimeShadow);
                 animator.SetTrigger("IntoDeathShadow");
+                LeanTween.moveX(Movement.Instance.gameObject, transform.position.x, 0.5f).setOnComplete(value => {
+                    Movement.Instance.DarkenPlayer();
+                    Movement.Instance.gameObject.transform.position = new Vector3(transform.position.x, Movement.Instance.gameObject.transform.position.y, Movement.Instance.gameObject.transform.position.z);
+                    Invoke("HidePlayer", 0.46f);
+                });
             }
             if (Input.GetKeyDown(KeyCode.S) && !IsShadow)
             {
-                Movement.Instance.ToggleHidding(true); // locks the player right away
+                Movement.Instance.ToggleHiding(true); // locks the player right away
+                Movement.Instance.HideSprite();
                 Invoke("CauseDeath", holdTimeBox);
                 animator.SetTrigger("IntoDeathBox");
             }
         }
+    }
+
+    private void HidePlayer()
+    {
+        Movement.Instance.HideSprite();
     }
 
     void OnTriggerEnter2D(Collider2D collision)

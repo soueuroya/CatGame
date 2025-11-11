@@ -24,7 +24,7 @@ public class EnemyAttack : MonoBehaviour
             playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
             // if collision object is not hidding
 
-            if (playerHealth != null && Movement.Instance != null && !Movement.Instance.IsHidding())
+            if (playerHealth != null && Movement.Instance != null && !Movement.Instance.IsHiding())
             {
                 playerHealth.TakeDamage(damage);
             }

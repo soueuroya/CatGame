@@ -103,7 +103,7 @@ public class EnemyFollow : MonoBehaviour
             }
         }
 
-        if (Vector2.Distance(transform.position, Movement.Instance.transform.position) < minimumDistance && !Movement.Instance.IsHidding()) // if player gets too close
+        if (Vector2.Distance(transform.position, Movement.Instance.transform.position) < minimumDistance && !Movement.Instance.IsHiding()) // if player gets too close
         {
             if ((isFacingRight && Movement.Instance.transform.position.x > transform.position.x) || (!isFacingRight && Movement.Instance.transform.position.x < transform.position.x))
             {
@@ -118,7 +118,7 @@ public class EnemyFollow : MonoBehaviour
                 Flip();
             }
         }
-        else if (Vector2.Distance(transform.position, Movement.Instance.transform.position) > maximumDistance || Movement.Instance.IsHidding()) // if player gets too far
+        else if (Vector2.Distance(transform.position, Movement.Instance.transform.position) > maximumDistance || Movement.Instance.IsHiding()) // if player gets too far
         {
             isChasing = false; //Is this the right way to make the enemy go back to its route?
         }

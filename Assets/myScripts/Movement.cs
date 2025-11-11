@@ -12,6 +12,7 @@ public class Movement : MonoBehaviour
     private bool isAttacking = false;
     private bool isJumping = false;
     private bool isDead = false;
+    private bool isCrounching = false;
     private PlayerAnimationCallback pac;
     private RigidbodyConstraints2D originalConstraints;
     [SerializeField] private Rigidbody2D rb;
@@ -19,6 +20,7 @@ public class Movement : MonoBehaviour
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private SpriteRenderer sr;
     [SerializeField] private Collider2D colliderpl;
+    [SerializeField] private GameObject flipTarget;
     public Animator animator;
 
     public static Movement Instance;
@@ -46,7 +48,7 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        if (!isAttacking && !isDead)
+        if (!isAttacking && !isDead && !isHidding)
         {
             horizontal = Input.GetAxisRaw("Horizontal");
             if (Input.GetButtonDown("Jump") && (IsGrounded() || isGrappling))
@@ -61,11 +63,13 @@ public class Movement : MonoBehaviour
             {
                 // is crouching
                 transform.localScale = Vector2.right * transform.localScale.x + Vector2.up * 0.5f; // making character smaller / can be swapped with play animation or something like that
+                isCrounching = true;
             }
             else
             {
                 // not crouching
                 transform.localScale = Vector2.right * transform.localScale.x + Vector2.up; // reset characters size
+                isCrounching = false;
             }
 
             HandleFlipping();
@@ -107,40 +111,80 @@ public class Movement : MonoBehaviour
         if (isFacingRight && horizontal < 0f)
         {
             isFacingRight = false;
-            transform.localScale = Vector2.up + Vector2.right * -1;
+            flipTarget.transform.localScale = Vector2.up + Vector2.right * -1;
         }
         else if (!isFacingRight && horizontal > 0f)
         {
             isFacingRight = true;
-            transform.localScale = Vector2.one;
+            flipTarget.transform.localScale = Vector2.one;
         }
     }
 
-    public void ToggleHidding(bool _isHidding)
+    public void ToggleHiding(bool _isHidding)
     {
-        isHidding = _isHidding;
+        if (IsGrounded())
+        {
+            isHidding = _isHidding;
 
-        if (_isHidding)
-        {
-            sr.enabled = false;
-            rb.velocity = Vector2.zero;
-            rb.constraints = RigidbodyConstraints2D.FreezeAll;
-            colliderpl.enabled = false;
-            this.enabled = false;
-        }
-        else
-        {
-            this.enabled = true;
-            sr.enabled = true;
-            rb.constraints = originalConstraints;
-            colliderpl.enabled = true;
+            if (_isHidding)
+            {
+                rb.velocity = Vector2.zero;
+                rb.constraints = RigidbodyConstraints2D.FreezeAll;
+                colliderpl.enabled = false;
+                this.enabled = false;
+            }
+            else
+            {
+                this.enabled = true;
+                rb.constraints = originalConstraints;
+                colliderpl.enabled = true;
+            }
         }
     }
 
-    public bool IsHidding()
+    public void HideSprite()
+    {
+        sr.enabled = false;
+    }
+
+    public void DarkenPlayer()
+    {
+        LeanTween.color(sr.gameObject, new Color(0f, 0f, 0f, 1f), 0.36f).setDelay(0.1f);
+    }
+
+    public void ShowSprite()
+    {
+        sr.enabled = true;
+    }
+
+    public void AnimateShadow()
+    {
+        animator.SetBool("isHiding", true);
+        animator.SetTrigger("HideInShadow");
+    }
+
+    public void AnimateExitShadow()
+    {
+        animator.SetTrigger("ExitHideInShadow");
+        Invoke("SetIsHiddingFalse", 0.9f);
+    }
+
+    public void SetIsHiddingFalse()
+    {
+        animator.SetBool("isHiding", false);
+        ToggleHiding(false);
+    }
+
+    public bool CanHide()
+    {
+        return (!isAttacking && !isCrounching && !isJumping && IsGrounded() && !isGrappling && !isDead);
+    }
+
+    public bool IsHiding()
     {
         return isHidding;
     }
+
 
     public void SetIsAttacking(bool isAttacking)
     {
