@@ -1690,7 +1690,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: minimumDistance
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4206,7 +4206,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: minimumDistance
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -4732,11 +4732,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 263529038360902035, guid: 73048b498522cbe4ab607083a2e7e16a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 312.62076
+      value: 312.5
       objectReference: {fileID: 0}
     - target: {fileID: 263529038360902035, guid: 73048b498522cbe4ab607083a2e7e16a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 72.37169
+      value: 57
       objectReference: {fileID: 0}
     - target: {fileID: 263529038360902035, guid: 73048b498522cbe4ab607083a2e7e16a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -5786,6 +5786,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1190807188}
     m_Modifications:
     - target: {fileID: 3805577841117010714, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
+      propertyPath: m_LocalScale.x
+      value: -3.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3805577841117010714, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: m_LocalPosition.x
       value: 286.8
       objectReference: {fileID: 0}
@@ -5825,9 +5829,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3805577841117010714, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
+      propertyPath: m_ConstrainProportionsScale
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7529002461917269853, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: m_Name
       value: BasicEnemy (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
+      propertyPath: isFacingRight
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: maximumDistance
@@ -5835,7 +5847,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: minimumDistance
-      value: 80
+      value: 100
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -7984,11 +7996,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 263529038360902035, guid: 73048b498522cbe4ab607083a2e7e16a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 352.62076
+      value: 380.4
       objectReference: {fileID: 0}
     - target: {fileID: 263529038360902035, guid: 73048b498522cbe4ab607083a2e7e16a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 155.37169
+      value: 155.2
       objectReference: {fileID: 0}
     - target: {fileID: 263529038360902035, guid: 73048b498522cbe4ab607083a2e7e16a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10987,7 +10999,7 @@ PolygonCollider2D:
       - {x: -0.7006373, y: -68.05257}
       - {x: -0.40325508, y: -73.917076}
       - {x: -0.10576448, y: -77.29644}
-      - {x: 0.013514847, y: -70.58534}
+      - {x: 0.029307496, y: -70.58534}
       - {x: 0.030594528, y: -19.420835}
   m_UseDelaunayMesh: 0
 --- !u!1 &2065504120
