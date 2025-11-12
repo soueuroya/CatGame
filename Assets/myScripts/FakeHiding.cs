@@ -58,6 +58,7 @@ public class FakeHiding : MonoBehaviour
         {
             playerIn = true;
             playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
+            Movement.Instance.SetCanLookDown(false);
         }
     }
 
@@ -66,6 +67,7 @@ public class FakeHiding : MonoBehaviour
         if (collision.gameObject.tag == "Player")
         {
             playerIn = false;
+            Movement.Instance.SetCanLookDown(true);
         }
     }
 

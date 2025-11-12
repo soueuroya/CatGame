@@ -4,7 +4,7 @@ public class EnemyAttack : MonoBehaviour
 {
     private PlayerHealth playerHealth;
     public int damage = 1;
-
+    private bool isDead = false;
     public Animator animator;
 
     private void Start()
@@ -14,7 +14,17 @@ public class EnemyAttack : MonoBehaviour
 
     public void Attack()
     {
+        if (isDead)
+        {
+            return;
+        }
+
         animator.SetTrigger("Attack");
+    }
+
+    public void SetIsDead(bool _isDead)
+    {
+        isDead = _isDead;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
@@ -26,7 +36,8 @@ public class EnemyAttack : MonoBehaviour
 
             if (playerHealth != null && Movement.Instance != null && !Movement.Instance.IsHiding())
             {
-                playerHealth.TakeDamage(damage);
+                bool isRight = transform.position.x > collision.transform.position.x;
+                playerHealth.TakeDamage(damage, isRight);
             }
         }
     }

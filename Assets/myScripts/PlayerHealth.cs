@@ -16,6 +16,7 @@ public class PlayerHealth : MonoBehaviour
     public int currentHealth;
     public SpriteRenderer playerSr;
     public Movement playerMovement;
+    public Animator animator;
 
     public static PlayerHealth Instance;
 
@@ -36,9 +37,9 @@ public class PlayerHealth : MonoBehaviour
         UpdateHealthUI();
     }
 
-    public void TakeDamage(int amount)
+    public void TakeDamage(int amount, bool isRight)
     {
-        if (immunedTime > 0) // prevent damage if blinking
+        if (immunedTime > 0 || isDead) // prevent damage if blinking
         {
             return;
         }
@@ -55,9 +56,13 @@ public class PlayerHealth : MonoBehaviour
         {
             // trigger blinking only if not dead
             immunedTime = immuned;
-            immuned = 1;
+            immuned = 0.5f;
             playerSr.enabled = false;
+            animator.SetTrigger("Damage");
+            animator.SetBool("TakingDamage", true);
             StartCoroutine(BlinkWhileImmune());
+            Movement.Instance.SetTakingDamage(true);
+            Movement.Instance.Knockback(isRight);
         }
         UpdateHealthUI();
     }
@@ -95,6 +100,8 @@ public class PlayerHealth : MonoBehaviour
 
         // Make sure the player is visible when immunity ends
         playerSr.enabled = true;
+        Movement.Instance.SetTakingDamage(false);
+        animator.SetBool("TakingDamage", false);
     }
 
     public void InstantDie()

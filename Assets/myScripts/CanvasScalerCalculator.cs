@@ -26,11 +26,11 @@ public class CanvasScalerCalculator : MonoBehaviour
         if (Camera.main != null && canvasScaler != null)
             if (Camera.main.aspect >= averageRatio)
             {
-                canvasScaler.matchWidthOrHeight = 1;
+                canvasScaler.matchWidthOrHeight = 0;
             }
             else
             {
-                canvasScaler.matchWidthOrHeight = 0;
+                canvasScaler.matchWidthOrHeight = 1;
             }
     }
 

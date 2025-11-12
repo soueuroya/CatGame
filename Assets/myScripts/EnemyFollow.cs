@@ -13,15 +13,18 @@ public class EnemyFollow : MonoBehaviour
     Vector2 initialPosition;
     public bool isFacingRight = false;
     bool isChasing = false;
+    bool takingDamage = false;
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private Transform groundCheck;
 
     // Start is called before the first frame update
 
-    private EnemyAttack enemyAttack;
     public Animator animator;
     private float attackRate = 1.0f;
     private bool canAttack = false;
     private bool canMove = false;
     private bool isFlipping = false;
+    private bool isDead = false;
 
     void Start()
     {
@@ -32,6 +35,11 @@ public class EnemyFollow : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (isDead || takingDamage || !IsGrounded())
+        {
+            return;
+        }
+
         if (isChasing) // if enemy is chasing
         {
             animator.SetBool("Chasing", true);
@@ -46,16 +54,22 @@ public class EnemyFollow : MonoBehaviour
 
                 if (Movement.Instance.transform.position.x > transform.position.x)
                 {
-                    rbenemy.velocity = Vector2.right * speed;
+                    if (transform.position.x < initialPosition.x + Maxright && isFacingRight && !isFlipping)
+                    {
+                        rbenemy.velocity = new Vector2(speed, rbenemy.velocity.y);
+                    }
                 }
                 else
                 {
-                    rbenemy.velocity = Vector2.right * -speed;
+                    if (transform.position.x > initialPosition.x - Maxleft && !isFacingRight && !isFlipping)
+                    {
+                        rbenemy.velocity = new Vector2(-speed, rbenemy.velocity.y);
+                    }
                 }
             }
             else
             {
-                rbenemy.velocity = Vector2.zero;
+                rbenemy.velocity = new Vector2(0, rbenemy.velocity.y);
             }
         }
         else // if enemy is not chasing
@@ -73,16 +87,16 @@ public class EnemyFollow : MonoBehaviour
 
                 if (isFacingRight)
                 {
-                    rbenemy.velocity = Vector2.right * speed;
+                    rbenemy.velocity = new Vector2(speed, rbenemy.velocity.y);
                 }
                 else
                 {
-                    rbenemy.velocity = Vector2.right * -speed;
+                    rbenemy.velocity = new Vector2(-speed, rbenemy.velocity.y);
                 }
             }
             else
             {
-                rbenemy.velocity = Vector2.zero;
+                rbenemy.velocity = new Vector2(0, rbenemy.velocity.y);
             }
 
             if (transform.position.x > initialPosition.x + Maxright && isFacingRight && !isFlipping)
@@ -125,6 +139,11 @@ public class EnemyFollow : MonoBehaviour
 
     }
 
+    public void SetIsDead(bool _isDead)
+    {
+        isDead = _isDead;
+    }
+
     public void StartWalk()
     {
         canMove = true;
@@ -137,8 +156,14 @@ public class EnemyFollow : MonoBehaviour
     
     private void Attack()
     {
-        animator.SetTrigger("Attack");
         Invoke("AllowAttack", 1);
+
+        if (takingDamage)
+        {
+            return;
+        }
+
+        animator.SetTrigger("Attack");
     }
 
     private void AllowAttack()
@@ -155,5 +180,27 @@ public class EnemyFollow : MonoBehaviour
         animator.SetBool("Moving", true);
         canMove = true;
         isFlipping = false;
+    }
+
+    public void SetTakingDamage(bool _takingDamage)
+    {
+        takingDamage = _takingDamage;
+    }
+
+    public void Knockback(bool isRight)
+    {
+        if (isRight)
+        {
+            rbenemy.AddForce(new Vector2(-60f, 75f), ForceMode2D.Impulse);
+        }
+        else
+        {
+            rbenemy.AddForce(new Vector2(60f, 75f), ForceMode2D.Impulse);
+        }
+    }
+
+    public bool IsGrounded()
+    {
+        return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
     }
 }

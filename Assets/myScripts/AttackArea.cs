@@ -9,7 +9,8 @@ public class AttackArea : MonoBehaviour
         if(collider.GetComponent<EnemyHealth>() != null)
         {
             EnemyHealth currentHealth = collider.GetComponent<EnemyHealth>();
-            currentHealth.TakeDamage(damage);
+            bool isRight = transform.position.x > collider.transform.position.x;
+            currentHealth.TakeDamage(damage, isRight);
         }
     }
 }

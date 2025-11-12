@@ -1,3 +1,4 @@
+using Cinemachine;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -12,15 +13,20 @@ public class Movement : MonoBehaviour
     private bool isAttacking = false;
     private bool isJumping = false;
     private bool isDead = false;
-    private bool isCrounching = false;
+    private bool isCrouching = false;
+    private bool canLook = true;
+    private bool takingDamage = false;
     private PlayerAnimationCallback pac;
     private RigidbodyConstraints2D originalConstraints;
     [SerializeField] private Rigidbody2D rb;
     [SerializeField] private Transform groundCheck;
+    [SerializeField] private Transform headCheck;
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private SpriteRenderer sr;
-    [SerializeField] private Collider2D colliderpl;
+    [SerializeField] private CapsuleCollider2D colliderpl;
     [SerializeField] private GameObject flipTarget;
+    [SerializeField] private CinemachineVirtualCamera virtualCamera;
+    [SerializeField] private CinemachineFramingTransposer transposer;
     public Animator animator;
 
     public static Movement Instance;
@@ -43,12 +49,14 @@ public class Movement : MonoBehaviour
 
         originalConstraints = rb.constraints;
         pac = GetComponentInChildren<PlayerAnimationCallback>();
-        colliderpl = GetComponent<Collider2D>();
+        colliderpl = GetComponent<CapsuleCollider2D>();
+
+        transposer = virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
     }
 
     void Update()
     {
-        if (!isAttacking && !isDead && !isHidding)
+        if (!isAttacking && !isDead && !isHidding && !takingDamage)
         {
             horizontal = Input.GetAxisRaw("Horizontal");
             if (Input.GetButtonDown("Jump") && (IsGrounded() || isGrappling))
@@ -63,16 +71,28 @@ public class Movement : MonoBehaviour
             {
                 // is crouching
                 transform.localScale = Vector2.right * transform.localScale.x + Vector2.up * 0.5f; // making character smaller / can be swapped with play animation or something like that
-                isCrounching = true;
+                colliderpl.size = new Vector2(11.33f, colliderpl.size.y);
+                isCrouching = true;
             }
-            else
+            else if (CanUncrouch())
             {
                 // not crouching
                 transform.localScale = Vector2.right * transform.localScale.x + Vector2.up; // reset characters size
-                isCrounching = false;
+                colliderpl.size = new Vector2(24.53621f, colliderpl.size.y);
+                isCrouching = false;
             }
 
-            HandleFlipping();
+            
+            if (Input.GetKey(KeyCode.S) && canLook)
+            {
+                transposer.m_TrackedObjectOffset = new Vector3(transposer.m_TrackedObjectOffset.x, -72, transposer.m_TrackedObjectOffset.z);
+            }
+            else
+            {
+                transposer.m_TrackedObjectOffset = new Vector3(transposer.m_TrackedObjectOffset.x, 74, transposer.m_TrackedObjectOffset.z);
+            }
+
+                HandleFlipping();
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
         }
 
@@ -101,6 +121,12 @@ public class Movement : MonoBehaviour
         //add hazardLayer to allow jumping on spikes
     }
 
+    public bool CanUncrouch()
+    {
+        return !Physics2D.OverlapCircle(headCheck.position, 5f, groundLayer);
+        //add hazardLayer to allow jumping on spikes
+    }
+
     public bool IsDead()
     {
         return isDead;
@@ -118,6 +144,11 @@ public class Movement : MonoBehaviour
             isFacingRight = true;
             flipTarget.transform.localScale = Vector2.one;
         }
+    }
+
+    public void SetCanLookDown(bool _canLook)
+    {
+        canLook = _canLook;
     }
 
     public void ToggleHiding(bool _isHidding)
@@ -177,7 +208,7 @@ public class Movement : MonoBehaviour
 
     public bool CanHide()
     {
-        return (!isAttacking && !isCrounching && !isJumping && IsGrounded() && !isGrappling && !isDead);
+        return (!isAttacking && !isCrouching && !isJumping && IsGrounded() && !isGrappling && !isDead);
     }
 
     public bool IsHiding()
@@ -236,6 +267,24 @@ public class Movement : MonoBehaviour
         {
             animator.SetTrigger("Die");
             StopMovement();
+        }
+    }
+
+    public void SetTakingDamage(bool _takingDamage)
+    {
+        takingDamage = _takingDamage;
+        isAttacking = false;
+    }
+
+    public void Knockback(bool isRight)
+    {
+        if (isRight)
+        {
+            rb.AddForce(new Vector2(-150f, 175f), ForceMode2D.Impulse);
+        }
+        else
+        {
+            rb.AddForce(new Vector2(150f, 175f), ForceMode2D.Impulse);
         }
     }
 }

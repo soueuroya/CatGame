@@ -27,7 +27,7 @@ public class GrapplingHook : MonoBehaviour
             {
                 ShootGrapple();
             }
-            else if (Input.GetMouseButtonDown(1) && isTryingToGrapple)
+            else if (Input.GetMouseButtonUp(1) && isTryingToGrapple)
             {
                 StopGrapple();
             }

@@ -1,5 +1,36 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &885824411001081018
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 995993210898447151}
+  m_Layer: 3
+  m_Name: GrondCheck
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &995993210898447151
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 885824411001081018}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.77, y: -11.8, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3805577841117010714}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7529002461917269853
 GameObject:
   m_ObjectHideFlags: 0
@@ -16,7 +47,6 @@ GameObject:
   - component: {fileID: 1862316493568560767}
   - component: {fileID: 6645562433795698658}
   - component: {fileID: 2706233193109220041}
-  - component: {fileID: 2895881737348315715}
   m_Layer: 3
   m_Name: BasicEnemy
   m_TagString: Enemy
@@ -36,7 +66,9 @@ Transform:
   m_LocalPosition: {x: -13.02639, y: -118.4, z: -1.5}
   m_LocalScale: {x: 3.8200002, y: 3.8200002, z: 3.8200002}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 5023373129636578201}
+  - {fileID: 995993210898447151}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &4016762224117420624
@@ -104,6 +136,10 @@ MonoBehaviour:
   minimumDistance: 170
   maximumDistance: 190
   isFacingRight: 0
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 64
+  groundCheck: {fileID: 995993210898447151}
   animator: {fileID: 0}
 --- !u!50 &5808985285696817542
 Rigidbody2D:
@@ -131,7 +167,7 @@ Rigidbody2D:
   m_Interpolate: 1
   m_SleepingMode: 0
   m_CollisionDetection: 1
-  m_Constraints: 6
+  m_Constraints: 4
 --- !u!114 &8635151705504388155
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -146,6 +182,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHealth: 3
   currentHealth: 3
+  animator: {fileID: 2706233193109220041}
+  blink: 0.1
+  immuned: 0.6
+  immunedTime: 0
+  enemySr: {fileID: 6645562433795698658}
+  isDead: 0
+  enemyFollow: {fileID: 8278113807677062637}
 --- !u!114 &1862316493568560767
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -233,14 +276,46 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!70 &2895881737348315715
+--- !u!1 &8277533698499991742
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5023373129636578201}
+  - component: {fileID: 6511881528749010413}
+  m_Layer: 11
+  m_Name: Attack
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5023373129636578201
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8277533698499991742}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3805577841117010714}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!70 &6511881528749010413
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7529002461917269853}
-  m_Enabled: 0
+  m_GameObject: {fileID: 8277533698499991742}
+  m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
   m_IncludeLayers:
