@@ -242,7 +242,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 616207912329204651, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: orthographic size
-      value: 126.16
+      value: 176.74
       objectReference: {fileID: 0}
     - target: {fileID: 1097920722617538089, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.x
@@ -250,7 +250,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1097920722617538089, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -3.3248038
+      value: -2.8901467
       objectReference: {fileID: 0}
     - target: {fileID: 1097920722617538089, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.z
@@ -276,10 +276,6 @@ PrefabInstance:
       propertyPath: m_Follow
       value: 
       objectReference: {fileID: 1813465932}
-    - target: {fileID: 2430624899588032791, guid: d267591642562c540852d24e9ae4d667, type: 3}
-      propertyPath: m_Lens.OrthographicSize
-      value: 126.16
-      objectReference: {fileID: 0}
     - target: {fileID: 3902947098812847031, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_Name
       value: Follow Cam
@@ -334,11 +330,11 @@ PrefabInstance:
       objectReference: {fileID: 859763148}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -21.042387
+      value: -20.60881
       objectReference: {fileID: 0}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -2.5803654
+      value: -1.8129697
       objectReference: {fileID: 0}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.z
@@ -359,10 +355,6 @@ PrefabInstance:
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7624018810818198774, guid: d267591642562c540852d24e9ae4d667, type: 3}
-      propertyPath: m_TrackedObjectOffset.y
-      value: 46
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8774421175019317052, guid: d267591642562c540852d24e9ae4d667, type: 3}

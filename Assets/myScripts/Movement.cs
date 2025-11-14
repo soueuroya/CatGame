@@ -7,7 +7,7 @@ public class Movement : MonoBehaviour
     public float speed;
     public float jumpingPower;
     private bool isFacingRight = true;
-    private bool isHidding = false;
+    private bool isHiding = false;
     private bool isGrappling = false;
     private bool isAiming = false;
     private bool isAttacking = false;
@@ -56,7 +56,7 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        if (!isAttacking && !isDead && !isHidding && !takingDamage)
+        if (!isAttacking && !isDead && !isHiding && !takingDamage)
         {
             horizontal = Input.GetAxisRaw("Horizontal");
             if (Input.GetButtonDown("Jump") && (IsGrounded() || isGrappling))
@@ -155,7 +155,7 @@ public class Movement : MonoBehaviour
     {
         if (IsGrounded())
         {
-            isHidding = _isHidding;
+            isHiding = _isHidding;
 
             if (_isHidding)
             {
@@ -163,12 +163,14 @@ public class Movement : MonoBehaviour
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
                 colliderpl.enabled = false;
                 this.enabled = false;
+                sr.sortingOrder = 1;
             }
             else
             {
                 this.enabled = true;
                 rb.constraints = originalConstraints;
                 colliderpl.enabled = true;
+                sr.sortingOrder = 3;
             }
         }
     }
@@ -213,7 +215,7 @@ public class Movement : MonoBehaviour
 
     public bool IsHiding()
     {
-        return isHidding;
+        return isHiding;
     }
 
 
