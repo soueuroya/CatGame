@@ -1359,7 +1359,7 @@ Transform:
   m_GameObject: {fileID: 381861188}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 84.62076, y: 277.3, z: -2}
+  m_LocalPosition: {x: 84.62076, y: 158.3, z: -2}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2330,6 +2330,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1419777383}
     - target: {fileID: 6415898310170796598, guid: 0c3deeb8cb0c4f94294b6f92628e5e28, type: 3}
+      propertyPath: rotatespeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6415898310170796598, guid: 0c3deeb8cb0c4f94294b6f92628e5e28, type: 3}
       propertyPath: wayPoints.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -2341,6 +2345,10 @@ PrefabInstance:
       propertyPath: wayPoints.Array.data[1]
       value: 
       objectReference: {fileID: 381861189}
+    - target: {fileID: 7759445363679442984, guid: 0c3deeb8cb0c4f94294b6f92628e5e28, type: 3}
+      propertyPath: m_MaskInteraction
+      value: 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3617,6 +3625,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1979896372}
     - target: {fileID: 6415898310170796598, guid: 0c3deeb8cb0c4f94294b6f92628e5e28, type: 3}
+      propertyPath: rotatespeed
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 6415898310170796598, guid: 0c3deeb8cb0c4f94294b6f92628e5e28, type: 3}
       propertyPath: wayPoints.Array.size
       value: 2
       objectReference: {fileID: 0}
@@ -4284,7 +4296,7 @@ PrefabInstance:
       objectReference: {fileID: 1779156225}
     - target: {fileID: 6415898310170796598, guid: 0c3deeb8cb0c4f94294b6f92628e5e28, type: 3}
       propertyPath: rotatespeed
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 6415898310170796598, guid: 0c3deeb8cb0c4f94294b6f92628e5e28, type: 3}
       propertyPath: wayPoints.Array.size
