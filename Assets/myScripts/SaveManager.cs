@@ -50,5 +50,6 @@ public class SaveManager : MonoBehaviour
     public void SaveGoodEnding()
     {
         PlayerPrefs.SetInt("GoodEnding", 1);
+        PlayerPrefs.SetInt("Background", 0);
     }
 }
