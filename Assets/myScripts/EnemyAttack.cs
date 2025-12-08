@@ -29,7 +29,7 @@ public class EnemyAttack : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if(collision.gameObject.tag == "Player")
+        if(collision.gameObject.tag == "Player" && !isDead)
         {
             playerHealth = collision.gameObject.GetComponent<PlayerHealth>();
             // if collision object is not hidding

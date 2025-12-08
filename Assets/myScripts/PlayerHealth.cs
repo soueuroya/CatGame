@@ -17,6 +17,7 @@ public class PlayerHealth : MonoBehaviour
     public SpriteRenderer playerSr;
     public Movement playerMovement;
     public Animator animator;
+    public ParticleSystem playerBleed;
 
     public static PlayerHealth Instance;
 
@@ -46,7 +47,14 @@ public class PlayerHealth : MonoBehaviour
 
         // reduce health
         currentHealth -= amount;
-        if(currentHealth <= 0 && !isDead)
+
+
+        playerBleed.Emit(80);
+        playerBleed.Play();
+
+
+        
+        if (currentHealth <= 0 && !isDead)
         {
             //playerMovement.enabled = false;
             isDead = true;

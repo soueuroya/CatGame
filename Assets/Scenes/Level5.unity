@@ -330,11 +330,11 @@ PrefabInstance:
       objectReference: {fileID: 859763148}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.87585
+      value: -19.87922
       objectReference: {fileID: 0}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.4452735
+      value: -1.4452779
       objectReference: {fileID: 0}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.z
@@ -4566,10 +4566,6 @@ PrefabInstance:
       propertyPath: Maxright
       value: 85
       objectReference: {fileID: 0}
-    - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1813465930}
     - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: maximumDistance
       value: 85
@@ -10217,10 +10213,6 @@ PrefabInstance:
       value: 55
       objectReference: {fileID: 0}
     - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1813465930}
-    - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: maximumDistance
       value: 200
       objectReference: {fileID: 0}
@@ -10683,11 +10675,6 @@ PrefabInstance:
 --- !u!1 &1813465929 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4940155336674327046, guid: 8d65435932ad98c448eeeeefa300225b, type: 3}
-  m_PrefabInstance: {fileID: 1813465928}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1813465930 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2674536693704871511, guid: 8d65435932ad98c448eeeeefa300225b, type: 3}
   m_PrefabInstance: {fileID: 1813465928}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &1813465932 stripped
@@ -11655,10 +11642,6 @@ PrefabInstance:
       propertyPath: Maxright
       value: 100
       objectReference: {fileID: 0}
-    - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1813465930}
     - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: isFacingRight
       value: 1

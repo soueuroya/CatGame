@@ -7,7 +7,6 @@ public class MultipleDeaths : MonoBehaviour
     public Image imageDisplay;
     public Sprite[] sprites;
 
-    public GameObject gameObject;
 
     public static MultipleDeaths Instance;
 

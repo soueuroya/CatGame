@@ -4558,10 +4558,6 @@ PrefabInstance:
       value: BasicEnemy (8)
       objectReference: {fileID: 0}
     - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1643834790}
-    - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: isFacingRight
       value: 1
       objectReference: {fileID: 0}
@@ -7059,10 +7055,6 @@ PrefabInstance:
       value: BasicEnemy (9)
       objectReference: {fileID: 0}
     - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1643834790}
-    - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: maximumDistance
       value: 160
       objectReference: {fileID: 0}
@@ -7615,7 +7607,7 @@ PrefabInstance:
       objectReference: {fileID: 1808248030}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.760496
+      value: -19.760233
       objectReference: {fileID: 0}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.y
@@ -8904,10 +8896,6 @@ PrefabInstance:
       value: BasicEnemy (10)
       objectReference: {fileID: 0}
     - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1643834790}
-    - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: maximumDistance
       value: 160
       objectReference: {fileID: 0}
@@ -9690,11 +9678,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 4940155336674327046, guid: 8d65435932ad98c448eeeeefa300225b, type: 3}
   m_PrefabInstance: {fileID: 1643834785}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &1643834790 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2674536693704871511, guid: 8d65435932ad98c448eeeeefa300225b, type: 3}
-  m_PrefabInstance: {fileID: 1643834785}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1671311586
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9755,10 +9738,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicEnemy (6)
       objectReference: {fileID: 0}
-    - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1643834790}
     - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: isFacingRight
       value: 1
@@ -12241,10 +12220,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicEnemy (7)
       objectReference: {fileID: 0}
-    - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1643834790}
     - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: maximumDistance
       value: 155

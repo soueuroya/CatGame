@@ -189,6 +189,7 @@ MonoBehaviour:
   enemySr: {fileID: 6645562433795698658}
   isDead: 0
   enemyFollow: {fileID: 8278113807677062637}
+  enemyAttack: {fileID: 1862316493568560767}
 --- !u!114 &1862316493568560767
 MonoBehaviour:
   m_ObjectHideFlags: 0

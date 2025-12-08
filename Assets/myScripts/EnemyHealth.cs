@@ -14,6 +14,7 @@ public class EnemyHealth : MonoBehaviour
     public SpriteRenderer enemySr;
     public bool isDead = false;
     public EnemyFollow enemyFollow;
+    public EnemyAttack enemyAttack;
 
     // Start is called before the first frame update
     void Start()
@@ -42,6 +43,8 @@ public class EnemyHealth : MonoBehaviour
         {
             Invoke("DeleteEnemy",1f);
             animator.SetTrigger("Dead");
+            animator.SetBool("isDead", true);
+            enemyAttack.SetIsDead(true);
         }
         else if (!isDead)
         {
@@ -49,8 +52,6 @@ public class EnemyHealth : MonoBehaviour
             immunedTime = immuned;
             immuned = 0.5f;
             enemySr.enabled = false;
-            animator.SetTrigger("Damage");
-            animator.SetBool("TakingDamage", true);
             StartCoroutine(BlinkWhileImmune());
             enemyFollow.SetTakingDamage(true);
             enemyFollow.Knockback(isRight);
@@ -68,7 +69,6 @@ public class EnemyHealth : MonoBehaviour
         // Make sure the player is visible when immunity ends
         enemySr.enabled = true;
         enemyFollow.SetTakingDamage(false);
-        animator.SetBool("TakingDamage", false);
     }
 
 

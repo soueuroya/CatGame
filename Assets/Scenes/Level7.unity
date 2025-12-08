@@ -559,10 +559,6 @@ PrefabInstance:
       value: BasicEnemy (8)
       objectReference: {fileID: 0}
     - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1924829396}
-    - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: maximumDistance
       value: 120
       objectReference: {fileID: 0}
@@ -2719,10 +2715,6 @@ PrefabInstance:
       value: BasicEnemy (10)
       objectReference: {fileID: 0}
     - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1924829396}
-    - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: maximumDistance
       value: 120
       objectReference: {fileID: 0}
@@ -4310,10 +4302,6 @@ PrefabInstance:
       value: BasicEnemy (6)
       objectReference: {fileID: 0}
     - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1924829396}
-    - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: isFacingRight
       value: 1
       objectReference: {fileID: 0}
@@ -4730,10 +4718,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicEnemy (11)
       objectReference: {fileID: 0}
-    - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1924829396}
     - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: maximumDistance
       value: 100
@@ -5312,10 +5296,6 @@ PrefabInstance:
       value: BasicEnemy (7)
       objectReference: {fileID: 0}
     - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1924829396}
-    - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: maximumDistance
       value: 120
       objectReference: {fileID: 0}
@@ -5385,10 +5365,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: BasicEnemy (9)
       objectReference: {fileID: 0}
-    - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
-      propertyPath: animator
-      value: 
-      objectReference: {fileID: 1924829396}
     - target: {fileID: 8278113807677062637, guid: 14557e267a562a84ab99e9cb3f700aa8, type: 3}
       propertyPath: maximumDistance
       value: 120
@@ -6525,11 +6501,11 @@ PrefabInstance:
       objectReference: {fileID: 1970772190}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.913054
+      value: -19.916424
       objectReference: {fileID: 0}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.401647
+      value: -1.4016479
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -8716,11 +8692,6 @@ CapsuleCollider2D:
 --- !u!4 &1924829395 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5237338695448394883, guid: 8d65435932ad98c448eeeeefa300225b, type: 3}
-  m_PrefabInstance: {fileID: 1924829391}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1924829396 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 2674536693704871511, guid: 8d65435932ad98c448eeeeefa300225b, type: 3}
   m_PrefabInstance: {fileID: 1924829391}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1925629745
