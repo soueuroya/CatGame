@@ -6,6 +6,7 @@ public class MultipleDeaths : MonoBehaviour
 
     public Image imageDisplay;
     public Sprite[] sprites;
+    public new GameObject gameObject;
 
 
     public static MultipleDeaths Instance;
@@ -16,7 +17,6 @@ public class MultipleDeaths : MonoBehaviour
         if (Instance == null)
         {
             Instance = this;
-            DontDestroyOnLoad(gameObject);
         }
         else
         {
