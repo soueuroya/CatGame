@@ -1143,9 +1143,9 @@ PolygonCollider2D:
       - {x: -113.81065, y: -136.7982}
       - {x: -120.7343, y: -136.96933}
       - {x: -124.286896, y: -136.94962}
-      - {x: -133.80257, y: -138.6881}
-      - {x: -146.6785, y: -143.38829}
-      - {x: -158.81401, y: -143.54305}
+      - {x: -129.1768, y: -138.84229}
+      - {x: -141.28177, y: -143.38829}
+      - {x: -161.89786, y: -143.54305}
       - {x: -163.60872, y: -150.63802}
       - {x: -163.3771, y: -163.12051}
       - {x: -161.19391, y: -177.89372}
@@ -1762,11 +1762,11 @@ PrefabInstance:
       objectReference: {fileID: 1720952331}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.216143
+      value: -19.935196
       objectReference: {fileID: 0}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.3875363
+      value: -1.4218605
       objectReference: {fileID: 0}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.z
