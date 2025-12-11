@@ -1,5 +1,4 @@
 using System.Collections;
-using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
 //Player does not take damage when entering an enemy hiding spot due to TakeDamage no longer having a damage indicator
@@ -48,11 +47,9 @@ public class PlayerHealth : MonoBehaviour
         // reduce health
         currentHealth -= amount;
 
-
+        playerBleed.Stop(true, ParticleSystemStopBehavior.StopEmitting);
         playerBleed.Emit(80);
         playerBleed.Play();
-
-
         
         if (currentHealth <= 0 && !isDead)
         {

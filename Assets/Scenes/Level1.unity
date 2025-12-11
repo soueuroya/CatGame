@@ -2508,77 +2508,13 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1031651101}
     m_Modifications:
-    - target: {fileID: 5753451449307449012, guid: 5b321705428575149a9910390c3cd1e1, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 227.12695
-      objectReference: {fileID: 0}
-    - target: {fileID: 5753451449307449012, guid: 5b321705428575149a9910390c3cd1e1, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: -29.931152
-      objectReference: {fileID: 0}
-    - target: {fileID: 6653207078354701508, guid: 5b321705428575149a9910390c3cd1e1, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.b
-      value: 0.6784314
-      objectReference: {fileID: 0}
-    - target: {fileID: 6653207078354701508, guid: 5b321705428575149a9910390c3cd1e1, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.g
-      value: 0.6784314
-      objectReference: {fileID: 0}
-    - target: {fileID: 6653207078354701508, guid: 5b321705428575149a9910390c3cd1e1, type: 3}
-      propertyPath: m_Colors.m_HighlightedColor.r
-      value: 0.6784314
-      objectReference: {fileID: 0}
-    - target: {fileID: 6653207078354701508, guid: 5b321705428575149a9910390c3cd1e1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6653207078354701508, guid: 5b321705428575149a9910390c3cd1e1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6653207078354701508, guid: 5b321705428575149a9910390c3cd1e1, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1320213581}
-    - target: {fileID: 6653207078354701508, guid: 5b321705428575149a9910390c3cd1e1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Target
-      value: 
-      objectReference: {fileID: 11500000, guid: 9ecbd98531e1863419827b2ebc87d06a, type: 3}
-    - target: {fileID: 6653207078354701508, guid: 5b321705428575149a9910390c3cd1e1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 6653207078354701508, guid: 5b321705428575149a9910390c3cd1e1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: Restart
-      objectReference: {fileID: 0}
-    - target: {fileID: 6653207078354701508, guid: 5b321705428575149a9910390c3cd1e1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
-      value: PauseMenu, Assembly-CSharp
-      objectReference: {fileID: 0}
-    - target: {fileID: 6653207078354701508, guid: 5b321705428575149a9910390c3cd1e1, type: 3}
-      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
-      objectReference: {fileID: 0}
     - target: {fileID: 6799635139277898002, guid: 5b321705428575149a9910390c3cd1e1, type: 3}
       propertyPath: m_Name
       value: DeathUIScreen
-      objectReference: {fileID: 0}
-    - target: {fileID: 7358025664177628086, guid: 5b321705428575149a9910390c3cd1e1, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: d4d9b0fadad1f8e47b0798d931525013, type: 2}
-    - target: {fileID: 7358025664177628086, guid: 5b321705428575149a9910390c3cd1e1, type: 3}
-      propertyPath: m_characterSpacing
-      value: -10.1
-      objectReference: {fileID: 0}
-    - target: {fileID: 7358025664177628086, guid: 5b321705428575149a9910390c3cd1e1, type: 3}
-      propertyPath: m_hasFontAssetChanged
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8418940745010901631, guid: 5b321705428575149a9910390c3cd1e1, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: -233.92578
       objectReference: {fileID: 0}
     - target: {fileID: 8941245145102777275, guid: 5b321705428575149a9910390c3cd1e1, type: 3}
       propertyPath: m_Pivot.x
@@ -4339,11 +4275,11 @@ PrefabInstance:
       objectReference: {fileID: 477095786}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -19.920877
+      value: -20.528246
       objectReference: {fileID: 0}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.4048283
+      value: -1.404217
       objectReference: {fileID: 0}
     - target: {fileID: 7014188122238141978, guid: d267591642562c540852d24e9ae4d667, type: 3}
       propertyPath: m_LocalPosition.z

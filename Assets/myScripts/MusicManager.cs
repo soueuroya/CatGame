@@ -79,7 +79,7 @@ public class MusicManager : MonoBehaviour
                 int randomclip = UnityEngine.Random.Range(0, clips.Count);
                 playedClips.Clear();
                 playedClips.Add(randomclip);
-                Instance.StartMusic(clips[randomclip]);
+                StartMusic(clips[randomclip]);
             }
             else
             {
