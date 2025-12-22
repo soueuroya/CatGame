@@ -10,7 +10,8 @@ public class InstaKillSmash : MonoBehaviour
 
         if (collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(buildIndex);
+            //SceneManager.LoadScene(buildIndex);
+            collision.gameObject.GetComponent<PlayerHealth>().InstantDie();
         }
     }
 }
