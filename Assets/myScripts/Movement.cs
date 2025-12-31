@@ -16,6 +16,7 @@ public class Movement : MonoBehaviour
     private bool isCrouching = false;
     private bool canLook = true;
     private bool takingDamage = false;
+    private bool isTryingUnCrouch = false;
     private PlayerAnimationCallback pac;
     private RigidbodyConstraints2D originalConstraints;
     [SerializeField] private Rigidbody2D rb;
@@ -56,6 +57,7 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
+        animator.SetBool("IsTryingUnCrouch", isTryingUnCrouch);
         if (!isAttacking && !isDead && !isHiding && !takingDamage)
         {
             horizontal = Input.GetAxisRaw("Horizontal");
@@ -67,18 +69,23 @@ public class Movement : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             }
 
-            if (Input.GetKey(KeyCode.C) || Input.GetKey(KeyCode.LeftControl))
+            if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.LeftControl))
             {
                 // is crouching
-                transform.localScale = Vector2.right * transform.localScale.x + Vector2.up * 0.5f; // making character smaller / can be swapped with play animation or something like that
-                colliderpl.size = new Vector2(11.33f, colliderpl.size.y);
+                animator.SetTrigger("Crouching");
                 isCrouching = true;
+                animator.SetBool("Crouched", true);
+                isTryingUnCrouch = true;
+            }
+            if (Input.GetKeyUp(KeyCode.C) || Input.GetKeyUp(KeyCode.LeftControl) && isTryingUnCrouch)
+            {
+                // is uncrouching
+                animator.SetTrigger("UnCrouch");
+                isTryingUnCrouch = false;
             }
             else if (CanUncrouch())
             {
                 // not crouching
-                transform.localScale = Vector2.right * transform.localScale.x + Vector2.up; // reset characters size
-                colliderpl.size = new Vector2(24.53621f, colliderpl.size.y);
                 isCrouching = false;
             }
 
@@ -92,7 +99,7 @@ public class Movement : MonoBehaviour
                 transposer.m_TrackedObjectOffset = new Vector3(transposer.m_TrackedObjectOffset.x, 74, transposer.m_TrackedObjectOffset.z);
             }
 
-                HandleFlipping();
+            HandleFlipping();
             rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
         }
 
@@ -125,6 +132,7 @@ public class Movement : MonoBehaviour
     {
         return !Physics2D.OverlapCircle(headCheck.position, 5f, groundLayer);
         //add hazardLayer to allow jumping on spikes
+
     }
 
     public bool IsDead()
