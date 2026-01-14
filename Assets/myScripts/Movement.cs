@@ -16,7 +16,9 @@ public class Movement : MonoBehaviour
     private bool isCrouching = false;
     private bool canLook = true;
     private bool takingDamage = false;
-    private bool isTryingUnCrouch = false;
+    private bool isTryingToCrouch = false;
+    private bool isTryingToUncrouch = false;
+    private bool isUncrouching = false;
     private PlayerAnimationCallback pac;
     private RigidbodyConstraints2D originalConstraints;
     [SerializeField] private Rigidbody2D rb;
@@ -53,15 +55,26 @@ public class Movement : MonoBehaviour
         colliderpl = GetComponent<CapsuleCollider2D>();
 
         transposer = virtualCamera.GetCinemachineComponent<CinemachineFramingTransposer>();
+
+        pac = GetComponentInChildren<PlayerAnimationCallback>();
+        pac.SetUncrouchFinishCallback(() => {
+            if (!isTryingToCrouch)
+            {
+                animator.SetBool("Crouching", false);
+                isUncrouching = false;
+                isCrouching = false;
+                colliderpl.size = new Vector2(24.53f, 39.56f);
+                colliderpl.offset = new Vector2(-0.15f, 2.68f);
+            }
+        });
     }
 
     void Update()
     {
-        animator.SetBool("IsTryingUnCrouch", isTryingUnCrouch);
         if (!isAttacking && !isDead && !isHiding && !takingDamage)
         {
             horizontal = Input.GetAxisRaw("Horizontal");
-            if (Input.GetButtonDown("Jump") && (IsGrounded() || isGrappling))
+            if (Input.GetButtonDown("Jump") && (IsGrounded() || isGrappling) && !isCrouching)
             {
                 isJumping = true;
                 if (isGrappling) { Ungrappled(); }
@@ -69,27 +82,8 @@ public class Movement : MonoBehaviour
                 rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
             }
 
-            if (Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.LeftControl))
-            {
-                // is crouching
-                animator.SetTrigger("Crouching");
-                isCrouching = true;
-                animator.SetBool("Crouched", true);
-                isTryingUnCrouch = true;
-            }
-            if (Input.GetKeyUp(KeyCode.C) || Input.GetKeyUp(KeyCode.LeftControl) && isTryingUnCrouch)
-            {
-                // is uncrouching
-                animator.SetTrigger("UnCrouch");
-                isTryingUnCrouch = false;
-            }
-            else if (CanUncrouch())
-            {
-                // not crouching
-                isCrouching = false;
-            }
+            HandleCrouch();
 
-            
             if (Input.GetKey(KeyCode.S) && canLook)
             {
                 transposer.m_TrackedObjectOffset = new Vector3(transposer.m_TrackedObjectOffset.x, -72, transposer.m_TrackedObjectOffset.z);
@@ -100,7 +94,14 @@ public class Movement : MonoBehaviour
             }
 
             HandleFlipping();
-            rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+            if (isCrouching && IsGrounded())
+            {
+                rb.velocity = new Vector2(horizontal * speed * 0.6f, rb.velocity.y);
+            }
+            else
+            {
+                rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+            }
         }
 
         animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
@@ -117,11 +118,7 @@ public class Movement : MonoBehaviour
         }
     }
 
-    private void FixedUpdate()
-    {
-        
-    }
-
+    
     public bool IsGrounded()
     {
         return Physics2D.OverlapCircle(groundCheck.position, 0.2f, groundLayer);
@@ -131,13 +128,48 @@ public class Movement : MonoBehaviour
     public bool CanUncrouch()
     {
         return !Physics2D.OverlapCircle(headCheck.position, 5f, groundLayer);
-        //add hazardLayer to allow jumping on spikes
 
     }
+
 
     public bool IsDead()
     {
         return isDead;
+    }
+
+    private void HandleCrouch()
+    {
+        if ((Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.LeftControl)) && !isCrouching && IsGrounded()) //Holding key to crouch
+        {
+            isTryingToCrouch = true;
+            isTryingToUncrouch = false;
+        }
+
+        if (isTryingToCrouch && !isGrappling && !isDead && !isCrouching)
+        {
+            isTryingToUncrouch = false;
+            isUncrouching = false;
+            isCrouching = true;
+            animator.ResetTrigger("Uncrouch");
+            animator.SetTrigger("Crouch");
+            animator.SetBool("Crouching", true);
+            colliderpl.size = new Vector2(24.53f, 24.53f);
+            colliderpl.offset = new Vector2(-0.15f, -4.83f);
+        }
+
+        if ((Input.GetKeyUp(KeyCode.C) || Input.GetKeyUp(KeyCode.LeftControl)) && isCrouching && !isUncrouching) // Not holding key anymore
+        {
+            isTryingToUncrouch = true;
+            isTryingToCrouch = false;
+        }
+
+        if (isTryingToUncrouch && CanUncrouch())
+        {
+            isTryingToUncrouch = false;
+            isUncrouching = true;
+            animator.ResetTrigger("Crouch");
+            animator.SetTrigger("Uncrouch");
+        }
     }
 
     private void HandleFlipping()

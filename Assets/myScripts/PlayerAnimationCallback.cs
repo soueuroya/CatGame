@@ -4,6 +4,7 @@ using UnityEngine;
 public class PlayerAnimationCallback : MonoBehaviour
 {
     private Action onPlayerFinishDeath;
+    private Action onPlayerFinishUncrouch;
     private Action onPlayerStartAttack;
     private Action onPlayerStopAttack;
 
@@ -22,6 +23,11 @@ public class PlayerAnimationCallback : MonoBehaviour
         onPlayerFinishDeath = callback;
     }
 
+    public void SetUncrouchFinishCallback(Action callback)
+    {
+        onPlayerFinishUncrouch = callback;
+    }
+
     public void PlayerAttackingStart()
     {
         onPlayerStartAttack?.Invoke();
@@ -35,6 +41,11 @@ public class PlayerAnimationCallback : MonoBehaviour
     public void PlayerDeathFinish()
     {
         onPlayerFinishDeath?.Invoke();
+    }
+
+    public void PlayerUncrouchFinish()
+    {
+        onPlayerFinishUncrouch?.Invoke();
     }
 
 }

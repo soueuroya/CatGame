@@ -22,34 +22,34 @@ AnimationClip:
     curve:
     - time: 0
       value: {fileID: -1971692501, guid: c99c3016c9aef564da5504b450fd1d5b, type: 3}
-    - time: 0.06666667
+    - time: 0.04
       value: {fileID: -1971692501, guid: c99c3016c9aef564da5504b450fd1d5b, type: 3}
-    - time: 0.13333334
+    - time: 0.08
       value: {fileID: -1971692501, guid: c99c3016c9aef564da5504b450fd1d5b, type: 3}
-    - time: 0.2
+    - time: 0.12
       value: {fileID: 12315832, guid: c99c3016c9aef564da5504b450fd1d5b, type: 3}
-    - time: 0.26666668
+    - time: 0.16
       value: {fileID: 520619428, guid: c99c3016c9aef564da5504b450fd1d5b, type: 3}
-    - time: 0.33333334
+    - time: 0.2
       value: {fileID: 520619428, guid: c99c3016c9aef564da5504b450fd1d5b, type: 3}
+    - time: 0.24
+      value: {fileID: 520619428, guid: c99c3016c9aef564da5504b450fd1d5b, type: 3}
+    - time: 0.28
+      value: {fileID: -55804301, guid: c99c3016c9aef564da5504b450fd1d5b, type: 3}
+    - time: 0.32
+      value: {fileID: -55804301, guid: c99c3016c9aef564da5504b450fd1d5b, type: 3}
+    - time: 0.36
+      value: {fileID: -1177593137, guid: c99c3016c9aef564da5504b450fd1d5b, type: 3}
     - time: 0.4
-      value: {fileID: 520619428, guid: c99c3016c9aef564da5504b450fd1d5b, type: 3}
-    - time: 0.46666667
-      value: {fileID: -55804301, guid: c99c3016c9aef564da5504b450fd1d5b, type: 3}
-    - time: 0.53333336
-      value: {fileID: -55804301, guid: c99c3016c9aef564da5504b450fd1d5b, type: 3}
-    - time: 0.6
       value: {fileID: -1177593137, guid: c99c3016c9aef564da5504b450fd1d5b, type: 3}
-    - time: 0.6666667
-      value: {fileID: -1177593137, guid: c99c3016c9aef564da5504b450fd1d5b, type: 3}
-    - time: 0.73333335
+    - time: 0.44
       value: {fileID: -1177593137, guid: c99c3016c9aef564da5504b450fd1d5b, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
     script: {fileID: 0}
     flags: 2
-  m_SampleRate: 60
+  m_SampleRate: 25
   m_WrapMode: 0
   m_Bounds:
     m_Center: {x: 0, y: 0, z: 0}
@@ -83,7 +83,7 @@ AnimationClip:
     m_AdditiveReferencePoseClip: {fileID: 0}
     m_AdditiveReferencePoseTime: 0
     m_StartTime: 0
-    m_StopTime: 0.75
+    m_StopTime: 0.48
     m_OrientationOffsetY: 0
     m_Level: 0
     m_CycleOffset: 0
@@ -102,4 +102,11 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 0
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 0.44
+    functionName: PlayerUncrouchFinish
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
