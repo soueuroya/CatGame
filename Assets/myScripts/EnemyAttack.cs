@@ -6,9 +6,11 @@ public class EnemyAttack : MonoBehaviour
     public int damage = 1;
     private bool isDead = false;
     public Animator animator;
+    private AudioSource audioSource;
 
     private void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         animator = GetComponent<Animator>();
     }
 
@@ -18,8 +20,11 @@ public class EnemyAttack : MonoBehaviour
         {
             return;
         }
-
+        
         animator.SetTrigger("Attack");
+        audioSource.Play();
+
+
     }
 
     public void SetIsDead(bool _isDead)
@@ -38,6 +43,7 @@ public class EnemyAttack : MonoBehaviour
             {
                 bool isRight = transform.position.x > collision.transform.position.x;
                 playerHealth.TakeDamage(damage, isRight);
+                
             }
         }
     }

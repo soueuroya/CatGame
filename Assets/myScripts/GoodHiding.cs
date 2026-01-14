@@ -8,10 +8,12 @@ public class GoodHiding : MonoBehaviour
     public bool overrideIn = false;
     public Animator animator;
     public bool IsBox;
+    private AudioSource audioSource;
 
     private void Start()
     {
         animator = GetComponent<Animator>();
+        audioSource = GetComponent<AudioSource>();
     }
 
     private void Update()
@@ -24,12 +26,14 @@ public class GoodHiding : MonoBehaviour
                 Movement.Instance.HideSprite();
                 overrideIn = true;
                 animator.SetTrigger("Hide");
+                audioSource.Play();
             }
             else if (Input.GetKeyDown(KeyCode.W) && overrideIn && IsBox) //UnHiding
             {
                 overrideIn = false;
                 animator.SetTrigger("UnHide");
                 Invoke("UnHide", 0.5f);
+                audioSource.Play();
             }
 
             if (Input.GetKeyDown(KeyCode.S) && !overrideIn && !IsBox) //IsHiding

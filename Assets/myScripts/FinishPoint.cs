@@ -4,9 +4,16 @@ using UnityEngine.SceneManagement;
 
 public class FinishPoint : MonoBehaviour
 {
+    private AudioSource audioSource;
     bool isColliding = false;
     bool isActive = true;
     PlayerInventory inventory;
+
+
+    void Start()
+    {
+        audioSource = GetComponent<AudioSource>();
+    }
 
     private void Update()
     {
@@ -15,6 +22,7 @@ public class FinishPoint : MonoBehaviour
             SaveInventory();
             UnlockNewLevel();
             isActive = false;
+            audioSource.Play();
         }
         else if (Input.GetKeyUp(KeyCode.E))
         {

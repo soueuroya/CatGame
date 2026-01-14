@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class PlayerHealth : MonoBehaviour
 {
+
     public int maxHealth = 3;
     public float blink;
     public float immuned;
