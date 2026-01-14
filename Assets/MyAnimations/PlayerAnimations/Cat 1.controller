@@ -254,6 +254,9 @@ AnimatorStateTransition:
   - m_ConditionMode: 2
     m_ConditionEvent: TakingDamage
     m_EventTreshold: 0
+  - m_ConditionMode: 2
+    m_ConditionEvent: Crouching
+    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 5384746517695488496}
   m_Solo: 0
@@ -306,9 +309,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Crouch
     m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: Grounded
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7070324122683736015}
   m_Solo: 0
@@ -330,10 +330,7 @@ AnimatorStateTransition:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: 
-  m_Conditions:
-  - m_ConditionMode: 1
-    m_ConditionEvent: Grounded
-    m_EventTreshold: 0
+  m_Conditions: []
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 2106201738419633904}
   m_Solo: 0
@@ -567,9 +564,6 @@ AnimatorStateTransition:
   - m_ConditionMode: 1
     m_ConditionEvent: Uncrouch
     m_EventTreshold: 0
-  - m_ConditionMode: 1
-    m_ConditionEvent: Grounded
-    m_EventTreshold: 0
   m_DstStateMachine: {fileID: 0}
   m_DstState: {fileID: 7064983416201002432}
   m_Solo: 0
@@ -620,14 +614,8 @@ AnimatorStateTransition:
   - m_ConditionMode: 4
     m_ConditionEvent: xVelocity
     m_EventTreshold: 0.5
-  - m_ConditionMode: 1
-    m_ConditionEvent: Grounded
-    m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Attacking
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: Jumping
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: Climbing
@@ -646,9 +634,6 @@ AnimatorStateTransition:
     m_EventTreshold: 0
   - m_ConditionMode: 2
     m_ConditionEvent: isHiding
-    m_EventTreshold: 0
-  - m_ConditionMode: 2
-    m_ConditionEvent: TakingDamage
     m_EventTreshold: 0
   - m_ConditionMode: 1
     m_ConditionEvent: Crouching

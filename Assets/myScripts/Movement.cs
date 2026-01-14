@@ -74,7 +74,7 @@ public class Movement : MonoBehaviour
         if (!isAttacking && !isDead && !isHiding && !takingDamage)
         {
             horizontal = Input.GetAxisRaw("Horizontal");
-            if (Input.GetButtonDown("Jump") && (IsGrounded() || isGrappling) && !isCrouching)
+            if (Input.GetButtonDown("Jump") && (IsGrounded() || isGrappling))
             {
                 isJumping = true;
                 if (isGrappling) { Ungrappled(); }
@@ -125,6 +125,11 @@ public class Movement : MonoBehaviour
         //add hazardLayer to allow jumping on spikes
     }
 
+    public bool IsCrouching()
+    {
+        return isCrouching;
+    }
+
     public bool CanUncrouch()
     {
         return !Physics2D.OverlapCircle(headCheck.position, 5f, groundLayer);
@@ -139,7 +144,7 @@ public class Movement : MonoBehaviour
 
     private void HandleCrouch()
     {
-        if ((Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.LeftControl)) && !isCrouching && IsGrounded()) //Holding key to crouch
+        if ((Input.GetKeyDown(KeyCode.C) || Input.GetKeyDown(KeyCode.LeftControl)) && !isCrouching) //Holding key to crouch
         {
             isTryingToCrouch = true;
             isTryingToUncrouch = false;

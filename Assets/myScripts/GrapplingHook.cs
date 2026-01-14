@@ -23,7 +23,7 @@ public class GrapplingHook : MonoBehaviour
     {
         if (inventory.Grapple > 0)
         {
-            if (Input.GetMouseButtonDown(1) && !isTryingToGrapple && !isGrappling)
+            if (Input.GetMouseButtonDown(1) && !isTryingToGrapple && !isGrappling && !Movement.Instance.IsCrouching())
             {
                 ShootGrapple();
             }
