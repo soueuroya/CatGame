@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class EnemyFollow : MonoBehaviour
 {
+    private AudioSource audioSource;
     public float speed;
     public Rigidbody2D rbenemy;
     public int holdTime = 1;
@@ -28,6 +29,7 @@ public class EnemyFollow : MonoBehaviour
 
     void Start()
     {
+        audioSource = GetComponent<AudioSource>();
         initialPosition = transform.position;
         animator = GetComponent<Animator>();
     }
@@ -47,6 +49,8 @@ public class EnemyFollow : MonoBehaviour
             {
                 canAttack = false;
                 Invoke("Attack", attackRate);
+                
+
             }
 
             if (canMove)
@@ -162,8 +166,9 @@ public class EnemyFollow : MonoBehaviour
         {
             return;
         }
-
+        audioSource.PlayDelayed(0f);
         animator.SetTrigger("Attack");
+        
     }
 
     private void AllowAttack()
