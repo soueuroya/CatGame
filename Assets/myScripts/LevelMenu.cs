@@ -5,6 +5,7 @@ public class LevelMenu : MonoBehaviour
 {
     public Button[] buttons;
     public GameObject levelButtons;
+    public IntroMovie introMovie;
 
     private void OnEnable()
     {
@@ -34,7 +35,15 @@ public class LevelMenu : MonoBehaviour
 
     public void OpenLevel(int levelId)
     {
-        SceneController.Instance.LoadLevel(levelId);
+        if (levelId == 1)
+        {
+            introMovie.gameObject.SetActive(true);
+            introMovie.PlayVideo(() => { SceneController.Instance.LoadLevel(levelId); });
+        }
+        else
+        {
+            SceneController.Instance.LoadLevel(levelId);
+        }
     }
 
     void ButtonsToArray()
