@@ -25,7 +25,7 @@ public class FakeHiding : MonoBehaviour
     {
         if ((playerIn && playerHealth != null) && Movement.Instance.CanHide())
         {
-            if (Input.GetKeyDown(KeyCode.S) && IsShadow)
+            if (Input.GetKeyDown(KeyCode.E) && IsShadow)
             {
                 Movement.Instance.ToggleHiding(true); // locks the player right away
                 Movement.Instance.AnimateShadow();
@@ -37,7 +37,7 @@ public class FakeHiding : MonoBehaviour
                     Invoke("HidePlayer", 0.46f);
                 });
             }
-            if (Input.GetKeyDown(KeyCode.S) && !IsShadow)
+            if (Input.GetKeyDown(KeyCode.E) && !IsShadow)
             {
                 Movement.Instance.ToggleHiding(true); // locks the player right away
                 Movement.Instance.HideSprite();

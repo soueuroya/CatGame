@@ -14,7 +14,7 @@ public class CreditsAnimation : MonoBehaviour
 
     private void AnimateCat()
     {
-        LeanTween.value(cat.anchoredPosition.y, 0f, 6f).setDelay(5).setLoopPingPong().setOnUpdate((float value) => {
+        LeanTween.value(cat.anchoredPosition.y, 200f, 6f).setDelay(5).setLoopPingPong().setOnUpdate((float value) => {
             cat.anchoredPosition = new Vector2(0f, value); 
         });
     }

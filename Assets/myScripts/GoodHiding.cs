@@ -20,7 +20,7 @@ public class GoodHiding : MonoBehaviour
     {
         if ((playerIn || overrideIn) && Movement.Instance.CanHide())
         {
-            if (Input.GetKeyDown(KeyCode.S) && !overrideIn && IsBox) //IsHiding
+            if (Input.GetKeyDown(KeyCode.E) && !overrideIn && IsBox) //IsHiding
             {
                 Movement.Instance.ToggleHiding(true);
                 Movement.Instance.HideSprite();
@@ -28,7 +28,7 @@ public class GoodHiding : MonoBehaviour
                 animator.SetTrigger("Hide");
                 audioSource.Play();
             }
-            else if (Input.GetKeyDown(KeyCode.W) && overrideIn && IsBox) //UnHiding
+            else if (Input.GetKeyDown(KeyCode.E) && overrideIn && IsBox) //UnHiding
             {
                 overrideIn = false;
                 animator.SetTrigger("UnHide");
@@ -36,7 +36,7 @@ public class GoodHiding : MonoBehaviour
                 audioSource.Play();
             }
 
-            if (Input.GetKeyDown(KeyCode.S) && !overrideIn && !IsBox) //IsHiding
+            if (Input.GetKeyDown(KeyCode.E) && !overrideIn && !IsBox) //IsHiding
             {
                 Movement.Instance.ToggleHiding(true);
                 overrideIn = true;
@@ -46,7 +46,7 @@ public class GoodHiding : MonoBehaviour
                 Movement.Instance.gameObject.transform.position = new Vector3(transform.position.x, Movement.Instance.gameObject.transform.position.y, Movement.Instance.gameObject.transform.position.z);
                 });
             }
-            else if (Input.GetKeyDown(KeyCode.W) && overrideIn && !IsBox && Movement.Instance.IsHiding()) //UnHiding
+            else if (Input.GetKeyDown(KeyCode.E) && overrideIn && !IsBox && Movement.Instance.IsHiding()) //UnHiding
             {
                 overrideIn = false;
                 Movement.Instance.ShowSprite();
