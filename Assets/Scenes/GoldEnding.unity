@@ -154,7 +154,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioSource: {fileID: 318093229}
   clips:
-  - {fileID: 8300000, guid: 9c9e650fbab2d7c4abd204c0ba2becb6, type: 3}
+  - {fileID: 8300000, guid: d9b843ffc6d626d4885da1022d3c53d6, type: 3}
   playedClips: 
   fadeBetween: 0
 --- !u!82 &318093229
@@ -167,7 +167,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 5802801691856099468, guid: 7b90b21c112c45f488a802c74d7e1654, type: 2}
-  m_audioClip: {fileID: 8300000, guid: 9c9e650fbab2d7c4abd204c0ba2becb6, type: 3}
+  m_audioClip: {fileID: 8300000, guid: d9b843ffc6d626d4885da1022d3c53d6, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
