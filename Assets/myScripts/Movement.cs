@@ -302,6 +302,7 @@ public class Movement : MonoBehaviour
         isDead = _isDead;
         if (isDead)
         {
+            animator.SetTrigger("Die");
             StopMovement();
             MultipleDeaths.Instance.RandomNumber();
         }

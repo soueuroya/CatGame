@@ -12,6 +12,24 @@ public class InstaKillSmash : MonoBehaviour
         {
             //SceneManager.LoadScene(buildIndex);
             collision.gameObject.GetComponent<PlayerHealth>().InstantDie();
+
+            var movingObstacleSaw = gameObject.GetComponent<MovingObstacleSaw>();
+            if (movingObstacleSaw != null)
+            {
+                movingObstacleSaw.StopMoving();
+            }
+
+            var movingObstacleSlab = gameObject.GetComponent<MovingObstacleSlab>();
+            if (movingObstacleSlab != null)
+            {
+                movingObstacleSlab.StopMoving();
+            }
+
+            var movingObstacleSpike = gameObject.GetComponent<MovingObstacleSpike>();
+            if (movingObstacleSpike != null)
+            {
+                movingObstacleSpike.StopMoving();
+            }
         }
     }
 }

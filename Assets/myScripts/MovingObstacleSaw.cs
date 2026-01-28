@@ -56,4 +56,9 @@ public class MovingObstacleSaw : MonoBehaviour
         pointIndex += direction;
         targetPos = wayPoints[pointIndex].transform.position;
    }
+
+    public void StopMoving()
+    {
+        speed = 0;
+    }
 }

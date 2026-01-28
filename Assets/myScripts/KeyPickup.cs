@@ -14,7 +14,8 @@ public class KeyPickup : MonoBehaviour
             {
                 inventory.Key = inventory.Key + keyValue;
                 print("Player inventory has " + inventory.Key + " key in it");
-                Invoke("DeleteKey",2);
+                //Invoke("DeleteKey",2);
+                DeleteKey();
             }
 
         }

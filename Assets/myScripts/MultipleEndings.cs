@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Diagnostics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -15,15 +12,11 @@ public class MultipleEndings : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E) && isActive && isColliding)
         {
-            print("Key Down");
-            CheckInventory();
-            EndingScene();
-            isActive = false;
-        }
-        else if (Input.GetKeyUp(KeyCode.E))
-        {
-            print("Key Up");
-            return;
+            if (CheckInventory())
+            {
+                EndingScene();
+                isActive = false;
+            }
         }
     }
 
@@ -44,7 +37,7 @@ public class MultipleEndings : MonoBehaviour
         }
     }
 
-    private void CheckInventory()
+    private bool CheckInventory()
     {
         if (inventory != null)
         {
@@ -62,6 +55,8 @@ public class MultipleEndings : MonoBehaviour
                 endState = 2;
             }
         }
+
+        return inventory.Key > 0;
     } 
 
     private void EndingScene()
@@ -85,13 +80,4 @@ public class MultipleEndings : MonoBehaviour
                 break;
         }
     }
-
-
-
-
-
-
-
-
-
 }

@@ -66,4 +66,9 @@ public class MovingObstacleSlab : MonoBehaviour
     yield return new WaitForSeconds(waitDuration);
     speedMultiplier = 1;
    }
+
+    public void StopMoving()
+    {
+        speed = 0;
+    }
 }
