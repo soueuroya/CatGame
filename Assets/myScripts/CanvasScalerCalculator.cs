@@ -8,7 +8,7 @@ public class CanvasScalerCalculator : MonoBehaviour
     [SerializeField] CanvasScaler canvasScaler;
 
     // Private properties
-    private float averageRatio = 16.0f / 9.0f;
+    private float averageRatio = 16.0f / 7.0f;
 
     #region Initialization
     private void OnValidate()
@@ -40,7 +40,7 @@ public class CanvasScalerCalculator : MonoBehaviour
         CalculateScreenScale();
 
         // This runs every x seconds
-        InvokeRepeating("CalculateScreenScale", 0, 5);
+        InvokeRepeating("CalculateScreenScale", 0, 1);
     }
 
     private void OnDisable()
