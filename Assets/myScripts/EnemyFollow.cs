@@ -60,20 +60,20 @@ public class EnemyFollow : MonoBehaviour
                 {
                     if (transform.position.x < initialPosition.x + Maxright && isFacingRight && !isFlipping)
                     {
-                        rbenemy.velocity = new Vector2(speed, rbenemy.velocity.y);
+                        rbenemy.linearVelocity = new Vector2(speed, rbenemy.linearVelocity.y);
                     }
                 }
                 else
                 {
                     if (transform.position.x > initialPosition.x - Maxleft && !isFacingRight && !isFlipping)
                     {
-                        rbenemy.velocity = new Vector2(-speed, rbenemy.velocity.y);
+                        rbenemy.linearVelocity = new Vector2(-speed, rbenemy.linearVelocity.y);
                     }
                 }
             }
             else
             {
-                rbenemy.velocity = new Vector2(0, rbenemy.velocity.y);
+                rbenemy.linearVelocity = new Vector2(0, rbenemy.linearVelocity.y);
             }
         }
         else // if enemy is not chasing
@@ -91,22 +91,22 @@ public class EnemyFollow : MonoBehaviour
 
                 if (isFacingRight)
                 {
-                    rbenemy.velocity = new Vector2(speed, rbenemy.velocity.y);
+                    rbenemy.linearVelocity = new Vector2(speed, rbenemy.linearVelocity.y);
                 }
                 else
                 {
-                    rbenemy.velocity = new Vector2(-speed, rbenemy.velocity.y);
+                    rbenemy.linearVelocity = new Vector2(-speed, rbenemy.linearVelocity.y);
                 }
             }
             else
             {
-                rbenemy.velocity = new Vector2(0, rbenemy.velocity.y);
+                rbenemy.linearVelocity = new Vector2(0, rbenemy.linearVelocity.y);
             }
 
             if (transform.position.x > initialPosition.x + Maxright && isFacingRight && !isFlipping)
             {
                 Invoke("Flip", holdTime);
-                rbenemy.velocity = Vector2.zero;
+                rbenemy.linearVelocity = Vector2.zero;
                 animator.SetBool("Moving", false);
                 isFlipping = true;
                 canMove = false;
@@ -114,7 +114,7 @@ public class EnemyFollow : MonoBehaviour
             else if (transform.position.x < initialPosition.x - Maxleft && !isFacingRight && !isFlipping)
             {
                 Invoke("Flip", holdTime);
-                rbenemy.velocity = Vector2.zero;
+                rbenemy.linearVelocity = Vector2.zero;
                 animator.SetBool("Moving", false);
                 isFlipping = true;
                 canMove = false;

@@ -79,7 +79,7 @@ public class Movement : MonoBehaviour
                 isJumping = true;
                 if (isGrappling) { Ungrappled(); }
                 animator.SetTrigger("Jump");
-                rb.velocity = new Vector2(rb.velocity.x, jumpingPower);
+                rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpingPower);
             }
 
             HandleCrouch();
@@ -96,16 +96,16 @@ public class Movement : MonoBehaviour
             HandleFlipping();
             if (isCrouching && IsGrounded())
             {
-                rb.velocity = new Vector2(horizontal * speed * 0.6f, rb.velocity.y);
+                rb.linearVelocity = new Vector2(horizontal * speed * 0.6f, rb.linearVelocity.y);
             }
             else
             {
-                rb.velocity = new Vector2(horizontal * speed, rb.velocity.y);
+                rb.linearVelocity = new Vector2(horizontal * speed, rb.linearVelocity.y);
             }
         }
 
-        animator.SetFloat("xVelocity", Mathf.Abs(rb.velocity.x));
-        animator.SetFloat("yVelocity", rb.velocity.y);
+        animator.SetFloat("xVelocity", Mathf.Abs(rb.linearVelocity.x));
+        animator.SetFloat("yVelocity", rb.linearVelocity.y);
         animator.SetBool("Grounded", IsGrounded());
         animator.SetBool("Jumping", isJumping);
         animator.SetBool("Aiming", isAiming);
@@ -204,7 +204,7 @@ public class Movement : MonoBehaviour
 
             if (_isHidding)
             {
-                rb.velocity = Vector2.zero;
+                rb.linearVelocity = Vector2.zero;
                 rb.constraints = RigidbodyConstraints2D.FreezeAll;
                 colliderpl.enabled = false;
                 this.enabled = false;
@@ -266,13 +266,13 @@ public class Movement : MonoBehaviour
 
     public void SetIsAttacking(bool isAttacking)
     {
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         this.isAttacking = isAttacking;
     }
 
     public void StopMovement()
     {
-        rb.velocity = Vector2.zero;
+        rb.linearVelocity = Vector2.zero;
         rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
