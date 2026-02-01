@@ -22,13 +22,13 @@ public class IntroMovie : MonoBehaviour
     private void Awake()
     {
         videoPlayer.loopPointReached += OnVideoFinished;
-        videoPlayer.prepareCompleted += OnVideoPrepared;
+        //videoPlayer.prepareCompleted += OnVideoPrepared;
     }
 
     private void OnDestroy()
     {
         videoPlayer.loopPointReached -= OnVideoFinished;
-        videoPlayer.prepareCompleted -= OnVideoPrepared;
+        //videoPlayer.prepareCompleted -= OnVideoPrepared;
     }
 
     public void PlayVideo(Action onAnimationFinished)
@@ -37,9 +37,13 @@ public class IntroMovie : MonoBehaviour
         hasFinished = false;
         fadeOutTriggered = false;
 
-        
+#if UNITY_WEBGL
+
+        videoPlayer.source = VideoSource.Url;
+        videoPlayer.url = "https://heistofwhiskers.s3.us-east-1.amazonaws.com/IntroMovie.mp4";
+
+#endif
         videoPlayer.Prepare();
-        
         LeanTween.color(image.rectTransform, Color.black, initialFadeDuration)
             .setOnComplete(() =>
             {
@@ -62,13 +66,13 @@ public class IntroMovie : MonoBehaviour
         });
     }
 
-    private void OnVideoPrepared(VideoPlayer vp)
-    {
-        // Schedule automatic fade-out near the end (simple & less accurate)
-        float fadeStartTime = Mathf.Max(0f, (float)vp.length - fadeOutDuration);
-
-        LeanTween.delayedCall(fadeStartTime, TriggerFadeOut);
-    }
+    //private void OnVideoPrepared(VideoPlayer vp)
+    //{
+    //    // Schedule automatic fade-out near the end (simple & less accurate)
+    //    float fadeStartTime = Mathf.Max(0f, 52);
+    //
+    //    LeanTween.delayedCall(fadeStartTime, () => { TriggerFadeOut(false); });
+    //}
 
     private void Update()
     {
@@ -78,24 +82,30 @@ public class IntroMovie : MonoBehaviour
 
         if (Input.anyKeyDown || Input.GetMouseButtonDown(0) || Input.touchCount > 0)
         {
-            TriggerFadeOut();
+            TriggerFadeOut(true);
         }
     }
 
     /// <summary>
     /// Can be called externally at any time to fade to black and end the video.
     /// </summary>
-    public void TriggerFadeOut()
+    public void TriggerFadeOut(bool forced = false)
     {
         if (fadeOutTriggered)
             return;
 
         fadeOutTriggered = true;
 
-        LeanTween.cancel(image.rectTransform);
-
-        LeanTween.color(image.rectTransform, Color.black, fadeOutDuration)
-            .setOnComplete(Finish);
+        if (forced)
+        {
+            LeanTween.cancel(image.rectTransform);
+            LeanTween.color(image.rectTransform, Color.black, fadeOutDuration)
+                .setOnComplete(Finish);
+        }
+        else
+        {
+            Finish();
+        }
     }
 
     private void OnVideoFinished(VideoPlayer vp)
