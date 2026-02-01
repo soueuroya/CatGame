@@ -8,7 +8,8 @@ public class IntroMovie : MonoBehaviour
     [Header("References")]
     [SerializeField] private VideoPlayer videoPlayer;
     [SerializeField] private Image image;
-
+    [SerializeField] private AudioClip introClip;
+    
     [Header("Fade Settings")]
     private float initialFadeDuration = 2.5f;
     private float fadeInDuration = 1f;
@@ -52,6 +53,7 @@ public class IntroMovie : MonoBehaviour
         videoPlayer.Play();
         Color transparent = Color.black;
         transparent.a = 0f;
+        MusicManager.Instance.StartMusic(introClip);
 
         LeanTween.color(image.rectTransform, transparent, fadeInDuration)
         .setOnComplete(() =>
@@ -111,6 +113,7 @@ public class IntroMovie : MonoBehaviour
         if (videoPlayer.isPlaying)
             videoPlayer.Stop();
 
+        MusicManager.Instance.StopMusic();
         onAnimationFinished?.Invoke();
         onAnimationFinished = null;
     }

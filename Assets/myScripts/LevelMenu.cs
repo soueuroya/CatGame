@@ -6,7 +6,7 @@ public class LevelMenu : MonoBehaviour
     public Button[] buttons;
     public GameObject levelButtons;
     public IntroMovie introMovie;
-
+    
     private void OnEnable()
     {
         ButtonsToArray();
