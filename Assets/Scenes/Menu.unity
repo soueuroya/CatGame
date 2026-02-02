@@ -453,6 +453,7 @@ MonoBehaviour:
   introClip: {fileID: 8300000, guid: fc767c36929499b42ae3937850d11776, type: 3}
   level1Intro: 1
   videoRT: {fileID: 8600000, guid: a331d29a181a2904c80f24832ee570c3, type: 2}
+  isEnding: 0
   videoType: 1
 --- !u!1 &33948988
 GameObject:
@@ -11190,6 +11191,7 @@ MonoBehaviour:
   introClip: {fileID: 8300000, guid: fc767c36929499b42ae3937850d11776, type: 3}
   level1Intro: 0
   videoRT: {fileID: 8600000, guid: a331d29a181a2904c80f24832ee570c3, type: 2}
+  isEnding: 0
   videoType: 0
 --- !u!328 &1204778682
 VideoPlayer:

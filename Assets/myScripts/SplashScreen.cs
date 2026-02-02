@@ -17,6 +17,7 @@ public class SplashScreen : MonoBehaviour
         }
         else
         {
+            SceneController.Instance.logoAnimationPlayed = true;
             introMovie.PlayVideo( () => { Invoke("Hide", 0.25f); });
         }
     }

@@ -1,9 +1,8 @@
 using System;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
-using System.Collections;
-using System.IO;
 
 public class IntroMovie : MonoBehaviour
 {
@@ -29,7 +28,6 @@ public class IntroMovie : MonoBehaviour
     [SerializeField] private IntroVideoType videoType;
 
     [Header("Fade Settings")]
-    private float initialFadeDuration = 2.5f;
     private float fadeInDuration = 1f;
     private float fadeOutDuration = 1f;
 
@@ -66,7 +64,7 @@ public class IntroMovie : MonoBehaviour
 
         if (level1Intro)
         {
-            LeanTween.color(foregroundFade.rectTransform, Color.black, initialFadeDuration)
+            LeanTween.color(foregroundFade.rectTransform, Color.black, fadeOutDuration)
                 .setOnComplete(StartVideo);
         }
         else
