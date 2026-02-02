@@ -6,6 +6,7 @@ public class SceneController : MonoBehaviour
 {
     public static SceneController Instance;
     [SerializeField] Animator transitionAnim;
+    public bool logoAnimationPlayed = false;
 
     private void Awake()
     {

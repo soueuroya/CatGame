@@ -2,14 +2,32 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Video;
+using System.Collections;
+using System.IO;
 
 public class IntroMovie : MonoBehaviour
 {
+    public enum IntroVideoType
+    {
+        LogoAnimation,
+        GameIntro,
+        GoldEnding,
+        CardboardEnding,
+        SilverEnding
+    }
+
     [Header("References")]
     [SerializeField] private VideoPlayer videoPlayer;
-    [SerializeField] private Image image;
+    [SerializeField] private RawImage videoImage;
+    [SerializeField] private Image foregroundFade;
     [SerializeField] private AudioClip introClip;
-    
+    [SerializeField] private bool level1Intro;
+    [SerializeField] private RenderTexture videoRT;
+    [SerializeField] private bool isEnding;
+
+    [Header("Video Selection")]
+    [SerializeField] private IntroVideoType videoType;
+
     [Header("Fade Settings")]
     private float initialFadeDuration = 2.5f;
     private float fadeInDuration = 1f;
@@ -22,13 +40,19 @@ public class IntroMovie : MonoBehaviour
     private void Awake()
     {
         videoPlayer.loopPointReached += OnVideoFinished;
-        //videoPlayer.prepareCompleted += OnVideoPrepared;
+    }
+
+    private void Start()
+    {
+        if (isEnding)
+        {
+            PlayVideo(null);
+        }
     }
 
     private void OnDestroy()
     {
         videoPlayer.loopPointReached -= OnVideoFinished;
-        //videoPlayer.prepareCompleted -= OnVideoPrepared;
     }
 
     public void PlayVideo(Action onAnimationFinished)
@@ -37,80 +61,111 @@ public class IntroMovie : MonoBehaviour
         hasFinished = false;
         fadeOutTriggered = false;
 
-#if UNITY_WEBGL
+        ClearRenderTexture();
+        SetVideoFromStreamingAssets();
 
+        if (level1Intro)
+        {
+            LeanTween.color(foregroundFade.rectTransform, Color.black, initialFadeDuration)
+                .setOnComplete(StartVideo);
+        }
+        else
+        {
+            StartVideo();
+        }
+    }
+
+    // ----------------------------------------------------
+    // StreamingAssets video selection
+    // ----------------------------------------------------
+    private void SetVideoFromStreamingAssets()
+    {
         videoPlayer.source = VideoSource.Url;
-        videoPlayer.url = "https://heistofwhiskers.s3.us-east-1.amazonaws.com/IntroMovie.mp4";
 
+        string fileName = videoType switch
+        {
+            IntroVideoType.LogoAnimation => "LogoAnimation.mp4",
+            IntroVideoType.GameIntro => "IntroMovie.mp4",
+            IntroVideoType.GoldEnding => "Golden Crown.mp4",
+            IntroVideoType.CardboardEnding => "cardoard.mp4",
+            IntroVideoType.SilverEnding => "silver crown.mp4",
+            _ => "LogoAnimation.mp4"
+        };
+
+        string fullPath = Path.Combine(Application.streamingAssetsPath, fileName);
+
+#if UNITY_EDITOR || UNITY_STANDALONE
+        videoPlayer.url = fullPath;
+#else
+        // WebGL / mobile requires proper URL formatting
+        videoPlayer.url = fullPath.Replace("\\", "/");
 #endif
-        videoPlayer.Prepare();
-        LeanTween.color(image.rectTransform, Color.black, initialFadeDuration)
-            .setOnComplete(() =>
-            {
-                Invoke("StartVideo", 1.5f);
-            });
     }
 
     private void StartVideo()
     {
         videoPlayer.gameObject.SetActive(true);
         videoPlayer.Play();
-        Color transparent = Color.black;
-        transparent.a = 0f;
-        MusicManager.Instance.StartMusic(introClip);
 
-        LeanTween.color(image.rectTransform, transparent, fadeInDuration)
-        .setOnComplete(() =>
+        if (level1Intro)
         {
+            Color transparent = Color.black;
+            transparent.a = 0f;
 
-        });
+            MusicManager.Instance.StartMusic(introClip);
+            LeanTween.color(foregroundFade.rectTransform, transparent, fadeInDuration);
+        }
     }
-
-    //private void OnVideoPrepared(VideoPlayer vp)
-    //{
-    //    // Schedule automatic fade-out near the end (simple & less accurate)
-    //    float fadeStartTime = Mathf.Max(0f, 52);
-    //
-    //    LeanTween.delayedCall(fadeStartTime, () => { TriggerFadeOut(false); });
-    //}
 
     private void Update()
     {
-        // Cut video short on ANY input
         if (hasFinished)
             return;
 
         if (Input.anyKeyDown || Input.GetMouseButtonDown(0) || Input.touchCount > 0)
         {
-            TriggerFadeOut(true);
+            if (level1Intro)
+            {
+                TriggerFadeOut();
+            }
+            else
+            {
+                CancelInvoke(nameof(TriggerFadeOut));
+                Invoke(nameof(TriggerFadeOut), 1f);
+            }
         }
     }
 
-    /// <summary>
-    /// Can be called externally at any time to fade to black and end the video.
-    /// </summary>
-    public void TriggerFadeOut(bool forced = false)
+    private void OnVideoFinished(VideoPlayer vp)
+    {
+        if (level1Intro)
+        {
+            TriggerFadeOut();
+        }
+        else
+        {
+            CancelInvoke(nameof(TriggerFadeOut));
+            Invoke(nameof(TriggerFadeOut), 1f);
+        }
+    }
+
+    public void TriggerFadeOut()
     {
         if (fadeOutTriggered)
             return;
 
         fadeOutTriggered = true;
 
-        if (forced)
+        if (!isEnding)
         {
-            LeanTween.cancel(image.rectTransform);
-            LeanTween.color(image.rectTransform, Color.black, fadeOutDuration)
+            LeanTween.cancel(foregroundFade.rectTransform);
+            LeanTween.color(foregroundFade.rectTransform, Color.black, fadeOutDuration)
                 .setOnComplete(Finish);
         }
         else
         {
             Finish();
         }
-    }
-
-    private void OnVideoFinished(VideoPlayer vp)
-    {
-        Finish();
     }
 
     private void Finish()
@@ -123,8 +178,27 @@ public class IntroMovie : MonoBehaviour
         if (videoPlayer.isPlaying)
             videoPlayer.Stop();
 
-        MusicManager.Instance.StopMusic();
+        ClearRenderTexture();
+
+        videoImage.color = new Color(0f, 0f, 0f, 0f);
+
+        if (level1Intro)
+        {
+            MusicManager.Instance.StopMusic();
+        }
+
         onAnimationFinished?.Invoke();
         onAnimationFinished = null;
+    }
+
+    private void ClearRenderTexture()
+    {
+        if (videoRT == null)
+            return;
+
+        RenderTexture active = RenderTexture.active;
+        RenderTexture.active = videoRT;
+        GL.Clear(true, true, Color.black);
+        RenderTexture.active = active;
     }
 }

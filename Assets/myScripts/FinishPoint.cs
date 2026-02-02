@@ -9,7 +9,6 @@ public class FinishPoint : MonoBehaviour
     bool isActive = true;
     PlayerInventory inventory;
 
-
     void Start()
     {
         audioSource = GetComponent<AudioSource>();
